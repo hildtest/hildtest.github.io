@@ -1,0 +1,158 @@
+#cellphone_container {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	width: 300px;
+	height: 500px;
+}
+
+/*when 300 px or less, maximize the width*/
+@media only screen and (max-width: 300px) {
+	#cellphone_container {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-height: 500px) {
+	#cellphone_container {
+		height: 100%;
+	}
+}
+
+#header {
+	position: absolute;
+	display: block;
+	text-align: center;
+	color: white;
+	background-color: #68AEDF;
+	left: 10px;
+	right: 10px;
+	top: 10px;
+	height: 50px;
+	font-size: 200%
+}
+
+#footer {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	color:white;
+	background-color: #68AEDF;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	height: 50px;
+	font-size: 75%;
+}
+
+.footerBox {
+	background-color: #2F528F;
+
+	flex: 1;
+}
+
+#active {
+	background-color: #68AEDF;
+}
+
+
+#content {
+	position: absolute;
+	display: block;
+	color: black;
+	background-color: white;
+	left: 10px;
+	right: 10px;
+	top: 60px;
+	bottom: 60px;
+	overflow-y: scroll;
+}
+
+#content > h3 {
+	text-align: center;
+}
+
+button {
+	background: white;
+}
+
+.liste_bivirkninger_div {}
+
+#angi_antall {
+	position: absolute;
+}
+
+#content > div {
+	font-size: 100%;
+	padding: 10px;
+}
+
+.sporsmal_container_flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.sporsmal_innhold_div {
+	flex: 2;
+}
+
+.sporsmal_knapper_div {
+	flex: 1;
+}
+
+.bivirkninger {
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-bottom: 2px solid black;
+}
+
+.active_div {
+	background-color: #CCCCFF;
+}
+
+.innhold_div_flex {
+	display: flex;
+}
+
+.radio_div {
+	flex: 1;
+	text-align: center;
+}
+
+.slider_container {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.registrer_alle_bivirkninger_div {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.oppsummering_bivirkninger_div {
+}
+
+.knapp_i_sentrum_container {
+	text-align: center;
+}
+
+.viktig_knapp {
+	color: white;
+	padding: 10px;
+	background-color: #68AEDF;
+	font-size: 100%;
+	font-weight: bold;
+	border-radius: 5%;
+}
+
+.ikke_klar_knapp {
+	background-color: #AAAAAA;
+	opacity: 0.2;
+	color: black;
+}
