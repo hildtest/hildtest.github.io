@@ -13,7 +13,7 @@ VisInformasjonKnappOmBivirkningen = function (hver_bivirkning_div, bivirkningen)
 
 BindHendelseInformasjonOmBivirkningen = function (knapp, bivirkningen) {
 	knapp.onclick = function () {
-		console.log(bivirkningen)
+		//console.log(bivirkningen)
 		VisRelevantInformasjon(overflate_div, overflate_div_blank, bivirkningen)
 	}
 }

@@ -1,5 +1,5 @@
 #cellphone_container {
-	position: relative;
+	position: absolute;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -193,4 +193,13 @@ button {
 	height: 100%;
 	background-color: transparent;
 	z-index: 1;
+}
+
+
+#veksler {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-color: white;
+	border: 2px solid black;
 }

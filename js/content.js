@@ -10,8 +10,8 @@ for (var i = 0; i < bivirkninger.length; i++) {
 
 var aktuell_index = 0
 
-var stilart_numerisk = "ja_nei" //radioknapper, slider, ja_nei
-var stilart_dikotom = "ja_nei"
+var numerisk_stilart = "ja_nei" //ja_nei, radioknapper, slider
+var dikotom_stilart= "radioknapper" //ja_nei
 
 var liste_bivirkninger_div = document.createElement("div")
 liste_bivirkninger_div.classList.add("liste_bivirkninger_div")
@@ -52,12 +52,12 @@ LagListe = function (array) {
 		//var bivirkning_talltype = array[i][1]
 		var hver_bivirkning_div = document.createElement("div")
 		hver_bivirkning_div.className = "bivirkninger"
-		LagBivirkningElement(i, array, hver_bivirkning_div, stilart_numerisk)
+		LagBivirkningElement(i, array, hver_bivirkning_div, numerisk_stilart)
 		liste_bivirkninger_div.appendChild(hver_bivirkning_div)
 	}
 }
 
-LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart_numerisk) {
+LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart) {
 	hver_bivirkning_div.innerHTML = ""
 
 	var bivirkningen = array[i][0]
@@ -70,22 +70,27 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart_numerisk
 	var endre_knapp = document.createElement("button")
 	endre_knapp.innerHTML = "Endre"
 	endre_knapp.className = "endre_knapp"
-	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, stilart_numerisk)
+	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, numerisk_stilart)
 
 	if (bivirkning_talltype == "numerisk") {
-		if (stilart_numerisk == "radioknapper") {
+		if (numerisk_stilart == "radioknapper") {
 			LagBivirkningElementForRadioKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
-		else if (stilart_numerisk == "slider") {
+		else if (numerisk_stilart == "slider") {
 			LagBivirkningElementForSlider(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
-		else if (stilart_numerisk == "ja_nei") {
+		else if (numerisk_stilart == "ja_nei") {
 			var bivirkningen_grense = array[i][2]
 			LagBivirkningElementForJaNeiKnapperMedGrense(i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 	}
 	else if (bivirkning_talltype == "dikotom") {
-		LagBivirkningElementForJaNeiKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		if (dikotom_stilart == "ja_nei") {
+			LagBivirkningElementForJaNeiKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		}
+		else if (dikotom_stilart == "radioknapper") {
+			LagBivirkningElementForRadioKnapperJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		}
 	}
 	hver_bivirkning_div.appendChild(sporsmal_div)
 	hver_bivirkning_div.appendChild(innhold_div)
@@ -93,10 +98,10 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart_numerisk
 	VisInformasjonKnappOmBivirkningen(hver_bivirkning_div, bivirkningen)
 }
 
-BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, stilart_numerisk) {
+BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, numerisk_stilart) {
 	endre_knapp.onclick = function () {
 		//console.log(index)
-		LagBivirkningElement(index, bivirkningen, bivirkning_talltype, hver_bivirkning_div, stilart_numerisk)
+		LagBivirkningElement(index, bivirkningen, bivirkning_talltype, hver_bivirkning_div, numerisk_stilart)
 		hver_bivirkning_div.classList.remove("active_div")
 	}
 }
@@ -106,7 +111,7 @@ VisDivSomGarOverInnhold = function () {
 }
 
 SkjulDiv = function (div) {
-	console.log(div)
+	//console.log(div)
 	div.style.display = "none"
 }
 

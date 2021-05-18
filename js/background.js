@@ -11,4 +11,4 @@ var height = screen.availHeight;
 cellphone_container.style.height = height*0.8 + "px";
 
 
-console.log(cellphone_container.style.padding)
+//console.log(cellphone_container.style.padding)
