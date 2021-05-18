@@ -1,10 +1,5 @@
 
-LagBivirkningElementForSlider = function (i, bivirkningen, hver_bivirkning_div) {
-	hver_bivirkning_div.innerHTML = ""
-
-	var sporsmal_div = document.createElement("div")
-	var innhold_div = document.createElement("div")
-	var resultat_div = document.createElement("div")
+LagBivirkningElementForSlider = function (i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
 
 	var sporsmal_container = document.createElement("div")
 	//sporsmal_container.className = "sporsmal_container_flex"
@@ -22,22 +17,15 @@ LagBivirkningElementForSlider = function (i, bivirkningen, hver_bivirkning_div) 
 	var bekreft_antall_knapp = document.createElement("button")
 	bekreft_antall_knapp.innerHTML = "Legg inn"
 
-	var endre_knapp = document.createElement("button")
-	endre_knapp.innerHTML = "Endre"
-	endre_knapp.className = "endre_knapp"
-	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div)
 
 	BindHendelseVisSlider(i, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div)		
 
-	hver_bivirkning_div.appendChild(sporsmal_div)
+
 	sporsmal_div.appendChild(sporsmal_container)
 	sporsmal_container.appendChild(sporsmal_innhold_div)
 	sporsmal_container.appendChild(sporsmal_knapper_div)
 	
 	innhold_div.appendChild(vis_slider_knapp)
-
-	hver_bivirkning_div.appendChild(innhold_div)
-	hver_bivirkning_div.appendChild(resultat_div)
 }
 
 BindHendelseVisSlider = function (index, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div) {
@@ -114,12 +102,3 @@ BindHendelseSlider = function (index, bivirkningen, slider, sporsmal_div, sporsm
 	}
 }
 
-
-BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div) {
-	endre_knapp.onclick = function () {
-		//console.log(index)
-		LagBivirkningElementForSlider(index, bivirkningen, hver_bivirkning_div)
-		hver_bivirkning_div.classList.remove("active_div")
-	}
-
-}

@@ -1,10 +1,4 @@
-LagBivirkningElementForJaNeiKnapper = function (i, bivirkningen, hver_bivirkning_div) {
-	hver_bivirkning_div.innerHTML = ""
-
-	var sporsmal_div = document.createElement("div")
-	//sporsmal_div.id = "sporsmal_div"
-	var innhold_div = document.createElement("div")
-	var resultat_div = document.createElement("div")
+LagBivirkningElementForJaNeiKnapper = function (i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
 
 	var sporsmal_container = document.createElement("div")
 	//sporsmal_container.className = "sporsmal_container_flex"
@@ -21,24 +15,41 @@ LagBivirkningElementForJaNeiKnapper = function (i, bivirkningen, hver_bivirkning
 	var nei_knapp = document.createElement("button")
 	nei_knapp.innerHTML = "Nei"
 
-
-	var endre_knapp = document.createElement("button")
-	endre_knapp.innerHTML = "Endre"
-	endre_knapp.className = "endre_knapp"
-	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div)
-
 	BindHendelseJaNeiKnapper(i, bivirkningen, ja_knapp, nei_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, hver_bivirkning_div)		
 
-	hver_bivirkning_div.appendChild(sporsmal_div)
 	sporsmal_div.appendChild(sporsmal_container)
 	sporsmal_container.appendChild(sporsmal_innhold_div)
 	sporsmal_container.appendChild(sporsmal_knapper_div)
 	sporsmal_knapper_div.appendChild(ja_knapp)
 	sporsmal_knapper_div.appendChild(nei_knapp)
-
-	hver_bivirkning_div.appendChild(innhold_div)
-	hver_bivirkning_div.appendChild(resultat_div)
 }
+
+LagBivirkningElementForJaNeiKnapperMedGrense = function (i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
+
+	var sporsmal_container = document.createElement("div")
+	//sporsmal_container.className = "sporsmal_container_flex"
+
+	var sporsmal_knapper_div = document.createElement("div")
+	sporsmal_knapper_div.className = "sporsmal_knapper_div"
+	
+	var sporsmal_innhold_div = document.createElement("div")
+	sporsmal_innhold_div.className = "sporsmal_innhold_div"
+	sporsmal_innhold_div.innerHTML = "Har du hatt mer enn " + bivirkningen_grense + " av " + bivirkningen + " det siste døgnet? ";
+
+	var ja_knapp = document.createElement("button")
+	ja_knapp.innerHTML = "Ja"
+	var nei_knapp = document.createElement("button")
+	nei_knapp.innerHTML = "Nei"
+
+	BindHendelseJaNeiKnapper(i, bivirkningen, ja_knapp, nei_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, hver_bivirkning_div)		
+
+	sporsmal_div.appendChild(sporsmal_container)
+	sporsmal_container.appendChild(sporsmal_innhold_div)
+	sporsmal_container.appendChild(sporsmal_knapper_div)
+	sporsmal_knapper_div.appendChild(ja_knapp)
+	sporsmal_knapper_div.appendChild(nei_knapp)
+}
+
 
 BindHendelseJaNeiKnapper = function (i, bivirkningen, ja_knapp, nei_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, hver_bivirkning_div) {
 	ja_knapp.onclick = function () {
