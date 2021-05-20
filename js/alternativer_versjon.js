@@ -41,7 +41,7 @@ LagBivirkningElementForRadioKnapper = function (i, bivirkningen, hver_bivirkning
 
 		innhold_div.appendChild(radio_div)
 
-		BindHendelseRadioKnapper(i, bivirkningen, radio_input, hver_bivirkning_div, innhold_div, resultat_div)
+		BindHendelseRadioKnapper(i, bivirkningen, radio_div, radio_input, hver_bivirkning_div, innhold_div, resultat_div)
 	}
 
 	sporsmal_div.appendChild(sporsmal_container)
@@ -49,10 +49,10 @@ LagBivirkningElementForRadioKnapper = function (i, bivirkningen, hver_bivirkning
 }
 
 
-BindHendelseRadioKnapper = function (index, bivirkningen, radio_input, hver_bivirkning_div, innhold_div, resultat_div) {
+BindHendelseRadioKnapper = function (index, bivirkningen, radio_div, radio_input, hver_bivirkning_div, innhold_div, resultat_div) {
 	radio_input.onclick = function () {
 		console.log(radio_input.value)
-,		hver_bivirkning_div.classList.add("active_div")
+		hver_bivirkning_div.classList.add("active_div")
 		status_bivirkninger[index][1] = radio_input.value
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Opplevd " + radio_input.value + " tilfeller med " + bivirkningen
@@ -104,7 +104,7 @@ LagBivirkningElementForRadioKnapperJaNei = function (i, bivirkningen, hver_bivir
 BindHendelseRadioKnapperJaNei = function (index, bivirkningen, radio_input, hver_bivirkning_div, innhold_div, resultat_div) {
 	radio_input.onclick = function () {
 		console.log(radio_input.value)
-,		hver_bivirkning_div.classList.add("active_div")
+		hver_bivirkning_div.classList.add("active_div")
 		status_bivirkninger[index][1] = radio_input.value
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Opplevd " + bivirkningen +": " + radio_input.value

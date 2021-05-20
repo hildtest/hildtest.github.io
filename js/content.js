@@ -10,8 +10,8 @@ for (var i = 0; i < bivirkninger.length; i++) {
 
 var aktuell_index = 0
 
-var numerisk_stilart = "ja_nei" //ja_nei, radioknapper, slider
-var dikotom_stilart= "radioknapper" //ja_nei
+var numerisk_stilart = "radioknapper" //ja_nei, radioknapper, slider
+var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
 
 var liste_bivirkninger_div = document.createElement("div")
 liste_bivirkninger_div.classList.add("liste_bivirkninger_div")
