@@ -4,22 +4,10 @@
 	margin-left: auto;
 	margin-right: auto;
 	background-color: black;
-	width: 300px;
-	height: 500px;
+	width: 350px;
+	height: 700px;
 }
 
-/*when 300 px or less, maximize the width*/
-@media only screen and (max-width: 300px) {
-	#cellphone_container {
-		width: 100%;
-	}
-}
-
-@media only screen and (max-height: 500px) {
-	#cellphone_container {
-		height: 100%;
-	}
-}
 
 #header {
 	position: absolute;
@@ -202,4 +190,23 @@ button {
 	top: 0px;
 	background-color: white;
 	border: 2px solid black;
+}
+
+
+/*when 300 px or less, maximize the width*/
+@media only screen and (max-width: 350px) {
+	#cellphone_container {
+		width: 100%;
+		background-color: white;
+	}
+
+	#veksler {
+		display: none;
+	}
+}
+
+@media only screen and (max-height: 700px) {
+	#cellphone_container {
+		height: 100%;
+	}
 }
