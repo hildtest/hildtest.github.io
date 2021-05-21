@@ -1,11 +1,13 @@
 #cellphone_container {
+	top: 0px;
+	left: 0px;
 	position: absolute;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: black;
-	width: 350px;
-	height: 700px;
+	width: 400px;
+	height: 100%;
 }
 
 
@@ -194,19 +196,12 @@ button {
 
 
 /*when 300 px or less, maximize the width*/
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 400px) {
 	#cellphone_container {
 		width: 100%;
-		background-color: white;
 	}
 
 	#veksler {
 		display: none;
-	}
-}
-
-@media only screen and (max-height: 700px) {
-	#cellphone_container {
-		height: 100%;
 	}
 }
