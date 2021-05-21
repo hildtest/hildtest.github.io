@@ -195,8 +195,8 @@ button {
 }
 
 
-/*when 300 px or less, maximize the width*/
-@media only screen and (max-width: 400px) {
+/*when 600 px or less, maximize the width*/
+@media only screen and (max-width: 600px) {
 	#cellphone_container {
 		width: 100%;
 	}
