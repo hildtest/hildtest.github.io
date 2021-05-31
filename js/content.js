@@ -17,9 +17,9 @@ var liste_bivirkninger_div = document.createElement("div")
 liste_bivirkninger_div.classList.add("liste_bivirkninger_div")
 content.appendChild(liste_bivirkninger_div)
 
-registrer_alle_bivirkninger_div = document.createElement("div")
-registrer_alle_bivirkninger_div.classList.add("registrer_alle_bivirkninger_div")
-content.appendChild(registrer_alle_bivirkninger_div)
+legg_inn_alle_bivirkninger_div = document.createElement("div")
+legg_inn_alle_bivirkninger_div.classList.add("legg_inn_alle_bivirkninger_div")
+content.appendChild(legg_inn_alle_bivirkninger_div)
 
 var oppsummering_bivirkninger_div = document.createElement("div")
 oppsummering_bivirkninger_div.classList.add("oppsummering_bivirkninger_div")

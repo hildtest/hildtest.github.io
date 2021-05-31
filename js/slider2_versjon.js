@@ -98,7 +98,7 @@ BindHendelseSlider = function (index, bivirkningen, slider, sporsmal_div, sporsm
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = ""
 		innhold_div.appendChild(endre_knapp)
-		OppdaterFargePaKnapp(registrer_alle_bivirkninger_knapp)
+		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 	}
 }
 

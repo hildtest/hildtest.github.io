@@ -1,17 +1,17 @@
 
-var registrer_alle_bivirkninger_knapp = document.createElement("button")
-registrer_alle_bivirkninger_knapp.classList.add("viktig_knapp")
-registrer_alle_bivirkninger_knapp.classList.add("ikke_klar_knapp")
-registrer_alle_bivirkninger_knapp.innerHTML = "Registrer bivirkninger"
+var legg_inn_alle_bivirkninger_knapp = document.createElement("button")
+legg_inn_alle_bivirkninger_knapp.classList.add("viktig_knapp")
+legg_inn_alle_bivirkninger_knapp.classList.add("ikke_klar_knapp")
+legg_inn_alle_bivirkninger_knapp.innerHTML = "Legg inn bivirkninger"
 
-registrer_alle_bivirkninger_div.appendChild(registrer_alle_bivirkninger_knapp)
+legg_inn_alle_bivirkninger_div.appendChild(legg_inn_alle_bivirkninger_knapp)
 
 var send_inn_alle_bivirkninger_knapp_container = document.createElement("div")
 send_inn_alle_bivirkninger_knapp_container.classList.add("knapp_i_sentrum_container")
 
 var send_inn_alle_bivirkninger_knapp = document.createElement("button")
 send_inn_alle_bivirkninger_knapp.classList.add("viktig_knapp")
-send_inn_alle_bivirkninger_knapp.innerHTML = "Send inn"
+send_inn_alle_bivirkninger_knapp.innerHTML = "Send inn bivirkninger"
 send_inn_alle_bivirkninger_knapp_container.appendChild(send_inn_alle_bivirkninger_knapp)
 
 var ring_sykehuset_knapp_container = document.createElement("div")
@@ -49,7 +49,7 @@ SjekkOmNoenBivirkningerErAlvorlige = function () {
 VisRegisterteBivirkninger = function (status_bivirkninger) {
 	//console.log(liste_bivirkninger_div)
 	SkjulDiv(liste_bivirkninger_div)
-	SkjulDiv(registrer_alle_bivirkninger_div)
+	SkjulDiv(legg_inn_alle_bivirkninger_div)
 	VisDiv(oppsummering_bivirkninger_div)
 
 	oppsummering_bivirkninger_div.innerHTML = "Oppsummering av bivirkninger: <br><br>"
@@ -82,7 +82,7 @@ OppdaterFargePaKnapp = function (knapp) {
 	}
 }
 
-registrer_alle_bivirkninger_knapp.onclick = function () {
+legg_inn_alle_bivirkninger_knapp.onclick = function () {
 	var antall_mangler = SjekkAtAlleBivirkningerErRegistrert()
 	if (antall_mangler > 0) {
 		//ikke alt registrert
@@ -103,7 +103,7 @@ send_inn_alle_bivirkninger_knapp.onclick = function () {
 		console.log("ikke alvorlig")
 		LagListe(bivirkninger)
 		VisDiv(liste_bivirkninger_div)
-		VisDiv(registrer_alle_bivirkninger_div)
+		VisDiv(legg_inn_alle_bivirkninger_div)
 		SkjulDiv(oppsummering_bivirkninger_div)
 	}
 	else {
@@ -116,6 +116,6 @@ ring_sykehuset_knapp.onclick = function () {
 	console.log("ikke alvorlig")
 	LagListe(bivirkninger)
 	VisDiv(liste_bivirkninger_div)
-	VisDiv(registrer_alle_bivirkninger_div)
+	VisDiv(legg_inn_alle_bivirkninger_div)
 	SkjulDiv(ring_sykehuset_div)
 }

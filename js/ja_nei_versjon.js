@@ -62,7 +62,7 @@ BindHendelseJaNeiKnapper = function (i, bivirkningen, ja_knapp, nei_knapp, spors
 		status_bivirkninger[i][1] = "ja"
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Ja, " + bivirkningen + " opplevd"
-		OppdaterFargePaKnapp(registrer_alle_bivirkninger_knapp)
+		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 	}
 	nei_knapp.onclick = function () {
 		ja_knapp.style.backgroundColor = "white"
@@ -74,6 +74,6 @@ BindHendelseJaNeiKnapper = function (i, bivirkningen, ja_knapp, nei_knapp, spors
 		status_bivirkninger[i][1] = "nei"
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Nei, ingen " + bivirkningen + " opplevd"
-		OppdaterFargePaKnapp(registrer_alle_bivirkninger_knapp)
+		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 	}
 }

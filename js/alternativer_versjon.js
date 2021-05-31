@@ -56,7 +56,7 @@ BindHendelseRadioKnapper = function (index, bivirkningen, radio_div, radio_input
 		status_bivirkninger[index][1] = radio_input.value
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Opplevd " + radio_input.value + " tilfeller med " + bivirkningen
-		OppdaterFargePaKnapp(registrer_alle_bivirkninger_knapp)
+		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 	}
 }
 
@@ -108,6 +108,6 @@ BindHendelseRadioKnapperJaNei = function (index, bivirkningen, radio_input, hver
 		status_bivirkninger[index][1] = radio_input.value
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Opplevd " + bivirkningen +": " + radio_input.value
-		OppdaterFargePaKnapp(registrer_alle_bivirkninger_knapp)
+		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 	}
 }
