@@ -38,10 +38,24 @@ SjekkAtAlleBivirkningerErRegistrert = function () {
 SjekkOmNoenBivirkningerErAlvorlige = function () {
 	antall_alvorlige = 0;
 	for (var i = 0; i < status_bivirkninger.length; i++) {
-		if (status_bivirkninger[i][1] >= 5 || status_bivirkninger[i][1] == "ja") {
-			console.log(status_bivirkninger[i][1] + " er for mye")
-			antall_alvorlige += 1
+		console.log(status_bivirkninger[i][0], status_bivirkninger[i][1], status_bivirkninger[i][2])
+		var grense = status_bivirkninger[i][1]
+
+		//hvis grensen er numerisk
+		if (Number(grense)) {
+			if (status_bivirkninger[i][2] >= grense) {
+				console.log(status_bivirkninger[i][1] + " er grensen, " + status_bivirkninger[i][2] + " er for mye")
+				antall_alvorlige += 1
+			}
 		}
+		//hvis ja-nei
+		else {
+			if (status_bivirkninger[i][2].toLowerCase() == grense.toLowerCase()) {
+				console.log(status_bivirkninger[i][1] + " er grensen, " + status_bivirkninger[i][2] + " er for mye")
+				antall_alvorlige += 1
+			}
+		}
+		
 	}
 	return antall_alvorlige
 }
@@ -55,7 +69,7 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 	oppsummering_bivirkninger_div.innerHTML = "Oppsummering av bivirkninger: <br><br>"
 	for (var i = 0; i < status_bivirkninger.length; i++) {
 		var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
-		oppsummering_bivirkninger_div.innerHTML += "- " + bivirkningen + ": " + status_bivirkninger[i][1] + "<br>"
+		oppsummering_bivirkninger_div.innerHTML += "- " + bivirkningen + ": " + status_bivirkninger[i][2] + "<br>"
 	}
 	oppsummering_bivirkninger_div.innerHTML += "<br>"
 	oppsummering_bivirkninger_div.appendChild(send_inn_alle_bivirkninger_knapp_container)

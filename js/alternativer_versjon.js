@@ -27,7 +27,7 @@ LagBivirkningElementForRadioKnapper = function (i, bivirkningen, hver_bivirkning
 		radio_input.type = "radio"
 		radio_input.id = bivirkningen + mengde_array[j]
 		radio_input.name = bivirkningen
-		radio_input.value = mengde_array[j]
+		radio_input.value = mengde_array[j][0]
 
 		var label = document.createElement("label")
 		label.htmlFor = bivirkningen + mengde_array[j]
@@ -50,7 +50,7 @@ BindHendelseRadioKnapper = function (index, bivirkningen, radio_div, radio_input
 	radio_input.onclick = function () {
 		console.log(radio_input.value)
 		hver_bivirkning_div.classList.add("active_div")
-		status_bivirkninger[index][1] = radio_input.value
+		status_bivirkninger[index][2] = radio_input.value
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Opplevd " + radio_input.value + " tilfeller med " + bivirkningen
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
@@ -102,7 +102,7 @@ BindHendelseRadioKnapperJaNei = function (index, bivirkningen, radio_input, hver
 	radio_input.onclick = function () {
 		console.log(radio_input.value)
 		hver_bivirkning_div.classList.add("active_div")
-		status_bivirkninger[index][1] = radio_input.value
+		status_bivirkninger[index][2] = radio_input.value
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Opplevd " + bivirkningen +": " + radio_input.value
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)

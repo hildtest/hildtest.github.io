@@ -59,7 +59,7 @@ BindHendelseJaNeiKnapper = function (i, bivirkningen, ja_knapp, nei_knapp, spors
 		nei_knapp.style.opacity = 0.5
 
 		hver_bivirkning_div.classList.add("active_div")
-		status_bivirkninger[i][1] = "ja"
+		status_bivirkninger[i][2] = "ja"
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Ja, " + bivirkningen + " opplevd"
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
@@ -71,7 +71,7 @@ BindHendelseJaNeiKnapper = function (i, bivirkningen, ja_knapp, nei_knapp, spors
 		nei_knapp.style.opacity = 1
 
 		hver_bivirkning_div.classList.add("active_div")
-		status_bivirkninger[i][1] = "nei"
+		status_bivirkninger[i][2] = "nei"
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = "Nei, ingen " + bivirkningen + " opplevd"
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)

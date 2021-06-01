@@ -92,7 +92,7 @@ BindHendelseSlider = function (index, bivirkningen, slider, sporsmal_div, sporsm
 		console.log(slider.value, bivirkningen)
 		hver_bivirkning_div.classList.add("active_div")
 		innhold_div.innerHTML = "<b>Registrert " + slider.value + " tilfeller</b> ";
-		status_bivirkninger[index][1] = slider.value
+		status_bivirkninger[index][2] = slider.value
 		console.log(status_bivirkninger)
 		resultat_div.innerHTML = ""
 		innhold_div.appendChild(endre_knapp)

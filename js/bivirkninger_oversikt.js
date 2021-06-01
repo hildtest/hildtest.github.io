@@ -7,11 +7,11 @@ var bivirkninger = [
 
 var status_bivirkninger = []
 for (var i = 0; i < bivirkninger.length; i++) {
-	status_bivirkninger.push([bivirkninger[i][0]])
+	status_bivirkninger.push([bivirkninger[i][0], bivirkninger[i][2]])
 }
 
-var mengde_array_lang = ["0", "1-3", "4-6", "7+"]
-var mengde_array_kort = ["0", "1", "2", "3+"]
+var mengde_array_lang = ["0", "1-3", "4-5", "6-7", "8+"]
+var mengde_array_kort = ["0", "1", "2", "3", "4+"]
 var ja_nei_array = ["Ja", "Nei"]
 
 FinnRiktigMengdeArrayForBivirkning = function (bivirkningen) {

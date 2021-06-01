@@ -5,7 +5,7 @@ var content = document.getElementById("content")
 
 var aktuell_index = 0
 
-var numerisk_stilart = "slider" //ja_nei, radioknapper, slider
+var numerisk_stilart = "radioknapper" //ja_nei, radioknapper, slider
 var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
 
 var liste_bivirkninger_div = document.createElement("div")
