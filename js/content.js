@@ -1,16 +1,11 @@
 var content = document.getElementById("content")
 
-//dikotom vs. numerisk
-var bivirkninger = [["avføring", "numerisk", 6], ["utslett", "dikotom"]]
-//["oppkast", "numerisk"], ["utslett", "dikotom"]
-var status_bivirkninger = []
-for (var i = 0; i < bivirkninger.length; i++) {
-	status_bivirkninger.push([bivirkninger[i][0]])
-}
+
+//console.log(bivirkninger)
 
 var aktuell_index = 0
 
-var numerisk_stilart = "radioknapper" //ja_nei, radioknapper, slider
+var numerisk_stilart = "slider" //ja_nei, radioknapper, slider
 var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
 
 var liste_bivirkninger_div = document.createElement("div")
@@ -59,6 +54,7 @@ LagListe = function (array) {
 
 LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart) {
 	hver_bivirkning_div.innerHTML = ""
+	console.log(hver_bivirkning_div)
 
 	var bivirkningen = array[i][0]
 	var bivirkning_talltype = array[i][1]
@@ -72,7 +68,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 	endre_knapp.className = "endre_knapp"
 	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, numerisk_stilart)
 
-	if (bivirkning_talltype == "numerisk") {
+	if (bivirkning_talltype == "numerisk kort" || bivirkning_talltype == "numerisk lang") {
 		if (numerisk_stilart == "radioknapper") {
 			LagBivirkningElementForRadioKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
@@ -100,8 +96,9 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 
 BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, numerisk_stilart) {
 	endre_knapp.onclick = function () {
-		//console.log(index)
-		LagBivirkningElement(index, bivirkningen, bivirkning_talltype, hver_bivirkning_div, numerisk_stilart)
+		console.log(index, numerisk_stilart, bivirkning_talltype)
+		
+		LagBivirkningElement(index, bivirkninger, hver_bivirkning_div, numerisk_stilart)
 		hver_bivirkning_div.classList.remove("active_div")
 	}
 }

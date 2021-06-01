@@ -11,8 +11,10 @@ LagBivirkningElementForSlider = function (i, bivirkningen, hver_bivirkning_div, 
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
 	sporsmal_innhold_div.innerHTML = "Hvor mange tilfeller med " + bivirkningen + " har du hatt det siste døgnet? ";
 
+	
 	var vis_slider_knapp = document.createElement("button")
 	vis_slider_knapp.innerHTML = "Vis slider"
+	
 
 	var bekreft_antall_knapp = document.createElement("button")
 	bekreft_antall_knapp.innerHTML = "Legg inn"
@@ -25,12 +27,12 @@ LagBivirkningElementForSlider = function (i, bivirkningen, hver_bivirkning_div, 
 	sporsmal_container.appendChild(sporsmal_innhold_div)
 	sporsmal_container.appendChild(sporsmal_knapper_div)
 	
-	innhold_div.appendChild(vis_slider_knapp)
+	//innhold_div.appendChild(vis_slider_knapp)
 }
 
 BindHendelseVisSlider = function (index, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div) {
 
-	vis_slider_knapp.onclick = function () {
+	//vis_slider_knapp.onclick = function () {
 		innhold_div.innerHTML = "Angi hvor mange ved å dra i slideren.<br>"
 		sporsmal_knapper_div.innerHTML = ""
 
@@ -38,7 +40,7 @@ BindHendelseVisSlider = function (index, bivirkningen, vis_slider_knapp, sporsma
 		console.log(aktuell_index)
 
 		LagSlideren(index, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div)
-	}
+	//}
 }
 
 LagSlideren = function (index, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div) {
@@ -51,7 +53,7 @@ LagSlideren = function (index, bivirkningen, vis_slider_knapp, sporsmal_div, spo
 	slider.type = "range"
 	slider.min = 0
 	slider.max = 10
-	slider.value = 0
+	slider.value = (slider.min+slider.max)/2
 
 	
 	var start_tekst = document.createTextNode("0")
@@ -72,21 +74,17 @@ BindHendelseSlider = function (index, bivirkningen, slider, sporsmal_div, sporsm
 	slider.oninput = function () {
 		console.log(slider.value, slider.max)
 
-		if (slider.value == slider.max) {
-			resultat_div.innerHTML = "Antall: " + this.value + "+<br>"
-		}
-		else {
-			resultat_div.innerHTML = "Antall: " + this.value + "<br>"
-		}
-	}
+		slider.style.opacity = 1;
 
-	slider.onchange = function () {
 		if (slider.value == slider.max) {
+			resultat_div.innerHTML = "Antall: " + this.value + "+<br>";
 			bekreft_antall_knapp.innerHTML = "Legg inn " + this.value + " eller flere hendelser";
 		}
 		else {
+			resultat_div.innerHTML = "Antall: " + this.value + "<br>";
 			bekreft_antall_knapp.innerHTML = "Legg inn " + this.value + " hendelser";
 		}
+
 		resultat_div.appendChild(bekreft_antall_knapp)
 	}
 

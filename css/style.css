@@ -194,14 +194,3 @@ button {
 	border: 2px solid black;
 }
 
-
-/*when 600 px or less, maximize the width*/
-@media only screen and (max-width: 600px) {
-	#cellphone_container {
-		width: 100%;
-	}
-
-	#veksler {
-		display: none;
-	}
-}

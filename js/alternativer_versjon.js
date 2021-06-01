@@ -1,12 +1,6 @@
 var content = document.getElementById("content")
 
 
-var mengde_array = ["0", "1-3", "4-6", "7+"]
-var ja_nei_array = ["Ja", "Nei"]
-
-var aktuell_index = 0
-
-
 LagBivirkningElementForRadioKnapper = function (i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
 	hver_bivirkning_div.innerHTML = ""
 
@@ -20,6 +14,9 @@ LagBivirkningElementForRadioKnapper = function (i, bivirkningen, hver_bivirkning
 	sporsmal_innhold_div.innerHTML = "Har du hatt " + bivirkningen + " det siste døgnet? ";
 
 	innhold_div.innerHTML = ""
+
+	var mengde_array = FinnRiktigMengdeArrayForBivirkning(bivirkningen)
+	console.log(mengde_array)
 
 	for (var j = 0; j < mengde_array.length; j++) {
 		//console.log(mengde_array[j])
