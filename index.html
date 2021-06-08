@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 	<title>
 Dette er en mock-up av appen</title>
 
@@ -13,9 +14,7 @@ Dette er en mock-up av appen</title>
 <body>
 	<div id="cellphone_container">
 		<div id="header">Bivirkninger</div>
-		<div id="content">
-			<h3>Symptomer siste døgn</h3>
-		</div>
+		<div id="content"></div>
 		<div id="footer">
 			<div class="footerBox"></div>
 			<div class="footerBox" id="active">Bivirkninger</div>
@@ -28,18 +27,22 @@ Dette er en mock-up av appen</title>
 	</div>
 
 	<script type="text/javascript" src="js/background.js"></script>
+	<script type="text/javascript" src="js/startmeny.js"></script>
+
 	<script type="text/javascript" src="js/bivirkninger_oversikt.js"></script>
 	<script type="text/javascript" src="js/content.js"></script>
 	<script type="text/javascript" src="js/registrer_alle_bivirkninger.js"></script>
 	<script type="text/javascript" src="js/informasjon_om_bivirkning.js"></script>
-	<script type="text/javascript" src="js/slider2_versjon.js"></script>
-	<script type="text/javascript" src="js/alternativer_versjon.js"></script>
-	<script type="text/javascript" src="js/ja_nei_versjon.js"></script>
+
 	<script type="text/javascript" src="js/veksle_mellom_ulike_grensesnitt.js"></script>
+
+	<script type="text/javascript" src="js/slider_versjon.js"></script>
+	<script type="text/javascript" src="js/radioknapper_versjon.js"></script>
+	<script type="text/javascript" src="js/ja_nei_versjon.js"></script>
 	<script type="text/javascript" src="js/drop_down_versjon.js"></script>
 
 	<script type="text/javascript">
-		LagListe(bivirkninger)
+		VisStartMenyBivirkninger()
 	</script>
 </body>
 </html>

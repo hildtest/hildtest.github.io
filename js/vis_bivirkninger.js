@@ -9,41 +9,39 @@ var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
 
 var overskrift_content_div = document.createElement("div")
 overskrift_content_div.classList.add("overskrift_content_div")
-overskrift_content_div.style.padding = "0px";
 overskrift_content_div.innerHTML = "<h3>Symptomer siste døgn</h3>"
+overskrift_content_div.style.padding = "0px";
+content.appendChild(overskrift_content_div)
 
 var liste_bivirkninger_div = document.createElement("div")
 liste_bivirkninger_div.classList.add("liste_bivirkninger_div")
+content.appendChild(liste_bivirkninger_div)
 
 var legg_inn_alle_bivirkninger_div = document.createElement("div")
 legg_inn_alle_bivirkninger_div.classList.add("legg_inn_alle_bivirkninger_div")
+content.appendChild(legg_inn_alle_bivirkninger_div)
 
 var oppsummering_bivirkninger_div = document.createElement("div")
 oppsummering_bivirkninger_div.classList.add("oppsummering_bivirkninger_div")
 oppsummering_bivirkninger_div.style.display = "none"
+content.appendChild(oppsummering_bivirkninger_div)
 
 var ring_sykehuset_div = document.createElement("div")
 ring_sykehuset_div.classList.add("ring_sykehuset_div")
 ring_sykehuset_div.style.display = "none"
+content.appendChild(ring_sykehuset_div)
 
 var overflate_div = document.createElement("div")
 overflate_div.classList.add("overflate_div")
 overflate_div.style.display = "none"
+content.appendChild(overflate_div)
 
 var overflate_div_blank = document.createElement("div")
 overflate_div_blank.classList.add("overflate_div_blank")
 overflate_div_blank.style.display = "none"
+content.appendChild(overflate_div_blank)
 
 VisSymptomerSisteDogn = function() {
-
-	content.appendChild(overskrift_content_div)
-	content.appendChild(liste_bivirkninger_div)
-	content.appendChild(legg_inn_alle_bivirkninger_div)
-	content.appendChild(oppsummering_bivirkninger_div)
-	content.appendChild(ring_sykehuset_div)
-	content.appendChild(overflate_div)
-	content.appendChild(overflate_div_blank)
-
 	LagListe(bivirkninger)
 }
 
@@ -93,10 +91,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 		}
 	}
 	else if (bivirkning_talltype == "dikotom") {
-		if (dikotom_stilart == "drop_down") {
-			LagBivirkningElementForDropDownJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (dikotom_stilart == "ja_nei") {
+		if (dikotom_stilart == "ja_nei") {
 			LagBivirkningElementForJaNeiKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 		else if (dikotom_stilart == "radioknapper") {

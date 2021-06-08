@@ -27,7 +27,7 @@ ring_sykehuset_knapp_container.appendChild(ring_sykehuset_knapp)
 SjekkAtAlleBivirkningerErRegistrert = function () {
 	antall_mangler = 0;
 	for (var i = 0; i < status_bivirkninger.length; i++) {
-		if (status_bivirkninger[i].length < 2) {
+		if (status_bivirkninger[i].length < 3) {
 			console.log(status_bivirkninger[i][0] + " ikke lagt inn")
 			antall_mangler += 1
 		}
@@ -43,7 +43,7 @@ SjekkOmNoenBivirkningerErAlvorlige = function () {
 
 		//hvis grensen er numerisk
 		if (Number(grense)) {
-			if (status_bivirkninger[i][2] >= grense) {
+			if (status_bivirkninger[i][2][0] >= grense) {
 				console.log(status_bivirkninger[i][1] + " er grensen, " + status_bivirkninger[i][2] + " er for mye")
 				antall_alvorlige += 1
 			}

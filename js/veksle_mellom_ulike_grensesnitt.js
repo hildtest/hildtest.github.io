@@ -8,12 +8,12 @@ veksler.innerHTML = ""
 var numerisk_stilvalg_div = document.createElement("div")
 numerisk_stilvalg_div.innerHTML = "Fremvisning av numeriske muligheter: <br>"
 
-var numeriske_stilvalg_array = [ "ja_nei", "radioknapper", "slider"]
+var numeriske_stilvalg_array = ["drop_down", "ja_nei", "radioknapper", "slider"]
 
 var dikotom_stilvalg_div = document.createElement("div")
 dikotom_stilvalg_div.innerHTML = "Fremvisning av dikotome muligheter: <br>"
 
-var dikotom_stilvalg_array = ["ja_nei", "radioknapper"]
+var dikotom_stilvalg_array = ["drop_down", "ja_nei", "radioknapper"]
 
 veksler.appendChild(numerisk_stilvalg_div)
 veksler.appendChild(dikotom_stilvalg_div)
