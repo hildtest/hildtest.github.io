@@ -12,7 +12,14 @@ send_inn_alle_bivirkninger_knapp_container.classList.add("knapp_i_sentrum_contai
 var send_inn_alle_bivirkninger_knapp = document.createElement("button")
 send_inn_alle_bivirkninger_knapp.classList.add("viktig_knapp")
 send_inn_alle_bivirkninger_knapp.innerHTML = "Send inn bivirkninger"
+
+var tilbake_til_oversikt_over_bivirkninger_knapp = document.createElement("button")
+tilbake_til_oversikt_over_bivirkninger_knapp.classList.add("viktig_knapp")
+tilbake_til_oversikt_over_bivirkninger_knapp.innerHTML = "Tilbake til symptomer siste døgn"
+
 send_inn_alle_bivirkninger_knapp_container.appendChild(send_inn_alle_bivirkninger_knapp)
+send_inn_alle_bivirkninger_knapp_container.appendChild(tilbake_til_oversikt_over_bivirkninger_knapp)
+
 
 var ring_sykehuset_knapp_container = document.createElement("div")
 ring_sykehuset_knapp_container.classList.add("knapp_i_sentrum_container")
@@ -21,7 +28,12 @@ var ring_sykehuset_knapp = document.createElement("button")
 ring_sykehuset_knapp.classList.add("viktig_knapp")
 ring_sykehuset_knapp.innerHTML = "Ring &#9742;"
 
+var tilbake_til_oppsummering_av_bivirkninger_knapp = document.createElement("button")
+tilbake_til_oppsummering_av_bivirkninger_knapp.classList.add("viktig_knapp")
+tilbake_til_oppsummering_av_bivirkninger_knapp.innerHTML = "Tilbake til oppsummering av symptomer"
+
 ring_sykehuset_knapp_container.appendChild(ring_sykehuset_knapp)
+ring_sykehuset_knapp_container.appendChild(tilbake_til_oppsummering_av_bivirkninger_knapp)
 
 
 SjekkAtAlleBivirkningerErRegistrert = function () {
@@ -62,9 +74,14 @@ SjekkOmNoenBivirkningerErAlvorlige = function () {
 
 VisRegisterteBivirkninger = function (status_bivirkninger) {
 	//console.log(liste_bivirkninger_div)
-	SkjulDiv(liste_bivirkninger_div)
-	SkjulDiv(legg_inn_alle_bivirkninger_div)
-	VisDiv(oppsummering_bivirkninger_div)
+	//SkjulDiv(liste_bivirkninger_div)
+	//SkjulDiv(legg_inn_alle_bivirkninger_div)
+	//VisDiv(oppsummering_bivirkninger_div)
+
+	content.innerHTML = ""
+	content.appendChild(tilbake_til_start_meny_knapp)
+	content.appendChild(overskrift_content_div)
+	content.appendChild(oppsummering_bivirkninger_div)
 
 	oppsummering_bivirkninger_div.innerHTML = "Oppsummering av bivirkninger: <br><br>"
 	for (var i = 0; i < status_bivirkninger.length; i++) {
@@ -77,8 +94,14 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 
 VisRingSykehuset = function () {
 	console.log("alvorlig")
-	SkjulDiv(oppsummering_bivirkninger_div)
-	VisDiv(ring_sykehuset_div)
+	//SkjulDiv(oppsummering_bivirkninger_div)
+	//VisDiv(ring_sykehuset_div)
+
+	content.innerHTML = ""
+	content.appendChild(tilbake_til_start_meny_knapp)
+	content.appendChild(overskrift_content_div)
+	content.appendChild(ring_sykehuset_div)
+
 
 	ring_sykehuset_div.innerHTML = ""
 	ring_sykehuset_div.innerHTML += "Du har registrert en eller flere bivirkninger som er alvorlig og kan potensielt påvirke behandlingsplanen. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
@@ -115,10 +138,8 @@ send_inn_alle_bivirkninger_knapp.onclick = function () {
 		//ikke noe alvorlig
 		//starter på nytt
 		console.log("ikke alvorlig")
-		LagListe(bivirkninger)
-		VisDiv(liste_bivirkninger_div)
-		VisDiv(legg_inn_alle_bivirkninger_div)
-		SkjulDiv(oppsummering_bivirkninger_div)
+		content.innerHTML = ""
+		VisStartMenyBivirkninger()
 	}
 	else {
 		//noe alvorlig, bedt om å ringe sykehuset
@@ -128,8 +149,23 @@ send_inn_alle_bivirkninger_knapp.onclick = function () {
 
 ring_sykehuset_knapp.onclick = function () {
 	console.log("ikke alvorlig")
-	LagListe(bivirkninger)
-	VisDiv(liste_bivirkninger_div)
-	VisDiv(legg_inn_alle_bivirkninger_div)
-	SkjulDiv(ring_sykehuset_div)
+	content.innerHTML = ""
+	VisStartMenyBivirkninger()
+}
+
+tilbake_til_oversikt_over_bivirkninger_knapp.onclick = function () {
+	content.innerHTML = ""
+	content.appendChild(tilbake_til_start_meny_knapp)
+	content.appendChild(overskrift_content_div)
+	content.appendChild(liste_bivirkninger_div)
+	content.appendChild(legg_inn_alle_bivirkninger_div)
+	content.appendChild(overflate_div)
+	content.appendChild(overflate_div_blank)
+}
+
+tilbake_til_oppsummering_av_bivirkninger_knapp.onclick = function () {
+	content.innerHTML = ""
+	content.appendChild(tilbake_til_start_meny_knapp)
+	content.appendChild(overskrift_content_div)
+	content.appendChild(oppsummering_bivirkninger_div)
 }

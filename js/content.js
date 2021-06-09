@@ -20,11 +20,9 @@ legg_inn_alle_bivirkninger_div.classList.add("legg_inn_alle_bivirkninger_div")
 
 var oppsummering_bivirkninger_div = document.createElement("div")
 oppsummering_bivirkninger_div.classList.add("oppsummering_bivirkninger_div")
-oppsummering_bivirkninger_div.style.display = "none"
 
 var ring_sykehuset_div = document.createElement("div")
 ring_sykehuset_div.classList.add("ring_sykehuset_div")
-ring_sykehuset_div.style.display = "none"
 
 var overflate_div = document.createElement("div")
 overflate_div.classList.add("overflate_div")
@@ -36,11 +34,10 @@ overflate_div_blank.style.display = "none"
 
 VisSymptomerSisteDogn = function() {
 
+	content.appendChild(tilbake_til_start_meny_knapp)
 	content.appendChild(overskrift_content_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
-	content.appendChild(oppsummering_bivirkninger_div)
-	content.appendChild(ring_sykehuset_div)
 	content.appendChild(overflate_div)
 	content.appendChild(overflate_div_blank)
 

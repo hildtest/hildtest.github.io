@@ -206,3 +206,9 @@ button {
 	font-weight: initial;
 }
 
+
+.tilbake_knapp_oppe_til_venstre {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
