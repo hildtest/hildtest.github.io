@@ -1,4 +1,5 @@
 var content = document.getElementById("content")
+var overflate_content = document.getElementById("overflate_content")
 
 //console.log(bivirkninger)
 
@@ -25,12 +26,13 @@ var ring_sykehuset_div = document.createElement("div")
 ring_sykehuset_div.classList.add("ring_sykehuset_div")
 
 var overflate_div = document.createElement("div")
-overflate_div.classList.add("overflate_div")
-overflate_div.style.display = "none"
+overflate_div.id = "overflate_div"
 
 var overflate_div_blank = document.createElement("div")
-overflate_div_blank.classList.add("overflate_div_blank")
-overflate_div_blank.style.display = "none"
+overflate_div_blank.id = "overflate_div_blank"
+
+overflate_content.appendChild(overflate_div)
+overflate_content.appendChild(overflate_div_blank)
 
 VisSymptomerSisteDogn = function() {
 
@@ -38,8 +40,6 @@ VisSymptomerSisteDogn = function() {
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
-	content.appendChild(overflate_div)
-	content.appendChild(overflate_div_blank)
 
 	LagListe(bivirkninger)
 }

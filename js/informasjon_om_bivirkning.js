@@ -13,31 +13,29 @@ VisInformasjonKnappOmBivirkningen = function (hver_bivirkning_div, bivirkningen)
 
 BindHendelseInformasjonOmBivirkningen = function (knapp, bivirkningen) {
 	knapp.onclick = function () {
-		//console.log(bivirkningen)
-		VisRelevantInformasjon(overflate_div, overflate_div_blank, bivirkningen)
+		console.log(bivirkningen)
+		overflate_content.style.zIndex = 2
+		console.log(overflate_content)
+		console.log(overflate_div)
+		VisRelevantInformasjon(bivirkningen)
 	}
 }
 
-VisRelevantInformasjon = function (div, div_blank, bivirkningen) {
-	div.style.display = "block"
-	div_blank.style.display = "block"
-	div_blank.style.padding = "0px"
-	div.innerHTML = ""
-	div.innerHTML += "Her står det relevant informasjon om bivirkningen. <br>"
-	div.innerHTML += "Som hvor vanlig den er, hvorfor den er alvorlig og hva man bør gjøre hvis den er såpass alvorlig.<br>"
-	div.innerHTML += "<br>"
+VisRelevantInformasjon = function (bivirkningen) {
+	overflate_div.innerHTML = ""
+	overflate_div.innerHTML += "Her står det relevant informasjon om bivirkningen. <br>"
+	overflate_div.innerHTML += "Som hvor vanlig den er, hvorfor den er alvorlig og hva man bør gjøre hvis den er såpass alvorlig.<br>"
+	overflate_div.innerHTML += "<br>"
 
 	var tilbake_til_bivirkning_oversikt_knapp = document.createElement("button")
 	tilbake_til_bivirkning_oversikt_knapp.innerHTML = "Tilbake"
-	div.appendChild(tilbake_til_bivirkning_oversikt_knapp)
+	overflate_div.appendChild(tilbake_til_bivirkning_oversikt_knapp)
 
 	tilbake_til_bivirkning_oversikt_knapp.onclick = function () {
-		SkjulDiv(overflate_div)
-		SkjulDiv(overflate_div_blank)
+		overflate_content.style.zIndex = -1
 	}
 }
 
 overflate_div_blank.onclick = function () {
-	SkjulDiv(overflate_div)
-	SkjulDiv(overflate_div_blank)
+	overflate_content.style.zIndex = -1
 }

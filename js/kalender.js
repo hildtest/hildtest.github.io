@@ -30,13 +30,13 @@ var month_information_array = [
 
 //dato (this dato-modifikasjon), alvorlighets-grad, anmerkninger, utfyllende
 tidligere_symptomer_array = [
-	[[dd_dato-17, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
-	[[dd_dato-16, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
-	[[dd_dato-15, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
-	[[dd_dato-14, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
-	[[dd_dato-13, month_array[mm_dato]], "middels", "Økt på oppkast, og milde magesmerter"],
-	[[dd_dato-12, month_array[mm_dato]], "lav", "Ned på oppkast"],
-	[[dd_dato-11, month_array[mm_dato]], "hoy", "Alvorlig økt avføring og alvorlig økte magesmerter"],
+	[[dd_dato-7, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
+	[[dd_dato-6, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
+	[[dd_dato-5, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
+	[[dd_dato-4, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
+	[[dd_dato-3, month_array[mm_dato]], "middels", "Økt på oppkast, og milde magesmerter"],
+	[[dd_dato-2, month_array[mm_dato]], "lav", "Ingen anmerkninger"],
+	[[dd_dato-1, month_array[mm_dato]], "hoy", "Alvorlig økt avføring og alvorlig økte magesmerter"],
 ]
 
 for (var i = 0; i < tidligere_symptomer_array.length; i++) {
@@ -49,13 +49,6 @@ for (var i = 0; i < tidligere_symptomer_array.length; i++) {
 	}
 }
 
-var overflate_div = document.createElement("div")
-overflate_div.classList.add("overflate_div")
-overflate_div.style.display = "none"
-
-var overflate_div_blank = document.createElement("div")
-overflate_div_blank.classList.add("overflate_div_blank")
-overflate_div_blank.style.display = "none"
 
 VisTidligereSymptomer= function () {
 	console.log("kalender")
@@ -71,11 +64,12 @@ LagListeDato = function (array) {
 	liste_tidligere_symptomer_div.innerHTML = ""
 
 	for (var i = 0; i < array.length; i++) {
-		console.log(array[i][0])
+		//console.log(array[i][0])
 		var hver_dato_div = document.createElement("div")
 		hver_dato_div.className = "dato_container_div"
 		LagDatoElement(i, array, hver_dato_div)
 		liste_tidligere_symptomer_div.appendChild(hver_dato_div)
+		BindHendelseHverDatoDiv(hver_dato_div)
 	}
 }
 
@@ -95,12 +89,30 @@ LagDatoElement = function (i, array, hver_dato_div) {
 
 	dato_div.innerHTML = "<div class='dd'>" + array[i][0][0] + ".</div><div class='mm'>" + array[i][0][1] + "</div>"
 
-	alvorlighetsgrad_div.innerHTML = GjorForsteBokstavStor(array[i][1])
-
+	//hard kodet at ø-kommer inn
+	if (array[i][1] == "hoy") {
+		alvorlighetsgrad_div.innerHTML = "Høy"
+	}
+	else {
+		alvorlighetsgrad_div.innerHTML = GjorForsteBokstavStor(array[i][1])
+	}
+	
 	anmerkninger_div.innerHTML = array[i][2]
 
 	hver_dato_div.appendChild(dato_div)
 	hver_dato_div.appendChild(alvorlighetsgrad_div)
 	hver_dato_div.appendChild(anmerkninger_div)
 
+}
+
+BindHendelseHverDatoDiv = function (div) {
+	div.onmouseover = function () {
+		div.style.filter = "brightness(0.9)"
+		div.style.fontWeight = "bold"
+		console.log(div)
+	}
+	div.onmouseout = function () {
+		div.style.filter = "brightness(1.0)"
+		div.style.fontWeight = "normal"
+	}
 }

@@ -80,7 +80,7 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 
 	content.innerHTML = ""
 	content.appendChild(tilbake_til_start_meny_knapp)
-	content.appendChild(overskrift_content_div)
+	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
 
 	oppsummering_bivirkninger_div.innerHTML = "Oppsummering av bivirkninger: <br><br>"
@@ -99,7 +99,7 @@ VisRingSykehuset = function () {
 
 	content.innerHTML = ""
 	content.appendChild(tilbake_til_start_meny_knapp)
-	content.appendChild(overskrift_content_div)
+	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(ring_sykehuset_div)
 
 
@@ -156,16 +156,14 @@ ring_sykehuset_knapp.onclick = function () {
 tilbake_til_oversikt_over_bivirkninger_knapp.onclick = function () {
 	content.innerHTML = ""
 	content.appendChild(tilbake_til_start_meny_knapp)
-	content.appendChild(overskrift_content_div)
+	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
-	content.appendChild(overflate_div)
-	content.appendChild(overflate_div_blank)
 }
 
 tilbake_til_oppsummering_av_bivirkninger_knapp.onclick = function () {
 	content.innerHTML = ""
 	content.appendChild(tilbake_til_start_meny_knapp)
-	content.appendChild(overskrift_content_div)
+	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
 }

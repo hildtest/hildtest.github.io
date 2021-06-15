@@ -142,6 +142,8 @@ button {
 	font-size: 100%;
 	font-weight: bold;
 	border-radius: 5%;
+	width: 90%;
+	margin: 5px;
 }
 
 .ikke_klar_knapp {
@@ -169,7 +171,7 @@ button {
 }
 
 .overflate_div {
-	position: absolute;
+	position: sticky;
 	padding: 10px;
 	top: 50px;
 	left: 10px;
@@ -181,7 +183,7 @@ button {
 }
 
 .overflate_div_blank {
-	position: absolute;
+	position: sticky;
 	top: 0px;
 	width: 100%;
 	height: 100%;
@@ -211,4 +213,8 @@ button {
 	position: absolute;
 	left: 0px;
 	top: 0px;
+}
+
+.start_meny_div {
+	padding: 5px;
 }

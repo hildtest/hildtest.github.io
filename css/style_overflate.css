@@ -1,0 +1,30 @@
+#overflate_content {
+	position: absolute;
+	display: block;
+	color: black;
+	background-color: transparent;
+	left: 10px;
+	right: 25px;
+	top: 60px;
+	bottom: 60px;
+	z-index: -1;
+}
+
+#overflate_div {
+	position: absolute;
+	padding: 10px;
+	top: 50px;
+	left: 10px;
+	right: 10px;
+	height: 50%;
+	border: 3px solid black;
+	background-color: white;
+}
+
+#overflate_div_blank {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+}
