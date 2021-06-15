@@ -27,6 +27,11 @@ vis_legg_inn_symptomer_siste_dogn_knapp.onclick = function () {
 	VisSymptomerSisteDogn()
 }
 
+vis_tidligere_symptomer_knapp.onclick = function () {
+	content.innerHTML = ""
+	VisTidligereSymptomer()
+}
+
 
 var tilbake_til_start_meny_knapp = document.createElement("button")
 tilbake_til_start_meny_knapp.innerHTML = "Tilbake"

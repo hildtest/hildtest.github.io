@@ -1,0 +1,44 @@
+.dato_container_div {
+	display: flex;
+	flex-direction: row;
+	border: 2px solid black;
+	padding: 5px;
+	margin: 5px;
+}
+
+.dato_div {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.alvorlighetsgrad_div {
+	flex: 2;
+	padding-left: 10px;
+}
+
+.anmerkninger_div {
+	flex: 6;
+}
+
+.dd {
+	font-size: 200%;
+	text-align: center;
+}
+
+.mm {
+	text-align: center;
+}
+
+.lav {
+	background-color: #55FF55;
+}
+
+.middels {
+	background-color: #FFFF55;
+}
+
+.hoy {
+	background-color: #FF5555;
+}

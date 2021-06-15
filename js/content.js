@@ -7,10 +7,10 @@ var aktuell_index = 0
 var numerisk_stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
 var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
 
-var overskrift_content_div = document.createElement("div")
-overskrift_content_div.classList.add("overskrift_content_div")
-overskrift_content_div.style.padding = "0px";
-overskrift_content_div.innerHTML = "<h3>Symptomer siste døgn</h3>"
+var overskrift_rapporter_symptomer_div = document.createElement("div")
+overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")
+overskrift_rapporter_symptomer_div.style.padding = "0px";
+overskrift_rapporter_symptomer_div.innerHTML = "<h3>Symptomer siste døgn</h3>"
 
 var liste_bivirkninger_div = document.createElement("div")
 liste_bivirkninger_div.classList.add("liste_bivirkninger_div")
@@ -35,7 +35,7 @@ overflate_div_blank.style.display = "none"
 VisSymptomerSisteDogn = function() {
 
 	content.appendChild(tilbake_til_start_meny_knapp)
-	content.appendChild(overskrift_content_div)
+	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
 	content.appendChild(overflate_div)
@@ -60,7 +60,7 @@ LagListe = function (array) {
 
 LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart) {
 	hver_bivirkning_div.innerHTML = ""
-	console.log(hver_bivirkning_div)
+	//console.log(hver_bivirkning_div)
 
 	var bivirkningen = array[i][0]
 	var bivirkning_talltype = array[i][1]
