@@ -50,20 +50,20 @@ SjekkAtAlleBivirkningerErRegistrert = function () {
 SjekkOmNoenBivirkningerErAlvorlige = function () {
 	antall_alvorlige = 0;
 	for (var i = 0; i < status_bivirkninger.length; i++) {
-		console.log(status_bivirkninger[i][0], status_bivirkninger[i][1], status_bivirkninger[i][2])
+		//console.log(status_bivirkninger[i][0], status_bivirkninger[i][1], status_bivirkninger[i][2])
 		var grense = status_bivirkninger[i][1]
 
 		//hvis grensen er numerisk
 		if (Number(grense)) {
 			if (status_bivirkninger[i][2][0] >= grense) {
-				console.log(status_bivirkninger[i][1] + " er grensen, " + status_bivirkninger[i][2] + " er for mye")
+				//console.log(status_bivirkninger[i][1] + " er grensen, " + status_bivirkninger[i][2] + " er for mye")
 				antall_alvorlige += 1
 			}
 		}
 		//hvis ja-nei
 		else {
 			if (status_bivirkninger[i][2].toLowerCase() == grense.toLowerCase()) {
-				console.log(status_bivirkninger[i][1] + " er grensen, " + status_bivirkninger[i][2] + " er for mye")
+				//console.log(status_bivirkninger[i][1] + " er grensen, " + status_bivirkninger[i][2] + " er for mye")
 				antall_alvorlige += 1
 			}
 		}

@@ -5,6 +5,7 @@ var content = document.getElementById("content")
 var aktuell_index = 0
 
 var numerisk_stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
+var kategorisk_stilart = "radioknapper" //dropdown, radioknapper, slider alternativ til numerisk
 var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
 
 var overskrift_content_div = document.createElement("div")
@@ -90,6 +91,9 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 			LagBivirkningElementForJaNeiKnapperMedGrense(i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 	}
+	else if (bivirkning_talltype == "kategorisk") {
+	}
+
 	else if (bivirkning_talltype == "dikotom") {
 		if (dikotom_stilart == "ja_nei") {
 			LagBivirkningElementForJaNeiKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)

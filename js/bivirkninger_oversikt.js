@@ -5,6 +5,8 @@ var bivirkninger = [
 		["magesmerter som begrenser daglig funksjon", "dikotom", "ja"], ["utslett", "dikotom", "ja"], ["blod i avføring", "dikotom", "ja"]]
 //["oppkast", "numerisk"], ["utslett", "dikotom"]
 
+//kategorisk
+
 var status_bivirkninger = []
 for (var i = 0; i < bivirkninger.length; i++) {
 	status_bivirkninger.push([bivirkninger[i][0], bivirkninger[i][2]])
