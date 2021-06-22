@@ -1,9 +1,13 @@
 var content = document.getElementById("content")
 var overflate_content = document.getElementById("overflate_content")
 
+var header = document.getElementById("header")
+var active_footer = document.getElementById("active")
+
 //console.log(bivirkninger)
 
 var aktuell_index = 0
+
 
 var numerisk_stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
 var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
@@ -35,14 +39,16 @@ overflate_content.appendChild(overflate_div)
 overflate_content.appendChild(overflate_div_blank)
 
 VisSymptomerSisteDogn = function() {
-
-	content.appendChild(tilbake_til_start_meny_knapp)
+	content.innerHTML = ""
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
 
+	content.appendChild(tilbake_til_start_meny_div)
+
 	LagListe(bivirkninger)
 }
+
 
 LagListe = function (array) {
 
@@ -53,6 +59,7 @@ LagListe = function (array) {
 		//var bivirkning_talltype = array[i][1]
 		var hver_bivirkning_div = document.createElement("div")
 		hver_bivirkning_div.className = "bivirkninger"
+		hver_bivirkning_div.classList.add("bivirkninger_inndeling_" + i%2)
 		LagBivirkningElement(i, array, hver_bivirkning_div, numerisk_stilart)
 		liste_bivirkninger_div.appendChild(hver_bivirkning_div)
 	}

@@ -68,11 +68,12 @@ for (var i = 0; i < tidligere_symptomer_array.length; i++) {
 VisTidligereSymptomer= function () {
 	console.log("kalender")
 
-	content.appendChild(tilbake_til_start_meny_knapp)
 	content.appendChild(overskrift_kalender_div)
 	content.appendChild(liste_tidligere_symptomer_div)
 
 	LagListeDato(tidligere_symptomer_array)
+
+	content.appendChild(tilbake_til_start_meny_div)
 }
 
 LagListeDato = function (array) {

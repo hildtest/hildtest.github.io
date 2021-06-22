@@ -17,9 +17,9 @@ var tilbake_til_oversikt_over_bivirkninger_knapp = document.createElement("butto
 tilbake_til_oversikt_over_bivirkninger_knapp.classList.add("viktig_knapp")
 tilbake_til_oversikt_over_bivirkninger_knapp.innerHTML = "Tilbake til symptomer siste døgn"
 
-send_inn_alle_bivirkninger_knapp_container.appendChild(send_inn_alle_bivirkninger_knapp)
+send_inn_alle_bivirkninger_knapp_container.innerHTML = ""
 send_inn_alle_bivirkninger_knapp_container.appendChild(tilbake_til_oversikt_over_bivirkninger_knapp)
-
+send_inn_alle_bivirkninger_knapp_container.appendChild(send_inn_alle_bivirkninger_knapp)
 
 var ring_sykehuset_knapp_container = document.createElement("div")
 ring_sykehuset_knapp_container.classList.add("knapp_i_sentrum_container")
@@ -79,7 +79,6 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 	//VisDiv(oppsummering_bivirkninger_div)
 
 	content.innerHTML = ""
-	content.appendChild(tilbake_til_start_meny_knapp)
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
 
@@ -90,6 +89,8 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 	}
 	oppsummering_bivirkninger_div.innerHTML += "<br>"
 	oppsummering_bivirkninger_div.appendChild(send_inn_alle_bivirkninger_knapp_container)
+
+	content.appendChild(tilbake_til_start_meny_div)
 }
 
 VisRingSykehuset = function () {
@@ -98,9 +99,8 @@ VisRingSykehuset = function () {
 	//VisDiv(ring_sykehuset_div)
 
 	content.innerHTML = ""
-	content.appendChild(tilbake_til_start_meny_knapp)
-	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(ring_sykehuset_div)
+	content.appendChild(tilbake_til_start_meny_div)
 
 
 	ring_sykehuset_div.innerHTML = ""

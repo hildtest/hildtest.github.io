@@ -1,3 +1,7 @@
+body {
+	font-family: sans-serif;
+}
+
 #cellphone_container {
 	top: 0px;
 	left: 0px;
@@ -21,7 +25,8 @@
 	right: 10px;
 	top: 10px;
 	height: 50px;
-	font-size: 200%
+	font-size: 200%;
+	padding-top: 5px;
 }
 
 #footer {
@@ -40,7 +45,7 @@
 
 .footerBox {
 	background-color: #2F528F;
-
+	padding-top: 5px;
 	flex: 1;
 }
 
@@ -100,6 +105,13 @@ button {
 	padding-bottom: 25px;
 	padding-top: 5px;
 	border-bottom: 2px solid black;
+}
+
+.bivirkninger_inndeling_0 {
+	background-color: #FFF;
+}
+.bivirkninger_inndeling_1 {
+	background-color: #DDD;
 }
 
 .active_div {
@@ -187,11 +199,14 @@ button {
 	font-weight: initial;
 }
 
+.tilbake_til_start_meny_div {
+	text-align: center;
+}
 
-.tilbake_knapp_oppe_til_venstre {
-	position: absolute;
+.tilbake_knapp_til_startmeny {
+	/*position: absolute;
 	left: 0px;
-	top: 0px;
+	top: 0px;*/
 }
 
 .start_meny_div {
