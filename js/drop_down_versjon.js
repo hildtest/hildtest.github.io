@@ -41,7 +41,7 @@ LagBivirkningElementForDropDown = function (i, bivirkningen, hver_bivirkning_div
 	var bekreft_antall_knapp = document.createElement("button")
 	bekreft_antall_knapp.innerHTML = "Legg inn"
 
-	BindHendelseDropDownBekreftAntall(i, bivirkningen, drop_down, hver_bivirkning_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp)
+	BindHendelseDropDown(i, bivirkningen, drop_down, hver_bivirkning_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp)
 
 	sporsmal_div.appendChild(sporsmal_container)
 	sporsmal_container.appendChild(sporsmal_innhold_div)
@@ -50,11 +50,18 @@ LagBivirkningElementForDropDown = function (i, bivirkningen, hver_bivirkning_div
 
 BindHendelseDropDown = function (index, bivirkningen, drop_down, hver_bivirkning_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp) {
 	drop_down.onchange = function () {
+		resultat_div.innerHTML = GjorForsteBokstavStor(bivirkningen) + ": " + drop_down.value + "<br>";
+		hver_bivirkning_div.classList.add("active_div")
+		status_bivirkninger[index][2] = drop_down.value
+		innhold_div.appendChild(endre_knapp)
+		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
+		/*
 		hver_bivirkning_div.classList.add("active_div")
 		status_bivirkninger[index][2] = drop_down.value
 
 		resultat_div.innerHTML = "Opplevd " + drop_down.value + " tilfeller med " + bivirkningen
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
+		*/
 	}
 }
 

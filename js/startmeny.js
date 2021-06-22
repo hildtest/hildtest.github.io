@@ -26,7 +26,7 @@ vis_tidligere_symptomer_div.appendChild(vis_tidligere_symptomer_knapp)
 
 
 
-var bivirkning_allerede_lagt_inn = "ja"
+var bivirkning_allerede_lagt_inn = "nei"
 
 var varsel_symptomer_allerede_lagt_inn_div = document.createElement("div")
 varsel_symptomer_allerede_lagt_inn_div.classList.add("start_meny_div")

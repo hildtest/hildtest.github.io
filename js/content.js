@@ -10,7 +10,7 @@ var aktuell_index = 0
 
 
 var numerisk_stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
-var dikotom_stilart= "radioknapper" //ja_nei, radioknapper
+var dikotom_stilart= "radioknapper" //drop_down, ja_nei, radioknapper
 
 var overskrift_rapporter_symptomer_div = document.createElement("div")
 overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")

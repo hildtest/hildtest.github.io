@@ -2,7 +2,7 @@
 //dikotom vs. numerisk
 var bivirkninger = [
 		["avføring", "numerisk lang", 6], ["oppkast", "numerisk kort", 2],
-		["magesmerter som begrenser daglig funksjon", "dikotom", "ja"], ["utslett", "dikotom", "ja"], ["blod i avføring", "dikotom", "ja"]]
+		["alvorlige magesmerter", "dikotom", "ja"], ["utslett", "dikotom", "ja"], ["blod i avføring", "dikotom", "ja"], ["smerter i munnhulen", "dikotom", "ja"]]
 //["oppkast", "numerisk"], ["utslett", "dikotom"]
 
 //kategorisk
