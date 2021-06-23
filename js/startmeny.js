@@ -25,9 +25,6 @@ vis_tidligere_symptomer_knapp.classList.add("viktig_knapp")
 vis_tidligere_symptomer_div.appendChild(vis_tidligere_symptomer_knapp)
 
 
-
-var bivirkning_allerede_lagt_inn = "nei"
-
 var varsel_symptomer_allerede_lagt_inn_div = document.createElement("div")
 varsel_symptomer_allerede_lagt_inn_div.classList.add("start_meny_div")
 
@@ -46,6 +43,7 @@ VisStartMenyBivirkninger = function () {
 vis_legg_inn_symptomer_siste_dogn_knapp.onclick = function () {
 	content.innerHTML = ""
 
+	console.log(bivirkning_allerede_lagt_inn)
 	if (bivirkning_allerede_lagt_inn == "nei") {
 		VisSymptomerSisteDogn()	
 	}

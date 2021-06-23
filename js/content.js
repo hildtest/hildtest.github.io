@@ -8,7 +8,6 @@ var active_footer = document.getElementById("active")
 
 var aktuell_index = 0
 
-
 var numerisk_stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
 var dikotom_stilart= "radioknapper" //drop_down, ja_nei, radioknapper
 
