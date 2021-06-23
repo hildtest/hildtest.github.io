@@ -1,6 +1,7 @@
 var content = document.getElementById("content")
 
 var start_meny_bivirkninger_div = document.createElement("div")
+start_meny_bivirkninger_div.classList.add("start_meny_bivirkninger_div")
 
 var vis_legg_inn_symptomer_siste_dogn_div = document.createElement("div")
 vis_legg_inn_symptomer_siste_dogn_div.innerHTML = ""
@@ -27,6 +28,9 @@ vis_tidligere_symptomer_div.appendChild(vis_tidligere_symptomer_knapp)
 
 var varsel_symptomer_allerede_lagt_inn_div = document.createElement("div")
 varsel_symptomer_allerede_lagt_inn_div.classList.add("start_meny_div")
+
+legg_inn_nye_symptomer_fra_registert_dogn_div = document.createElement("div")
+legg_inn_nye_symptomer_fra_registert_dogn_div.classList.add("knapp_i_sentrum_container")
 
 var legg_inn_nye_symptomer_fra_registert_dogn_knapp = document.createElement("button")
 legg_inn_nye_symptomer_fra_registert_dogn_knapp.innerHTML = "Legg inn nye symptomer"
@@ -66,9 +70,12 @@ VisVarselAlleredeSymptomerLagtInn = function () {
 	content.innerHTML = ""
 	varsel_symptomer_allerede_lagt_inn_div.innerHTML = "<h3>Dagens symptomer er allerede lagt inn<h3>"
 	varsel_symptomer_allerede_lagt_inn_div.innerHTML += "Det er allerede blitt lagt inn symptomer for i dag, ønsker du å legge inn på nytt?<br>"
-	varsel_symptomer_allerede_lagt_inn_div.appendChild(legg_inn_nye_symptomer_fra_registert_dogn_knapp)
-
 	content.appendChild(varsel_symptomer_allerede_lagt_inn_div)
+
+	legg_inn_nye_symptomer_fra_registert_dogn_div.appendChild(legg_inn_nye_symptomer_fra_registert_dogn_knapp)
+	content.appendChild(legg_inn_nye_symptomer_fra_registert_dogn_div)
+
+	content.appendChild(tilbake_til_start_meny_div)
 }
 
 legg_inn_nye_symptomer_fra_registert_dogn_knapp.onclick = function () {

@@ -203,10 +203,15 @@ button {
 	text-align: center;
 }
 
-.tilbake_knapp_til_startmeny {
+.tilbake_til_start_meny_knapp {
+	background-color: #2F528F;;
 	/*position: absolute;
 	left: 0px;
 	top: 0px;*/
+}
+
+.start_meny_bivirkninger_div {
+	text-align: center;
 }
 
 .start_meny_div {
