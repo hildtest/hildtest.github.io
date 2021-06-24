@@ -23,7 +23,7 @@ checkbox_elementer_div.innerHTML = "Fremvisning av checkbox-alternativer: <br>"
 var font_stil = "sans-serif" //sans-serif eller serif
 var font_stil_muligheter = ["sans-serif", "serif"]
 
-var bivirkning_allerede_lagt_inn = "ja" //ja eller nei
+var bivirkning_allerede_lagt_inn = "nei" //ja eller nei
 var bivirkning_allerede_lagt_inn_muligheter = ["nei", "ja"]
 
 document.body.style.fontFamily = font_stil

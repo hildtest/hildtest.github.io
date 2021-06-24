@@ -1,9 +1,10 @@
 .slider {
   -webkit-appearance: none;
-  width: 50%;
+  width: 70%;
   height: 10px;
-  border-radius: 5px;  
-  background: #d3d3d3;
+  border-radius: 5px;
+  border: 1px solid black;
+  background: #d3d3d3; /*#2F528F*/
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -21,9 +22,10 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%; 
+  border: 1px solid black;
   background: #68AEDF;
   cursor: pointer;
 }

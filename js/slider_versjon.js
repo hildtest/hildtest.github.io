@@ -33,7 +33,7 @@ LagBivirkningElementForSlider = function (i, bivirkningen, hver_bivirkning_div, 
 BindHendelseVisSlider = function (index, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div) {
 
 	//vis_slider_knapp.onclick = function () {
-		innhold_div.innerHTML = "Angi hvor mange ved å dra i slideren.<br>"
+		innhold_div.innerHTML = "Angi hvor mange ved å dra i slideren.<br><br>"
 		sporsmal_knapper_div.innerHTML = ""
 
 		aktuell_index = index
@@ -66,7 +66,7 @@ LagSlideren = function (index, bivirkningen, vis_slider_knapp, sporsmal_div, spo
 	innhold_div.appendChild(slider_div)
 	console.log(slider)
 
-	resultat_div.innerHTML = "Antall: Dra i slideren <br>"
+	resultat_div.innerHTML = "<br>Antall: Dra i slideren <br>"
 	BindHendelseSlider(index, bivirkningen, slider, hver_bivirkning_div, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp)
 }
 
@@ -77,11 +77,11 @@ BindHendelseSlider = function (index, bivirkningen, slider, hver_bivirkning_div,
 		slider.style.opacity = 1;
 
 		if (slider.value == slider.max) {
-			resultat_div.innerHTML = "Antall: " + this.value + "+<br>";
+			resultat_div.innerHTML = "<br>Antall: " + this.value + "+<br>";
 			bekreft_antall_knapp.innerHTML = "Legg inn " + this.value + " eller flere hendelser";
 		}
 		else {
-			resultat_div.innerHTML = "Antall: " + this.value + "<br>";
+			resultat_div.innerHTML = "<br>Antall: " + this.value + "<br>";
 			bekreft_antall_knapp.innerHTML = "Legg inn " + this.value + " hendelser";
 		}
 
