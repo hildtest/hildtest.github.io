@@ -8,8 +8,8 @@ var active_footer = document.getElementById("active")
 
 var aktuell_index = 0
 
-var numerisk_stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
-var dikotom_stilart= "radioknapper" //drop_down, ja_nei, radioknapper
+var numerisk_stilart = "slider" //drop_down, ja_nei, radioknapper, slider
+var dikotom_stilart= "slider" //drop_down, ja_nei, radioknapper, slider
 
 var overskrift_rapporter_symptomer_div = document.createElement("div")
 overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")
@@ -87,15 +87,15 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 		if (numerisk_stilart == "drop_down") {
 			LagBivirkningElementForDropDown(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
+		else if (numerisk_stilart == "ja_nei") {
+			var bivirkningen_grense = array[i][2]
+			LagBivirkningElementForJaNeiKnapperMedGrense(i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		}
 		else if (numerisk_stilart == "radioknapper") {
 			LagBivirkningElementForRadioKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 		else if (numerisk_stilart == "slider") {
 			LagBivirkningElementForSlider(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (numerisk_stilart == "ja_nei") {
-			var bivirkningen_grense = array[i][2]
-			LagBivirkningElementForJaNeiKnapperMedGrense(i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 	}
 	else if (bivirkning_talltype == "dikotom") {
@@ -107,6 +107,9 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 		}
 		else if (dikotom_stilart == "radioknapper") {
 			LagBivirkningElementForRadioKnapperJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		}
+		else if (dikotom_stilart == "slider") {
+			LagBivirkningElementForSliderJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 	}
 	hver_bivirkning_div.appendChild(sporsmal_div)

@@ -13,7 +13,7 @@ var numeriske_stilvalg_array = ["drop_down", "ja_nei", "radioknapper", "slider"]
 var dikotom_stilvalg_div = document.createElement("div")
 dikotom_stilvalg_div.innerHTML = "Fremvisning av dikotome muligheter: <br>"
 
-var dikotom_stilvalg_array = ["drop_down", "ja_nei", "radioknapper"]
+var dikotom_stilvalg_array = ["drop_down", "ja_nei", "radioknapper", "slider"]
 
 
 

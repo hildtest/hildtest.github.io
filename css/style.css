@@ -150,12 +150,21 @@ button {
 	color: white;
 	padding: 10px;
 	background-color: #68AEDF;
-	font-size: 100%;
 	font-weight: bold;
 	border-radius: 5%;
 	width: 90%;
 	margin: 5px;
 	font-size: 130%;
+}
+
+.litt_viktig_knapp {
+	color: black;
+	padding: 5px;
+	background-color: #FAFAFA;
+	font-weight: bold;
+	border-radius: 5%;
+	margin: 2px;
+	font-size: 100%;
 }
 
 .ikke_klar_knapp {
