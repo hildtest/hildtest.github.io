@@ -73,10 +73,6 @@ SjekkOmNoenBivirkningerErAlvorlige = function () {
 }
 
 VisRegisterteBivirkninger = function (status_bivirkninger) {
-	//console.log(liste_bivirkninger_div)
-	//SkjulDiv(liste_bivirkninger_div)
-	//SkjulDiv(legg_inn_alle_bivirkninger_div)
-	//VisDiv(oppsummering_bivirkninger_div)
 
 	content.innerHTML = ""
 	content.appendChild(overskrift_rapporter_symptomer_div)
@@ -87,25 +83,23 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 		var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
 		oppsummering_bivirkninger_div.innerHTML += "- " + bivirkningen + ": " + status_bivirkninger[i][2] + "<br>"
 	}
-	oppsummering_bivirkninger_div.innerHTML += "<br>"
-	oppsummering_bivirkninger_div.appendChild(send_inn_alle_bivirkninger_knapp_container)
+	content.appendChild(send_inn_alle_bivirkninger_knapp_container)
 
 	content.appendChild(tilbake_til_start_meny_div)
 }
 
 VisRingSykehuset = function () {
 	console.log("alvorlig")
-	//SkjulDiv(oppsummering_bivirkninger_div)
-	//VisDiv(ring_sykehuset_div)
 
 	content.innerHTML = ""
 	content.appendChild(ring_sykehuset_div)
-	content.appendChild(tilbake_til_start_meny_div)
-
 
 	ring_sykehuset_div.innerHTML = ""
 	ring_sykehuset_div.innerHTML += "Du har registrert en eller flere bivirkninger som er alvorlig og kan potensielt påvirke behandlingsplanen. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
-	ring_sykehuset_div.appendChild(ring_sykehuset_knapp_container)
+	
+	content.appendChild(ring_sykehuset_knapp_container)
+
+	content.appendChild(tilbake_til_start_meny_div)
 }
 
 OppdaterFargePaKnapp = function (knapp) {

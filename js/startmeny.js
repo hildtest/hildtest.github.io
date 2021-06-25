@@ -3,6 +3,11 @@ var content = document.getElementById("content")
 var start_meny_bivirkninger_div = document.createElement("div")
 start_meny_bivirkninger_div.classList.add("start_meny_bivirkninger_div")
 
+
+var overskrift_start_meny_bivirkninger_div = document.createElement("div")
+overskrift_start_meny_bivirkninger_div.innerHTML = ""
+overskrift_start_meny_bivirkninger_div.classList.add("overskrift_sentrum_div")
+
 var vis_legg_inn_symptomer_siste_dogn_div = document.createElement("div")
 vis_legg_inn_symptomer_siste_dogn_div.innerHTML = ""
 vis_legg_inn_symptomer_siste_dogn_div.classList.add("start_meny_div")
@@ -39,7 +44,8 @@ legg_inn_nye_symptomer_fra_registert_dogn_knapp.classList.add("viktig_knapp")
 VisStartMenyBivirkninger = function () {
 	content.innerHTML = ""
 	content.appendChild(start_meny_bivirkninger_div)
-	start_meny_bivirkninger_div.innerHTML = "<h3>Hva ønsker du å gjøre?</h3>"
+	overskrift_start_meny_bivirkninger_div.innerHTML = "<h3>Hva ønsker du å gjøre?</h3>"
+	start_meny_bivirkninger_div.appendChild(overskrift_start_meny_bivirkninger_div)
 	start_meny_bivirkninger_div.appendChild(vis_legg_inn_symptomer_siste_dogn_div)
 	start_meny_bivirkninger_div.appendChild(vis_tidligere_symptomer_div)
 }

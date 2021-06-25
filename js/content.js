@@ -24,9 +24,11 @@ legg_inn_alle_bivirkninger_div.classList.add("legg_inn_alle_bivirkninger_div")
 
 var oppsummering_bivirkninger_div = document.createElement("div")
 oppsummering_bivirkninger_div.classList.add("oppsummering_bivirkninger_div")
+oppsummering_bivirkninger_div.classList.add("tekst_innhold")
 
 var ring_sykehuset_div = document.createElement("div")
 ring_sykehuset_div.classList.add("ring_sykehuset_div")
+ring_sykehuset_div.classList.add("tekst_innhold")
 
 var overflate_div = document.createElement("div")
 overflate_div.id = "overflate_div"
@@ -58,6 +60,7 @@ LagListe = function (array) {
 		//var bivirkning_talltype = array[i][1]
 		var hver_bivirkning_div = document.createElement("div")
 		hver_bivirkning_div.className = "bivirkninger"
+		hver_bivirkning_div.classList.add("tekst_innhold")
 		hver_bivirkning_div.classList.add("bivirkninger_inndeling_" + i%2)
 		LagBivirkningElement(i, array, hver_bivirkning_div, numerisk_stilart)
 		liste_bivirkninger_div.appendChild(hver_bivirkning_div)

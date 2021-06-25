@@ -72,6 +72,7 @@ body {
 	width: 100%;
 	text-align: center;
 	padding: 0px;
+	font-size: 150%;
 }
 
 button {
@@ -83,8 +84,6 @@ button {
 }
 
 #content > div {
-	font-size: 100%;
-	padding: 10px;
 }
 
 .sporsmal_container_flex {
@@ -156,6 +155,7 @@ button {
 	border-radius: 5%;
 	width: 90%;
 	margin: 5px;
+	font-size: 130%;
 }
 
 .ikke_klar_knapp {
@@ -216,4 +216,9 @@ button {
 
 .start_meny_div {
 	padding: 5px;
+}
+
+.tekst_innhold {
+	font-size: 120%;
+	padding: 15px;
 }
