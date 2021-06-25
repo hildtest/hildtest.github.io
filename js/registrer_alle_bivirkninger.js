@@ -155,15 +155,15 @@ ring_sykehuset_knapp.onclick = function () {
 
 tilbake_til_oversikt_over_bivirkninger_knapp.onclick = function () {
 	content.innerHTML = ""
-	content.appendChild(tilbake_til_start_meny_knapp)
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
+	content.appendChild(tilbake_til_start_meny_div)
 }
 
 tilbake_til_oppsummering_av_bivirkninger_knapp.onclick = function () {
 	content.innerHTML = ""
-	content.appendChild(tilbake_til_start_meny_knapp)
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
+	content.appendChild(tilbake_til_start_meny_div)
 }

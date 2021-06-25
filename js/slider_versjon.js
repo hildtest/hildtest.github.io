@@ -37,27 +37,48 @@ BindHendelseVisSlider = function (index, bivirkningen, vis_slider_knapp, sporsma
 		sporsmal_knapper_div.innerHTML = ""
 
 		aktuell_index = index
-		console.log(aktuell_index)
+		//console.log(aktuell_index)
 
 		LagSlideren(index, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div)
 	//}
+}
+
+FinnHoyesteTallEtterPluss = function (array) {
+	for (var i = 0; i < array.length; i++) {
+		var number_array = ""
+		if (Number(array[i])) {
+			number_array += array[i]
+		}
+		return number_array
+	}
 }
 
 LagSlideren = function (index, bivirkningen, vis_slider_knapp, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp, hver_bivirkning_div) {
 	var slider_div = document.createElement("div")
 	slider_div.className = "slider_container"
 
+	var mengde_array = FinnRiktigMengdeArrayForBivirkning(bivirkningen)
+
+	var start_verdi = mengde_array[0]
+	var slutt_verdi = mengde_array[mengde_array.length-1]
+
+	var start_verdi_tall = FinnHoyesteTallEtterPluss(start_verdi)
+	var slutt_verdi_tall = FinnHoyesteTallEtterPluss(slutt_verdi)
+
+	console.log(slutt_verdi_tall)
+	console.log(mengde_array)
+
 	var slider = document.createElement("input")
 	slider.id = bivirkningen
 	slider.className = "slider"
 	slider.type = "range"
-	slider.min = 0
-	slider.max = 10
+	slider.min = start_verdi_tall
+	slider.max = slutt_verdi_tall
 	slider.value = (slider.min+slider.max)/2
 
 	
-	var start_tekst = document.createTextNode("0")
-	var slutt_tekst = document.createTextNode("10+")
+	var start_tekst = document.createTextNode(mengde_array[0])
+	var slutt_tekst = document.createTextNode(mengde_array[mengde_array.length-1])
 	
 	slider_div.appendChild(start_tekst)
 	slider_div.appendChild(slider)
