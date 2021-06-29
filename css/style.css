@@ -126,6 +126,20 @@ button {
 	text-align: center;
 }
 
+.radio_input_div {
+	font-size: 120%;
+}
+
+.bivirkning_radio_input {
+	width: 2em;
+	height: 2em;
+}
+
+.radio_label_div {
+	font-size: 70%;
+}
+
+
 .slider_container {
 	position: relative;
 	display: block;

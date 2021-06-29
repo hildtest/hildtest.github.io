@@ -16,7 +16,7 @@ LagBivirkningElementForRadioKnapper = function (i, bivirkningen, hver_bivirkning
 	innhold_div.innerHTML = ""
 
 	var mengde_array = FinnRiktigMengdeArrayForBivirkning(bivirkningen)
-	console.log(mengde_array)
+	//console.log(mengde_array)
 
 	for (var j = 0; j < mengde_array.length; j++) {
 		//console.log(mengde_array[j])
@@ -125,4 +125,57 @@ OppdaterFargePaRadioDivKlasser = function (div, bivirkningen) {
 
 	div.classList.add("valgt_radio")
 	div.classList.remove("generell_radio")
+}
+
+
+LagBivirkningElementForRadioKnapperTest = function (i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
+	hver_bivirkning_div.innerHTML = ""
+
+	innhold_div.className = "innhold_div_flex"
+
+	var sporsmal_container = document.createElement("div")
+	//sporsmal_container.className = "sporsmal_container_flex"
+	
+	var sporsmal_innhold_div = document.createElement("div")
+	sporsmal_innhold_div.className = "sporsmal_innhold_div"
+	sporsmal_innhold_div.innerHTML = "Hvordan har du opplevd det med " + bivirkningen + " det siste døgnet? ";
+
+	innhold_div.innerHTML = ""
+
+	var alternativer_array = FinnRiktigAltenativerArrayForBivirkning(bivirkningen)
+
+	for (var j = 0; j < alternativer_array.length; j++) {
+		//console.log(alternativer_array[j])
+		var radio_div = document.createElement("div")
+		radio_div.className = "radio_div"
+		radio_div.classList.add("radio_div"+bivirkningen)
+
+		var radio_input_div = document.createElement("div")
+		radio_input_div.className = "radio_input_div"
+
+		var radio_input = document.createElement("input")
+		radio_input.type = "radio"
+		radio_input.id = bivirkningen + alternativer_array[j]
+		radio_input.className = "bivirkning_radio_input"
+		radio_input.name = bivirkningen
+		radio_input.value = alternativer_array[j]
+		radio_input_div.appendChild(radio_input)
+
+		var radio_label_div = document.createElement("div")
+		radio_label_div.className = "radio_label_div"
+		var label = document.createElement("label")
+		label.htmlFor = bivirkningen + alternativer_array[j]
+		label.innerHTML = GjorForsteBokstavStor(alternativer_array[j])
+		radio_label_div.appendChild(label)
+
+		radio_div.appendChild(radio_input_div)
+		radio_div.appendChild(radio_label_div)
+
+		innhold_div.appendChild(radio_div)
+
+		BindHendelseRadioKnapper(i, bivirkningen, radio_div, radio_input, hver_bivirkning_div, innhold_div, resultat_div)
+	}
+
+	sporsmal_div.appendChild(sporsmal_container)
+	sporsmal_container.appendChild(sporsmal_innhold_div)
 }

@@ -35,8 +35,6 @@ FinnRiktigMengdeArrayForBivirkning = function (bivirkningen) {
 	for (var i = 0; i < bivirkninger.length; i++) {
 		bivirkninger_navn_array.push(bivirkninger[i][0])
 	}
-	//console.log(bivirkninger_navn_array)
-
 	var index = bivirkninger_navn_array.indexOf(bivirkningen)
 	//console.log(bivirkningen, index)
 	var numerisk_type = bivirkninger[index][1]

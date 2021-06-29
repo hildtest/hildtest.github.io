@@ -71,7 +71,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 	hver_bivirkning_div.innerHTML = ""
 	//console.log(hver_bivirkning_div)
 
-	var bivirkningen = array[i][0]
+	var bivirkningen = bivirkninger_del_2[i][0]
 	var bivirkning_talltype = array[i][1]
 
 	var sporsmal_div = document.createElement("div")
@@ -93,7 +93,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 			LagBivirkningElementForJaNeiKnapperMedGrense(i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 		else if (numerisk_stilart == "radioknapper") {
-			LagBivirkningElementForRadioKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+			LagBivirkningElementForRadioKnapperTest(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 		else if (numerisk_stilart == "slider") {
 			LagBivirkningElementForSlider(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
@@ -107,7 +107,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 			LagBivirkningElementForJaNeiKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 		else if (dikotom_stilart == "radioknapper") {
-			LagBivirkningElementForRadioKnapperJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+			LagBivirkningElementForRadioKnapperTest(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 		}
 		else if (dikotom_stilart == "slider") {
 			LagBivirkningElementForSliderJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
