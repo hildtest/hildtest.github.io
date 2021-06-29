@@ -16,6 +16,7 @@ LagBivirkningElementForDropDown = function (i, bivirkningen, hver_bivirkning_div
 	var mengde_array = FinnRiktigMengdeArrayForBivirkning(bivirkningen)
 
 	var drop_down = document.createElement("select")
+	drop_down.className = "select"
 	drop_down.name = bivirkningen
 	drop_down.id = bivirkningen
 	innhold_div.appendChild(drop_down)
@@ -50,10 +51,11 @@ LagBivirkningElementForDropDown = function (i, bivirkningen, hver_bivirkning_div
 
 BindHendelseDropDown = function (index, bivirkningen, drop_down, hver_bivirkning_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp) {
 	drop_down.onchange = function () {
-		resultat_div.innerHTML = GjorForsteBokstavStor(bivirkningen) + ": " + drop_down.value + "<br>";
+		innhold_div.innerHTML = ""
+		resultat_div.innerHTML = "<b>" + GjorForsteBokstavStor(bivirkningen) + ": " + drop_down.value + "</b><br>";
 		hver_bivirkning_div.classList.add("active_div")
 		status_bivirkninger[index][2] = drop_down.value
-		innhold_div.appendChild(endre_knapp)
+		resultat_div.appendChild(endre_knapp)
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 		/*
 		hver_bivirkning_div.classList.add("active_div")
@@ -98,6 +100,7 @@ LagBivirkningElementForDropDownJaNei = function (i, bivirkningen, hver_bivirknin
 	innhold_div.innerHTML = ""
 
 	var drop_down = document.createElement("select")
+	drop_down.className = "select"
 	drop_down.name = bivirkningen
 	drop_down.id = bivirkningen
 	innhold_div.appendChild(drop_down)
@@ -131,10 +134,11 @@ LagBivirkningElementForDropDownJaNei = function (i, bivirkningen, hver_bivirknin
 
 BindHendelseDropDownJaNei = function (index, bivirkningen, drop_down, hver_bivirkning_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp) {
 	drop_down.onchange = function () {
-		resultat_div.innerHTML = GjorForsteBokstavStor(bivirkningen) + ": " + drop_down.value + "<br>";
+		innhold_div.innerHTML = ""
+		resultat_div.innerHTML = "<b>" + GjorForsteBokstavStor(bivirkningen) + ": " + drop_down.value + "</b><br>";
 		hver_bivirkning_div.classList.add("active_div")
 		status_bivirkninger[index][2] = drop_down.value
-		innhold_div.appendChild(endre_knapp)
+		resultat_div.appendChild(endre_knapp)
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 	}
 }

@@ -1,13 +1,23 @@
 
 //dikotom vs. numerisk
 var bivirkninger = [
-	["avføring", "numerisk lang", 6], ["oppkast", "numerisk kort", 2],
-	["alvorlige magesmerter", "dikotom", "ja"], ["utslett", "dikotom", "ja"],
-	["feber", "dikotom", "ja"], ["blod i avføring", "dikotom", "ja"], ["smerter i munnhulen", "dikotom", "ja"],
+	["avføring", "numerisk lang", 6], ["oppkast", "numerisk kort", 3],
+	["feber", "dikotom", "ja"], ["smerter i munnhulen", "dikotom", "ja"], ["kvalme med dehydrering og/eller vekttap", "dikotom", "ja"],
+	["alvorlige magesmerter", "dikotom", "ja"], ["hudforandringer med smerter", "dikotom", "ja"],
 ]
 //["oppkast", "numerisk"], ["utslett", "dikotom"]
 
-//kategorisk
+//kategorisk, erstatter den dikotome
+
+var bivirkninger_del_2 = [
+	["kvalme", ["ingen", "nedsatt appetitt", "nedsatt inntak av mat og væske", "dehydrering og/eller vekttap"],], 
+	["oppkast", ["0", "1-2", "3-5", "6 eller flere",]],
+	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6", "7 eller flere"]],
+	["hudforandringer (hånd-fot-syndrom)", ["ingen", "begrensede hudforandringer uten smerter", "hudforandringer med smerter", "hudforandringer med smerter og nedsatt funksjon",],],
+	["smerter i munnhulen", ["ingen", "mild", "moderat, trenger tilpasset mat", "sterk, påvirker matinntaket"]],
+	["feber", ["ingen (under 38)", "38,0 - 39,0", "over 39,0 - 40,0", "over 40,0"]],
+	["magesmerter", ["ingen", "mild", "moderat", "sterk"],],
+]
 
 var status_bivirkninger = []
 for (var i = 0; i < bivirkninger.length; i++) {

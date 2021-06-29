@@ -74,6 +74,7 @@ SjekkOmNoenBivirkningerErAlvorlige = function () {
 
 VisRegisterteBivirkninger = function (status_bivirkninger) {
 
+	content.scrollTop = 0 + "px"
 	content.innerHTML = ""
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
@@ -94,6 +95,7 @@ VisRingSykehuset = function () {
 	content.innerHTML = ""
 	content.appendChild(ring_sykehuset_div)
 
+	//Meldingen her:
 	ring_sykehuset_div.innerHTML = ""
 	ring_sykehuset_div.innerHTML += "Du har registrert en eller flere bivirkninger som er alvorlig og kan potensielt påvirke behandlingsplanen. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
 	

@@ -8,8 +8,8 @@ var active_footer = document.getElementById("active")
 
 var aktuell_index = 0
 
-var numerisk_stilart = "slider" //drop_down, ja_nei, radioknapper, slider
-var dikotom_stilart= "slider" //drop_down, ja_nei, radioknapper, slider
+var numerisk_stilart = "ja_nei" //drop_down, ja_nei, radioknapper, slider
+var dikotom_stilart= "ja_nei" //drop_down, ja_nei, radioknapper, slider
 
 var overskrift_rapporter_symptomer_div = document.createElement("div")
 overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")
@@ -81,6 +81,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 	var endre_knapp = document.createElement("button")
 	endre_knapp.innerHTML = "Endre"
 	endre_knapp.className = "endre_knapp"
+	endre_knapp.classList.add("litt_viktig_knapp")
 	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, numerisk_stilart)
 
 	if (bivirkning_talltype == "numerisk kort" || bivirkning_talltype == "numerisk lang") {

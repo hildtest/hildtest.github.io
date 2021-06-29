@@ -114,7 +114,7 @@ button {
 }
 
 .active_div {
-	background-color: #CCFFCC;
+	background-color: #AADDFF;
 }
 
 .innhold_div_flex {
@@ -230,4 +230,12 @@ button {
 .tekst_innhold {
 	font-size: 120%;
 	padding: 15px;
+}
+
+.select {
+	font-size: 130%;
+	width: 70%;
+}
+.option {
+	font-size: 120%;
 }
