@@ -187,6 +187,11 @@ button {
 	color: black;
 }
 
+.informasjon_om_bivirkningen_container_div {
+	position: relative;
+	height: 40px;
+}
+
 .informasjon_om_bivirkningen_div {
 	position: absolute;
 	right: 0px;

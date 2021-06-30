@@ -8,8 +8,7 @@ var active_footer = document.getElementById("active")
 
 var aktuell_index = 0
 
-var numerisk_stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
-var dikotom_stilart= "radioknapper" //drop_down, ja_nei, radioknapper, slider
+var stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
 
 var overskrift_rapporter_symptomer_div = document.createElement("div")
 overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")
@@ -47,7 +46,7 @@ VisSymptomerSisteDogn = function() {
 
 	content.appendChild(tilbake_til_start_meny_div)
 
-	LagListe(bivirkninger)
+	LagListe(bivirkninger_array)
 }
 
 
@@ -62,17 +61,17 @@ LagListe = function (array) {
 		hver_bivirkning_div.className = "bivirkninger"
 		hver_bivirkning_div.classList.add("tekst_innhold")
 		hver_bivirkning_div.classList.add("bivirkninger_inndeling_" + i%2)
-		LagBivirkningElement(i, array, hver_bivirkning_div, numerisk_stilart)
+		LagBivirkningElement(i, array, hver_bivirkning_div, stilart)
 		liste_bivirkninger_div.appendChild(hver_bivirkning_div)
 	}
 }
 
-LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart) {
+LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart) {
 	hver_bivirkning_div.innerHTML = ""
 	//console.log(hver_bivirkning_div)
 
-	var bivirkningen = bivirkninger_del_2[i][0]
-	var bivirkning_talltype = array[i][1]
+	var bivirkningen = bivirkninger_array[i][0]
+	var bivirkning_talltype = "numerisk kort"
 
 	var sporsmal_div = document.createElement("div")
 	var innhold_div = document.createElement("div")
@@ -82,48 +81,33 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, numerisk_stilart
 	endre_knapp.innerHTML = "Endre"
 	endre_knapp.className = "endre_knapp"
 	endre_knapp.classList.add("litt_viktig_knapp")
-	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, numerisk_stilart)
+	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, stilart)
 
-	if (bivirkning_talltype == "numerisk kort" || bivirkning_talltype == "numerisk lang") {
-		if (numerisk_stilart == "drop_down") {
-			LagBivirkningElementForDropDown(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (numerisk_stilart == "ja_nei") {
-			var bivirkningen_grense = array[i][2]
-			LagBivirkningElementForJaNeiKnapperMedGrense(i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (numerisk_stilart == "radioknapper") {
-			LagBivirkningElementForRadioKnapperTest(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (numerisk_stilart == "slider") {
-			LagBivirkningElementForSlider(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
+	if (stilart == "drop_down") {
+		LagBivirkningElementForDropDown(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
-	else if (bivirkning_talltype == "dikotom") {
-		if (dikotom_stilart == "drop_down") {
-			LagBivirkningElementForDropDownJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (dikotom_stilart == "ja_nei") {
-			LagBivirkningElementForJaNeiKnapper(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (dikotom_stilart == "radioknapper") {
-			LagBivirkningElementForRadioKnapperTest(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
-		else if (dikotom_stilart == "slider") {
-			LagBivirkningElementForSliderJaNei(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
-		}
+	else if (stilart == "ja_nei") {
+		var bivirkningen_grense = array[i][2]
+		LagBivirkningElementForJaNeiKnapperMedGrense(i, bivirkningen, bivirkningen_grense, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
+	else if (stilart == "radioknapper") {
+		LagBivirkningElementForRadioKnapperV2(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+	}
+	else if (stilart == "slider") {
+		LagBivirkningElementForSlider(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+	}
+	
 	hver_bivirkning_div.appendChild(sporsmal_div)
 	hver_bivirkning_div.appendChild(innhold_div)
 	hver_bivirkning_div.appendChild(resultat_div)
 	VisInformasjonKnappOmBivirkningen(hver_bivirkning_div, bivirkningen)
 }
 
-BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, numerisk_stilart) {
+BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, stilart) {
 	endre_knapp.onclick = function () {
-		console.log(index, numerisk_stilart, bivirkning_talltype)
+		console.log(index, stilart, bivirkning_talltype)
 		
-		LagBivirkningElement(index, bivirkninger, hver_bivirkning_div, numerisk_stilart)
+		LagBivirkningElement(index, bivirkninger, hver_bivirkning_div, stilart)
 		hver_bivirkning_div.classList.remove("active_div")
 	}
 }
