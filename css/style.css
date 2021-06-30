@@ -121,6 +121,17 @@ button {
 	display: flex;
 }
 
+.flex_div {
+	flex: 1;
+}
+
+.alternativer_flex_div {
+	text-align: center;
+	font-size: 80%;
+	margin: auto;
+	width: 50%;
+}
+
 .radio_div {
 	flex: 1;
 	text-align: center;
@@ -187,15 +198,12 @@ button {
 	color: black;
 }
 
-.informasjon_om_bivirkningen_container_div {
-	position: relative;
-	height: 40px;
+.mellomrom_mellom_liste_element {
+	padding: 5px;
 }
 
 .informasjon_om_bivirkningen_div {
-	position: absolute;
-	right: 0px;
-	bottom: 0px;
+	text-align: right;
 }
 
 .forstorret_knapp {

@@ -65,9 +65,14 @@ FinnHoyesteAlvorlighetsgrad = function () {
 		if (hoyeste_alvorlighetsgrad < aktuell_alvorlighetsgrad) {
 			hoyeste_alvorlighetsgrad = aktuell_alvorlighetsgrad
 		}
+		else if (aktuell_alvorlighetsgrad == "0-2") {
+			console.log("ikke aktuelt")
+			hoyeste_alvorlighetsgrad = "0-2"
+		}
 		else {
 			//nothing happens
 		}
+
 	}
 	return hoyeste_alvorlighetsgrad
 }
@@ -79,11 +84,19 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
 
-	oppsummering_bivirkninger_div.innerHTML = "Oppsummering av bivirkninger: <br><br>"
+	oppsummering_bivirkninger_div.innerHTML = "Oppsummering av bivirkninger:"
+	oppsummering_bivirkninger_div.innerHTML += "<ul>"
 	for (var i = 0; i < status_bivirkninger.length; i++) {
-		var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
-		oppsummering_bivirkninger_div.innerHTML += "- " + bivirkningen + ": " + status_bivirkninger[i][1] + "<br>"
+		if (stilart == "ja_nei") {
+			var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
+			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b> (" + bivirkninger_array[i][2] + "): <b>" + GjorForsteBokstavStor(status_bivirkninger[i][1])+ "</b></li>"
+		}
+		else {
+			var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
+			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b>: <b>" + status_bivirkninger[i][1] + "</b></li>"
+		}
 	}
+	oppsummering_bivirkninger_div.innerHTML += "</ul>"
 	var hoyeste_alvorlighetsgrad = FinnHoyesteAlvorlighetsgrad()
 	oppsummering_bivirkninger_div.innerHTML += "<br>Høyeste alvorlighetsgrad: Grad " + hoyeste_alvorlighetsgrad
 

@@ -10,7 +10,7 @@ var active_footer = document.getElementById("active")
 
 var aktuell_index = 0
 
-var stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
+var stilart = "slider" //drop_down, ja_nei, radioknapper, slider
 
 var overskrift_rapporter_symptomer_div = document.createElement("div")
 overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")
@@ -95,7 +95,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart) {
 		LagBivirkningElementForRadioKnapperV2(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
 	else if (stilart == "slider") {
-		LagBivirkningElementForSlider(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		LagBivirkningElementForSliderV2(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
 	
 	hver_bivirkning_div.appendChild(sporsmal_div)

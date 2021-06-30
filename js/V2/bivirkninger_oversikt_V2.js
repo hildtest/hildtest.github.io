@@ -3,10 +3,10 @@
 //Sortert etter grader
 //Merk at for avføring er både 0 og 1-3, normal konsistens definert som grad 0
 var bivirkninger_array = [
-	["kvalme", ["ingen", "nedsatt appetitt", "nedsatt inntak av mat og væske", "nedsatt inntak med vekttap og/eller dehydrering"], "med nedsatt inntak av mat og væske, samt vekttap og/eller dehydrering"], 
+	["kvalme", ["ingen", "nedsatt appetitt, men normalt inntak", "nedsatt inntak av mat og væske", "nedsatt inntak med vekttap og/eller dehydrering"], "med nedsatt inntak av mat og væske, samt vekttap og/eller dehydrering"], 
 	["oppkast", ["0", "1-2", "3-5", "6 eller flere",], "med 6 eller flere tilfeller"],
 	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6", "7 eller flere"], "med 7 eller flere tilfeller"],
-	["hudforandringer", ["ingen", "begrensede forandringer uten smerter", "forandringer med smerter", "store forandringer med smerter og nedsatt funksjon",], "som er store og gir smerter, og hindrar deg i hverdagen"],
+	/*["hudforandringer", ["ingen", "begrensede forandringer uten smerter", "forandringer med smerter", "store forandringer med smerter og nedsatt funksjon",], "som er store og gir smerter, og hindrar deg i hverdagen"],
 	["munnhulesmerter", ["ingen", "mild", "moderat", "sterk"], "som er sterke og påvirker matinntaket"],
 	["feber", ["ingen (under 38,0)", "38,0 - 39,0", "over 39,0 - 40,0", "over 40,0"], "som er over 40,0 grader"],
 	["magesmerter", ["ingen", "mild", "moderat", "sterk"], "som er sterke og hindrer deg i hverdagen"],
