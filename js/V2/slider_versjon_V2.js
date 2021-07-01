@@ -93,7 +93,7 @@ LagBivirkningElementForSliderV2 = function (i, bivirkningen, hver_bivirkning_div
 
 
 BindHendelseSliderV2 = function (index, bivirkningen, alternativer_array, slider, hver_bivirkning_div, sporsmal_div, sporsmal_knapper_div, innhold_div, resultat_div, endre_knapp, bekreft_antall_knapp) {
-	slider.onclick = function () {
+	slider.oninput = function () {
 		console.log(slider.value, slider.max)
 		var verdi = alternativer_array[slider.value]
 
