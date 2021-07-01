@@ -41,10 +41,17 @@ overflate_content.appendChild(overflate_div)
 overflate_content.appendChild(overflate_div_blank)
 
 VisSymptomerSisteDogn = function() {
+	status_bivirkninger = []
+	for (var i = 0; i < bivirkninger_array.length; i++) {
+		status_bivirkninger.push([bivirkninger_array[i][0]])
+	}
+	console.log(status_bivirkninger)
+
 	content.innerHTML = ""
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
+	OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 
 	content.appendChild(tilbake_til_start_meny_div)
 

@@ -122,8 +122,10 @@ VisRingSykehuset = function () {
 
 OppdaterFargePaKnapp = function (knapp) {
 	var antall_mangler = SjekkAtAlleBivirkningerErRegistrert()
+	console.log(antall_mangler)
 	if (antall_mangler > 0) {
 		//ikke alt registrert
+		knapp.classList.add("ikke_klar_knapp")
 	}
 	else {
 		//gjennomfører registrering

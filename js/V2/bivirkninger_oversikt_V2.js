@@ -13,10 +13,18 @@ var bivirkninger_array = [
 	/**/
 ]
 
+/*
+kvalme
+oppkast
+avføring/diare
+hudforandringer
+munnhulesmerter
+feber
+magesmerter
+*/
+
 var status_bivirkninger = []
-for (var i = 0; i < bivirkninger_array.length; i++) {
-	status_bivirkninger.push([bivirkninger_array[i][0]])
-}
+
 
 
 FinnRiktigAltenativerArrayForBivirkning = function (bivirkningen) {
