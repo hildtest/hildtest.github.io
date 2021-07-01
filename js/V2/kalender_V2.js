@@ -29,25 +29,69 @@ var month_information_array = [
 ]
 
 var standard_rapport = [
-	["avføring", 3], ["oppkast", 0], ["magesmerter som begrenser daglig funksjon", "nei"], ["utslett", "nei"], ["blod i avføring", "nei"]
+	["kvalme", "ingen"], 
+	["oppkast", "0"],
+	["avføring/diare", "1-3, normal konsistens"],
+	["munnhulesmerter", "ingen"],
+	["feber", "ingen (under 38,0)"],
+	["magesmerter", "ingen"],
 ]
 
-var okt_oppkast = [
-	["avføring", 2], ["oppkast", 1], ["magesmerter som begrenser daglig funksjon", "nei"], ["utslett", "nei"], ["blod i avføring", "nei"]
+var grad_1_avforing = [
+	["kvalme", "ingen"], 
+	["oppkast", "0"],
+	["avføring/diare", "1-3, løs konsistens"],
+	["munnhulesmerter", "ingen"],
+	["feber", "ingen (under 38,0)"],
+	["magesmerter", "ingen"],
 ]
 
-var alvorlig_okt_avføring_og_magesmerter = [
-	["avføring", 7], ["oppkast", 0], ["magesmerter som begrenser daglig funksjon", "ja"], ["utslett", "nei"], ["blod i avføring", "nei"]
+var grad_1_avforing_og_feber = [
+	["kvalme", "ingen"], 
+	["oppkast", "0"],
+	["avføring/diare", "1-3, løs konsistens"],
+	["munnhulesmerter", "ingen"],
+	["feber", "38,0 - 39,0"],
+	["magesmerter", "ingen"],
 ]
+
+var grad_2_oppkast = [
+	["kvalme", "ingen"], 
+	["oppkast", "3-5"],
+	["avføring/diare", "1-3, normal konsistens"],
+	["munnhulesmerter", "ingen"],
+	["feber", "ingen (under 38,0)"],
+	["magesmerter", "ingen"],
+]
+
+var grad_1_oppkast = [
+	["kvalme", "ingen"], 
+	["oppkast", "1-2"],
+	["avføring/diare", "1-3, normal konsistens"],
+	["munnhulesmerter", "ingen"],
+	["feber", "ingen (under 38,0)"],
+	["magesmerter", "ingen"],
+]
+
+grad_3_avforing_og_magesmerter = [
+	["kvalme", "ingen"], 
+	["oppkast", "0"],
+	["avføring/diare", "7 eller flere"],
+	["munnhulesmerter", "ingen"],
+	["feber", "ingen (under 38,0)"],
+	["magesmerter", "sterk"],
+]
+
+
 //dato (this dato-modifikasjon), alvorlighets-grad, anmerkninger, utfyllende
 tidligere_symptomer_array = [
-	[[dd_dato-7, month_array[mm_dato]], "lav", "Ingen anmerkninger", standard_rapport],
-	[[dd_dato-6, month_array[mm_dato]], "lav", "Ingen anmerkninger", standard_rapport],
-	[[dd_dato-5, month_array[mm_dato]], "lav", "Ingen anmerkninger", standard_rapport],
-	[[dd_dato-4, month_array[mm_dato]], "lav", "Ingen anmerkninger", standard_rapport],
-	[[dd_dato-3, month_array[mm_dato]], "middels", "Ikke alvorlig, men økt oppkast", okt_oppkast],
-	[[dd_dato-2, month_array[mm_dato]], "lav", "Ingen anmerkninger", standard_rapport],
-	[[dd_dato-1, month_array[mm_dato]], "hoy", "Alvorlig økt avføring og alvorlig økte magesmerter", alvorlig_okt_avføring_og_magesmerter],
+	[[dd_dato-7, month_array[mm_dato]], "lav", "Grad 0", "Ingen anmerkninger", standard_rapport],
+	[[dd_dato-6, month_array[mm_dato]], "lav", "Grad 1", "Avføring", grad_1_avforing],
+	[[dd_dato-5, month_array[mm_dato]], "lav", "Grad 1", "Avføring og feber", grad_1_avforing_og_feber],
+	[[dd_dato-4, month_array[mm_dato]], "lav", "Grad 1", "Avføring", grad_1_avforing],
+	[[dd_dato-3, month_array[mm_dato]], "middels", "Grad 2", "Oppkast", grad_2_oppkast],
+	[[dd_dato-2, month_array[mm_dato]], "lav", "Grad 1", "Oppkast", grad_1_oppkast],
+	[[dd_dato-1, month_array[mm_dato]], "hoy", "Grad 3", "Avføring og magesmerter", grad_3_avforing_og_magesmerter],
 ]
 
 var standard_rapport = [
@@ -113,15 +157,9 @@ LagDatoElement = function (i, array, hver_dato_div) {
 
 	dato_div.innerHTML = "<div class='dd'>" + array[i][0][0] + ".</div><div class='mm'>" + array[i][0][1] + "</div>"
 
-	//hard kodet at ø-kommer inn
-	if (array[i][1] == "hoy") {
-		alvorlighetsgrad_div.innerHTML = "Høy"
-	}
-	else {
-		alvorlighetsgrad_div.innerHTML = GjorForsteBokstavStor(array[i][1])
-	}
+	alvorlighetsgrad_div.innerHTML = GjorForsteBokstavStor(array[i][2])
 	
-	anmerkninger_div.innerHTML = array[i][2]
+	anmerkninger_div.innerHTML = array[i][3]
 
 
 	var utfyllende_informasjon_div = document.createElement("div")
@@ -159,7 +197,7 @@ BindHendelseHverDatoDiv = function (i, array, div, utfyllende_informasjon_div, c
 VisTidligereSymptomerForDag = function (i, array, div, utfyllende_informasjon_div, count) {
 	console.log("hei", array[i])
 	var element = array[i]
-	var rapport = element[3]
+	var rapport = element[4]
 	utfyllende_informasjon_div.innerHTML = ""
 
 
@@ -170,6 +208,7 @@ VisTidligereSymptomerForDag = function (i, array, div, utfyllende_informasjon_di
 	}
 
 	var minimer_knapp = document.createElement("button")
+	minimer_knapp.classList.add("litt_viktig_knapp")
 	minimer_knapp.innerHTML = "Minimer"
 	utfyllende_informasjon_div.appendChild(minimer_knapp)
 
