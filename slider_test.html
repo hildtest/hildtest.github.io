@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+<style type="text/css">
+
+.slider_container {
+	position: relative;
+	width: 500px;
+	height: 50px;
+}
+
+.slider_linje {
+	position: absolute;
+	margin: 20px 25px;
+	width: 90%;
+	height: 10px;
+	background-color: grey;
+}
+
+.slider_punkt {
+	position: absolute;
+	left: 25px;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+	background-color: blue;
+	border-radius: 50%;
+}
+
+</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+
+alternativer_array = [0, 1, 2, 3]
+
+var slider_div = document.createElement("div")
+slider_div.className = "slider_container"
+
+var slider_linje = document.createElement("div")
+slider_linje.className = "slider_linje"
+
+var slider_punkt = document.createElement("button")
+slider_punkt.className = "slider_punkt"
+slider_punkt.draggable = "true"
+
+slider_div.appendChild(slider_linje)
+slider_div.appendChild(slider_punkt)
+
+document.body.appendChild(slider_div)
+
+slider_punkt.onclick = function () {
+	showCoords(event)
+}
+
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  console.log(coords);
+}
+
+</script>
+
+</body>
+</html>

@@ -10,7 +10,7 @@ var active_footer = document.getElementById("active")
 
 var aktuell_index = 0
 
-var stilart = "slider" //drop_down, ja_nei, radioknapper, slider
+var stilart = "drop_down" //drop_down, ja_nei, radioknapper, slider
 
 var overskrift_rapporter_symptomer_div = document.createElement("div")
 overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")
