@@ -11,7 +11,7 @@ LagBivirkningElementForJaNeiKnapperV2 = function (i, bivirkningen, hver_bivirkni
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = "Har du hatt opplevd " + bivirkningen + " " + bivirkningen_grense + " det siste døgnet? ";
+	sporsmal_innhold_div.innerHTML = "Har du hatt opplevd <b>" + bivirkningen + "</b> " + bivirkningen_grense + " det siste døgnet? ";
 
 	var ja_knapp = document.createElement("button")
 	ja_knapp.classList.add("litt_viktig_knapp")

@@ -6,7 +6,7 @@ LagBivirkningElementForDropDownV2 = function (i, bivirkningen, hver_bivirkning_d
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = "Hvordan har du opplevd det med " + bivirkningen + " det siste døgnet? ";
+	sporsmal_innhold_div.innerHTML = "Hvordan har du opplevd det med <b>" + bivirkningen + "</b> det siste døgnet? ";
 
 	innhold_div.innerHTML = ""
 

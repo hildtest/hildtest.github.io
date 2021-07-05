@@ -9,7 +9,7 @@ LagBivirkningElementForSliderV2 = function (i, bivirkningen, hver_bivirkning_div
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = "Hvor mange tilfeller med " + bivirkningen + " har du hatt det siste døgnet? ";
+	sporsmal_innhold_div.innerHTML = "Hvor mange tilfeller med <b>" + bivirkningen + "</b> har du hatt det siste døgnet? ";
 
 	
 	var vis_slider_knapp = document.createElement("button")
