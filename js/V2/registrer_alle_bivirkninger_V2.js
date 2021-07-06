@@ -1,3 +1,18 @@
+var oppsummering_bivirkninger_div = document.createElement("div")
+oppsummering_bivirkninger_div.classList.add("oppsummering_bivirkninger_div")
+oppsummering_bivirkninger_div.classList.add("tekst_innhold")
+
+var ring_sykehuset_div = document.createElement("div")
+ring_sykehuset_div.classList.add("ring_sykehuset_div")
+
+var overskrift_advarsel_symptomer_div = document.createElement("div")
+overskrift_advarsel_symptomer_div.classList.add("overskrift_sentrum_div")
+overskrift_advarsel_symptomer_div.style.padding = "0px";
+overskrift_advarsel_symptomer_div.innerHTML = "<h3>Advarsel!</h3>"
+
+var tekst_advarsel_symptomer_div = document.createElement("div")
+tekst_advarsel_symptomer_div.classList.add("tekst_innhold")
+
 
 var legg_inn_alle_bivirkninger_knapp = document.createElement("button")
 legg_inn_alle_bivirkninger_knapp.classList.add("viktig_knapp")
@@ -34,6 +49,25 @@ tilbake_til_oppsummering_av_bivirkninger_knapp.innerHTML = "Tilbake til oppsumme
 
 ring_sykehuset_knapp_container.appendChild(ring_sykehuset_knapp)
 ring_sykehuset_knapp_container.appendChild(tilbake_til_oppsummering_av_bivirkninger_knapp)
+
+
+var varsel_trekant_div_container = document.createElement("div")
+varsel_trekant_div_container.classList.add = "varsel_trekant_div_container"
+
+
+var varsel_trekant_svg_container = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+var svg_storrelse = 200
+varsel_trekant_svg_container.setAttribute("width", svg_storrelse);
+varsel_trekant_svg_container.setAttribute("height", svg_storrelse-25);
+
+var varsel_trekant_polygon = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+varsel_trekant_polygon.setAttribute("points", "10,160 100,10 190,160");
+varsel_trekant_polygon.setAttribute("fill", "yellow");
+varsel_trekant_polygon.setAttribute("stroke", "black")
+varsel_trekant_polygon.setAttribute("stroke-width", "10")
+
+varsel_trekant_svg_container.appendChild(varsel_trekant_polygon)
+varsel_trekant_div_container.appendChild(varsel_trekant_svg_container)
 
 
 SjekkAtAlleBivirkningerErRegistrert = function () {
@@ -113,8 +147,12 @@ VisRingSykehuset = function () {
 
 	//Meldingen her:
 	ring_sykehuset_div.innerHTML = ""
-	ring_sykehuset_div.innerHTML += "Du har registrert en eller flere bivirkninger som er alvorlig og kan potensielt påvirke behandlingsplanen. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
-	
+	ring_sykehuset_div.appendChild(overskrift_advarsel_symptomer_div)
+	ring_sykehuset_div.appendChild(varsel_trekant_div_container)
+	tekst_advarsel_symptomer_div.innerHTML += "Du har registrert en/flere bivirkninger som er alvorlige. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
+	ring_sykehuset_div.appendChild(tekst_advarsel_symptomer_div)
+
+
 	content.appendChild(ring_sykehuset_knapp_container)
 
 	content.appendChild(tilbake_til_start_meny_div)
@@ -179,5 +217,6 @@ tilbake_til_oppsummering_av_bivirkninger_knapp.onclick = function () {
 	content.innerHTML = ""
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
+	content.appendChild(send_inn_alle_bivirkninger_knapp_container)
 	content.appendChild(tilbake_til_start_meny_div)
 }

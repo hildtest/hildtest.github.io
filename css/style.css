@@ -267,3 +267,12 @@ button {
 .option {
 	font-size: 120%;
 }
+
+.ring_sykehuset_div {
+	text-align: center;
+	color: red;
+	font-weight: bold;
+}
+
+.varsel_trekant_div_container {
+}
