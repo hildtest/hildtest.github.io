@@ -142,6 +142,7 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 VisRingSykehuset = function () {
 	console.log("alvorlig")
 
+	content.scrollTop = 0 + "px"
 	content.innerHTML = ""
 	content.appendChild(ring_sykehuset_div)
 
