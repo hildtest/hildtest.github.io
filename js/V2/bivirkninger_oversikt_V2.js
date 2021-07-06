@@ -4,7 +4,7 @@
 //Merk at for avføring er både 0 og 1-3, normal konsistens definert som grad 0
 var bivirkninger_array = [
 	["kvalme", ["ingen", "nedsatt appetitt, men normalt inntak", "nedsatt inntak av mat og væske", "nedsatt inntak med vekttap og/eller dehydrering"], "med nedsatt inntak av mat og væske, samt vekttap og/eller dehydrering"], 
-	/*["oppkast", ["0", "1-2", "3-5", "6 eller flere",], "med 6 eller flere tilfeller"],
+	["oppkast", ["0", "1-2", "3-5", "6 eller flere",], "med 6 eller flere tilfeller"],
 	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6", "7 eller flere"], "med 7 eller flere tilfeller"],
 	["nevropati/nervebetennelse", ["ingen", "føleforstyrrelser i huden", "smerter og lammelser som begrenser enkelte aktiviteter", "sterke smerter og lammelser som hindrer deg i hverdagen"], "som er sterke og hindrer deg i hverdagen"],
 	["hudforandringer", ["ingen", "begrensede forandringer uten smerter", "forandringer med smerter", "store forandringer med smerter og nedsatt funksjon",], "som er store og gir smerter, og hindrar deg i hverdagen"],
