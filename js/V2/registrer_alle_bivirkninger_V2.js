@@ -208,6 +208,7 @@ ring_sykehuset_knapp.onclick = function () {
 
 tilbake_til_oversikt_over_bivirkninger_knapp.onclick = function () {
 	content.innerHTML = ""
+	content.scrollTop = 0 + "px"
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(liste_bivirkninger_div)
 	content.appendChild(legg_inn_alle_bivirkninger_div)
@@ -216,6 +217,7 @@ tilbake_til_oversikt_over_bivirkninger_knapp.onclick = function () {
 
 tilbake_til_oppsummering_av_bivirkninger_knapp.onclick = function () {
 	content.innerHTML = ""
+	content.scrollTop = 0 + "px"
 	content.appendChild(overskrift_rapporter_symptomer_div)
 	content.appendChild(oppsummering_bivirkninger_div)
 	content.appendChild(send_inn_alle_bivirkninger_knapp_container)
