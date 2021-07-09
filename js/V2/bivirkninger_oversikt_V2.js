@@ -73,3 +73,65 @@ FinnAlvorlighetsgrad = function (bivirkningen, bivirkning_verdi) {
 	}
 	return alvorlighetsgrad
 }
+
+FinnBivirkningNavnOgStatus = function (status_bivirkninger) {
+	var array = []
+	for (var i = 0; i < status_bivirkninger.length; i++) {
+		array.push([status_bivirkninger[i][0], status_bivirkninger[i][1]])
+	}
+	return array
+}
+
+FinnAnmerkninger = function (status_bivirkninger, hoyeste_alvorlighetsgrad) {
+	var array = []
+	if (hoyeste_alvorlighetsgrad == 0) {
+		array.push("Ingen anmerkninger")
+	}
+	else {
+		for (var i = 0; i < status_bivirkninger.length; i++) {
+			if (status_bivirkninger[i][2] == hoyeste_alvorlighetsgrad) {
+				array.push(status_bivirkninger[i][0])
+			}
+		}	
+	}
+	
+	return array
+}
+
+SkrivUtArraySomSammenhengendeTekst = function (array) {
+	var tekst = ""
+	tekst += GjorForsteBokstavStor(array[0])
+	if (array.length > 1) {
+		for (var i = 1; i < array.length-2; i++) {
+		tekst += ", " + array[i]
+		}
+		tekst += " og " + array[array.length-1]		
+	}
+	return tekst
+}
+
+LeggBivirkningerForDagenInn = function (status_bivirkninger, index_for_dagen=7) {
+	var bivirkning_navn_og_status_array = FinnBivirkningNavnOgStatus(status_bivirkninger)
+	//console.log(bivirkning_navn_og_status_array)
+	var dato = [dd_dato, month_array[mm_dato]]
+	var hoyeste_alvorlighetsgrad = FinnHoyesteAlvorlighetsgrad()
+	var farge_kode = alvorlighetsgrad_og_farge_sammenheng_array[hoyeste_alvorlighetsgrad]
+	var alvorlighetsgrad = "Grad " + hoyeste_alvorlighetsgrad
+	var anmerkninger_array = FinnAnmerkninger(status_bivirkninger, hoyeste_alvorlighetsgrad)
+	var anmerkninger = SkrivUtArraySomSammenhengendeTekst(anmerkninger_array)
+
+	console.log(anmerkninger)
+	tidligere_symptomer_array[index_for_dagen] = [dato, farge_kode, alvorlighetsgrad, anmerkninger, bivirkning_navn_og_status_array]
+
+
+
+	//Gjør at bivirkningen blir lagt inn når man sjekker i startmenyen
+	bivirkning_allerede_lagt_inn = "ja"
+	console.log(bivirkning_allerede_lagt_inn==bivirkning_allerede_lagt_inn_muligheter[0])
+	checkbox_elementer_array = [
+		["Font Stil: Sans-serif", font_stil, font_stil_muligheter, true],
+		["Bivirkning allerede lagt inn", bivirkning_allerede_lagt_inn, bivirkning_allerede_lagt_inn_muligheter, bivirkning_allerede_lagt_inn==bivirkning_allerede_lagt_inn_muligheter[0]],
+	]
+	LagRadioKnapperFraArray(stilvalg_array, stilart, stilvalg_div)
+	LagCheckboxForElementFraArray(checkbox_elementer_array, checkbox_elementer_div)
+}

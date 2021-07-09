@@ -6,6 +6,9 @@ overskrift_kalender_div.innerHTML = "<h3>Tidligere symptomer</h3>"
 var liste_tidligere_symptomer_div = document.createElement("div")
 liste_tidligere_symptomer_div.classList.add("liste_tidligere_symptomer_div")
 
+//Grad 0, 1, 2 og 3
+var alvorlighetsgrad_og_farge_sammenheng_array = ["lav", "lav", "middels", "hoy"]
+
 var dato = new Date();
 dd_dato = dato.getDate();
 

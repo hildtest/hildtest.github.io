@@ -30,9 +30,13 @@ vis_tidligere_symptomer_knapp.classList.add("viktig_knapp")
 
 vis_tidligere_symptomer_div.appendChild(vis_tidligere_symptomer_knapp)
 
+var overskrift_varsel_symptomer_allerede_lagt_inn_div = document.createElement("div")
+overskrift_varsel_symptomer_allerede_lagt_inn_div.innerHTML = ""
+overskrift_varsel_symptomer_allerede_lagt_inn_div.classList.add("overskrift_sentrum_div")
 
 var varsel_symptomer_allerede_lagt_inn_div = document.createElement("div")
-varsel_symptomer_allerede_lagt_inn_div.classList.add("start_meny_div")
+varsel_symptomer_allerede_lagt_inn_div.classList.add("varsel_symptomer_allerede_lagt_inn_div")
+varsel_symptomer_allerede_lagt_inn_div.classList.add("tekst_innhold")
 
 legg_inn_nye_symptomer_fra_registert_dogn_div = document.createElement("div")
 legg_inn_nye_symptomer_fra_registert_dogn_div.classList.add("knapp_i_sentrum_container")
@@ -53,7 +57,7 @@ VisStartMenyBivirkninger = function () {
 vis_legg_inn_symptomer_siste_dogn_knapp.onclick = function () {
 	content.innerHTML = ""
 
-	console.log(bivirkning_allerede_lagt_inn)
+	//console.log(bivirkning_allerede_lagt_inn)
 	if (bivirkning_allerede_lagt_inn == "nei") {
 		VisSymptomerSisteDogn()	
 	}
@@ -74,8 +78,9 @@ vis_tidligere_symptomer_knapp.onclick = function () {
 
 VisVarselAlleredeSymptomerLagtInn = function () {
 	content.innerHTML = ""
-	varsel_symptomer_allerede_lagt_inn_div.innerHTML = "<h3>Dagens symptomer er allerede lagt inn<h3>"
+	overskrift_varsel_symptomer_allerede_lagt_inn_div.innerHTML = "<h3>Dagens symptomer er allerede lagt inn<h3>"
 	varsel_symptomer_allerede_lagt_inn_div.innerHTML += "Det er allerede blitt lagt inn symptomer for i dag, ønsker du å legge inn på nytt?<br>"
+	content.appendChild(overskrift_varsel_symptomer_allerede_lagt_inn_div)
 	content.appendChild(varsel_symptomer_allerede_lagt_inn_div)
 
 	legg_inn_nye_symptomer_fra_registert_dogn_div.appendChild(legg_inn_nye_symptomer_fra_registert_dogn_knapp)

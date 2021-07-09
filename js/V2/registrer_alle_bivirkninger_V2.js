@@ -81,6 +81,17 @@ SjekkAtAlleBivirkningerErRegistrert = function () {
 	return antall_mangler
 }
 
+FinnManglendeBivirkninger = function () {
+	var mangler_array = [];
+	for (var i = 0; i < status_bivirkninger.length; i++) {
+		if (status_bivirkninger[i].length < 3) {
+			//console.log(status_bivirkninger[i][0] + " ikke lagt inn")
+			mangler_array.push(status_bivirkninger[i][0])
+		}
+	}
+	return mangler_array
+}
+ 
 SjekkOmNoenBivirkningerErAlvorlige = function () {
 	var antall_alvorlige = 0;
 	for (var i = 0; i < status_bivirkninger.length; i++) {
@@ -176,6 +187,12 @@ legg_inn_alle_bivirkninger_knapp.onclick = function () {
 	var antall_mangler = SjekkAtAlleBivirkningerErRegistrert()
 	if (antall_mangler > 0) {
 		//ikke alt registrert
+		//vis informasjon
+		var manglende_bivirkninger_array = FinnManglendeBivirkninger()
+		overflate_content.style.zIndex = 2
+		//console.log(overflate_content)
+		//console.log(overflate_div)
+		VisInformasjonOmArBivirkningerMangler(manglende_bivirkninger_array)
 	}
 	else {
 		//gjennomfører registrering
@@ -190,9 +207,11 @@ send_inn_alle_bivirkninger_knapp.onclick = function () {
 	if (antall_alvorlige == 0) {
 		//ikke noe alvorlig
 		//starter på nytt
-		console.log("ikke alvorlig")
+		//console.log(status_bivirkninger)
+		//console.log("ikke alvorlig")
 		content.innerHTML = ""
 		VisStartMenyBivirkninger()
+		LeggBivirkningerForDagenInn(status_bivirkninger)
 	}
 	else {
 		//noe alvorlig, bedt om å ringe sykehuset
@@ -201,9 +220,10 @@ send_inn_alle_bivirkninger_knapp.onclick = function () {
 }
 
 ring_sykehuset_knapp.onclick = function () {
-	console.log("ikke alvorlig")
+	//console.log("alvorlig")
 	content.innerHTML = ""
 	VisStartMenyBivirkninger()
+	LeggBivirkningerForDagenInn(status_bivirkninger)
 }
 
 tilbake_til_oversikt_over_bivirkninger_knapp.onclick = function () {

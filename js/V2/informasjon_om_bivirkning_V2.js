@@ -34,6 +34,7 @@ VisRelevantInformasjon = function (bivirkningen) {
 	overflate_div.innerHTML += "<br>"
 
 	var tilbake_til_bivirkning_oversikt_knapp = document.createElement("button")
+	tilbake_til_bivirkning_oversikt_knapp.classList.add("litt_viktig_knapp")
 	tilbake_til_bivirkning_oversikt_knapp.innerHTML = "Tilbake"
 	overflate_div.appendChild(tilbake_til_bivirkning_oversikt_knapp)
 
@@ -44,4 +45,24 @@ VisRelevantInformasjon = function (bivirkningen) {
 
 overflate_div_blank.onclick = function () {
 	overflate_content.style.zIndex = -1
+}
+
+VisInformasjonOmArBivirkningerMangler = function (manglende_bivirkninger_array) {
+	overflate_div.innerHTML = ""
+	overflate_div.innerHTML += "Ikke alle bivirkninger har blitt tildelt en verdi, vennligst legg inn informasjon for å gå videre.<br>"
+	overflate_div.innerHTML += "<br>"
+
+	overflate_div.innerHTML += "Følgende bivirkninger er ikke lagt inn: <br>"
+	for (var i = 0; i < manglende_bivirkninger_array.length; i++) {
+		overflate_div.innerHTML += "-" + GjorForsteBokstavStor(manglende_bivirkninger_array[i]) + "<br>"
+	}
+
+	var tilbake_til_bivirkning_oversikt_knapp = document.createElement("button")
+	tilbake_til_bivirkning_oversikt_knapp.classList.add("litt_viktig_knapp")
+	tilbake_til_bivirkning_oversikt_knapp.innerHTML = "Tilbake"
+	overflate_div.appendChild(tilbake_til_bivirkning_oversikt_knapp)
+
+	tilbake_til_bivirkning_oversikt_knapp.onclick = function () {
+		overflate_content.style.zIndex = -1
+	}
 }

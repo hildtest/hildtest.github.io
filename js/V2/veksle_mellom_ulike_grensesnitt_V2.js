@@ -6,7 +6,6 @@ var veksler = document.getElementById("veksler")
 veksler.innerHTML = ""
 
 stilvalg_div = document.createElement("div")
-stilvalg_div.innerHTML = "Fremvisning av muligheter: <br>"
 
 stilvalg_array = ["drop_down", "ja_nei", "radioknapper", "slider"]
 
@@ -14,20 +13,19 @@ stilvalg_array = ["drop_down", "ja_nei", "radioknapper", "slider"]
 
 
 checkbox_elementer_div = document.createElement("div")
-checkbox_elementer_div.innerHTML = "Fremvisning av checkbox-alternativer: <br>"
 
 var font_stil = "sans-serif" //sans-serif eller serif
 var font_stil_muligheter = ["sans-serif", "serif"]
 
 var bivirkning_allerede_lagt_inn = "nei" //ja eller nei
-var bivirkning_allerede_lagt_inn_muligheter = ["nei", "ja"]
+var bivirkning_allerede_lagt_inn_muligheter = ["ja", "nei"]
 
 document.body.style.fontFamily = font_stil
 
 
 var checkbox_elementer_array = [
-	["font_stil", font_stil, font_stil_muligheter],
-	["bivirkning_allerede_lagt_inn", bivirkning_allerede_lagt_inn, bivirkning_allerede_lagt_inn_muligheter],
+	["Font Stil: Sans-serif", font_stil, font_stil_muligheter, true],
+	["Bivirkning allerede lagt inn", bivirkning_allerede_lagt_inn, bivirkning_allerede_lagt_inn_muligheter, bivirkning_allerede_lagt_inn==bivirkning_allerede_lagt_inn_muligheter[0]],
 	]
 
 
@@ -36,6 +34,7 @@ veksler.appendChild(checkbox_elementer_div)
 
 
 LagRadioKnapperFraArray = function (array, presatt_verdi, div) {
+	div.innerHTML = "Fremvisning av muligheter: <br>"
 	//console.log("array")
 	var stilvalg_type = "test"
 	for (var i = 0; i < array.length; i++) {
@@ -78,6 +77,7 @@ BindHendelseValgAvStil = function (i, radio_input, stilvalg_type, stilvalget) {
 
 
 LagCheckboxForElementFraArray = function (array, div) {
+	div.innerHTML = "Fremvisning av checkbox-alternativer: <br>"
 	for (var i = 0; i < array.length; i++) {
 		console.log(array[i])
 
@@ -89,11 +89,12 @@ LagCheckboxForElementFraArray = function (array, div) {
 		checkbox_input.id = array[i][0]
 		checkbox_input.name = array[i][0]
 		checkbox_input.value = array[i][1]
-		checkbox_input.checked = "checked"
+		checkbox_input.checked = array[i][3]
+		console.log(array[i][3])
 
 		var label = document.createElement("label")
 		label.htmlFor = array[i][0]
-		label.innerHTML = GjorForsteBokstavStor(array[i][0] + ": " + array[i][1])
+		label.innerHTML = GjorForsteBokstavStor(array[i][0])
 
 		checkbox_div.appendChild(checkbox_input)
 		checkbox_div.appendChild(label)
@@ -117,11 +118,11 @@ BindHendelseCheckboxStil = function (i, checkbox_input, elementet) {
 		}
 
 
-		if (elementet[0] == "font_stil") {
+		if (elementet[0] == "Font Stil: Sans-serif") {
 			font_stil = elementet[1]
 			document.body.style.fontFamily = font_stil
 		}
-		else if (elementet[0] == "bivirkning_allerede_lagt_inn") {
+		else if (elementet[0] == "Bivirkning allerede lagt inn") {
 			bivirkning_allerede_lagt_inn = elementet[1]
 			//console.log(bivirkning_allerede_lagt_inn)
 		}
@@ -130,3 +131,4 @@ BindHendelseCheckboxStil = function (i, checkbox_input, elementet) {
 
 LagRadioKnapperFraArray(stilvalg_array, stilart, stilvalg_div)
 LagCheckboxForElementFraArray(checkbox_elementer_array, checkbox_elementer_div)
+
