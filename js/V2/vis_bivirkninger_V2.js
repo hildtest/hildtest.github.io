@@ -73,7 +73,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart) {
 	//console.log(hver_bivirkning_div)
 
 	var bivirkningen = bivirkninger_array[i][0]
-	var bivirkning_talltype = "numerisk kort"
+	var bivirkningen_array = bivirkninger_array[i]
 
 	var sporsmal_div = document.createElement("div")
 	var innhold_div = document.createElement("div")
@@ -83,19 +83,19 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart) {
 	endre_knapp.innerHTML = "Endre"
 	endre_knapp.className = "endre_knapp"
 	endre_knapp.classList.add("litt_viktig_knapp")
-	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, stilart)
+	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, stilart)
 
 	if (stilart == "drop_down") {
-		LagBivirkningElementForDropDownV2(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		LagBivirkningElementForDropDownV2(i, bivirkningen, bivirkningen_array, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
 	else if (stilart == "ja_nei") {
-		LagBivirkningElementForJaNeiKnapperV2(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		LagBivirkningElementForJaNeiKnapperV2(i, bivirkningen, bivirkningen_array, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
 	else if (stilart == "radioknapper") {
-		LagBivirkningElementForRadioKnapperV2(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		LagBivirkningElementForRadioKnapperV2(i, bivirkningen, bivirkningen_array, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
 	else if (stilart == "slider") {
-		LagBivirkningElementForSliderV2(i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
+		LagBivirkningElementForSliderV2(i, bivirkningen, bivirkningen_array, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp)
 	}
 	
 	hver_bivirkning_div.appendChild(sporsmal_div)
@@ -104,7 +104,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart) {
 	VisInformasjonKnappOmBivirkningen(hver_bivirkning_div, bivirkningen)
 }
 
-BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div, bivirkning_talltype, stilart) {
+BindEndreKnapp = function (index, bivirkningen, endre_knapp, hver_bivirkning_div, stilart) {
 	endre_knapp.onclick = function () {
 		console.log(index, stilart)
 		

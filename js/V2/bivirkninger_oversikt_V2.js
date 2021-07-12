@@ -3,14 +3,45 @@
 //Sortert etter grader
 //Merk at for avføring er både 0 og 1-3, normal konsistens definert som grad 0
 var bivirkninger_array = [
-	["kvalme", ["ingen", "nedsatt appetitt, men normalt inntak", "nedsatt inntak av mat og væske", "nedsatt inntak med vekttap og/eller dehydrering"], "med nedsatt inntak av mat og væske, samt vekttap og/eller dehydrering"], 
-	["oppkast", ["0", "1-2", "3-5", "6 eller flere",], "med 6 eller flere tilfeller"],
-	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6", "7 eller flere"], "med 7 eller flere tilfeller"],
-	["nevropati/nervebetennelse", ["ingen", "føleforstyrrelser i huden", "smerter og lammelser som begrenser enkelte aktiviteter", "sterke smerter og lammelser som hindrer deg i hverdagen"], "som er sterke og hindrer deg i hverdagen", "Har du opplevd noen tilfeller med nevropati, dvs. har du kjent følelsesforstyrrelser/prikking i huden og/eller smerter og lammelser i kroppen?"],
-	["hudforandringer", ["ingen", "begrensede forandringer uten smerter", "forandringer med smerter", "store forandringer med smerter og nedsatt funksjon",], "som er store og gir smerter, og hindrar deg i hverdagen"],
-	["munnhulesmerter", ["ingen", "milde/svake smerter", "moderate smerter som krever tilpasset kost", "sterke smerter som påvirker matinntak"], "som er sterke og påvirker matinntaket"],
-	["feber", ["ingen (under 38,0)", "38,0 - 39,0", "over 39,0 - 40,0", "over 40,0"], "som er over 40,0 grader"],
-	["magesmerter", ["ingen", "milde/svake smerter", "moderate smerter som begrenser enkelte aktiviteter", "sterke smerter som hindrer deg i hverdagen"], "som er sterke og hindrer deg i hverdagen"],
+	["kvalme", ["ingen", "nedsatt appetitt, men normalt inntak", "nedsatt inntak av mat og væske", "nedsatt inntak med vekttap og/eller dehydrering"], 
+	"Har du opplevd <b>kvalme</b> det siste døgnet, og i så fall hvordan vil du beskrive den?",
+	"Har du opplevd <b>kvalme</b> hvor det har vært <b>nedsatt inntak av mat og væske med vekttap og/eller dehydrering</b> det siste døgnet",
+	], 
+	
+	["oppkast", ["0", "1-2", "3-5", "6 eller flere",],
+	"Hvor mange tilfeller med <b>oppkast</b> har du hatt det siste døgnet?",
+	"Har du hatt <b>6 eller flere tilfeller</b> med <b>oppkast</b> det siste døgnet",
+	],
+	
+	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6, normal eller løs konsistens", "7 eller flere, , normal eller løs konsistens"],
+	"Hvor mange tilfeller med <b>avføring</b> har du hatt det siste døgnet, og hvordan har <b>konsistensen</b> vært?",
+	"Har du hatt <b>7 eller flere tilfeller</b> med <b>avføring</b> det siste døgnet",
+	],
+	
+	["nevropati/nervebetennelse", ["ingen", "føleforstyrrelser i huden uten smerter", "smerter og lammelser som begrenser enkelte aktiviteter", "sterke smerter og lammelser som hindrer deg i hverdagen"],
+	"Har du opplevd noen tilfeller med <b>nevropati</b> det siste døgnet, dvs. har du kjent på følelsesforstyrrelser/prikking i huden og/eller smerter og lammelser i kroppen?",
+	"Har du opplevd <b>smerter og lammelser i kroppen (nevropati)</b> det siste døgnet som <b>hindrer deg betraktelig i hverdagen</b>",
+	],
+
+	["hudforandringer", ["ingen", "begrensede forandringer uten smerter", "forandringer med smerter", "store forandringer med smerter og nedsatt funksjon",],
+	"Har du opplevd <b>hudforandringer</b> det siste døgnet, og i så fall hvordan vil du beskrive dem?",
+	"Har du opplevd <b>store hudforandringer</b> som gir <b>smerter og nedsatt funksjon</b> det siste døgnet?",
+	],
+	
+	["munnhulesmerter", ["ingen", "milde/svake smerter", "moderate smerter som krever tilpasset kost", "sterke smerter som påvirker matinntaket"],
+	"Har du opplevd <b>smerter i munnhulen<b> det siste døgnet, og i så fall hvordan vil du beskrive dem?",
+	"Har du opplevd <b>sterke smerter i munnhulen</b> det siste døgnet som <b>påvirker matinntaket</b>?",
+	],
+	
+	["feber", ["ingen (under 38,0)", "38,0 - 39,0", "over 39,0 - 40,0", "over 40,0"],
+	"Har du hatt <b>feber<b> det siste døgnet, og i så fall til hvilken temperatur?",
+	"Har du hatt feber over 40,0 grader det siste døgnet?",
+	],
+	
+	["magesmerter", ["ingen", "milde/svake smerter", "moderate smerter som begrenser enkelte aktiviteter", "sterke smerter som hindrer deg i hverdagen"],
+	"Har du opplevd <b>magesmerter</b> det siste døgnet, og i så fall hvordan vil du beskrive dem?",
+	"Har du opplevd <b>sterke magesmerter</b> det siste døgnet som <b>hindrer deg betraktelig i hverdagen</b>?",
+	],
 	/**/
 ]
 

@@ -1,4 +1,4 @@
-LagBivirkningElementForJaNeiKnapperV2 = function (i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
+LagBivirkningElementForJaNeiKnapperV2 = function (i, bivirkningen, bivirkningen_array, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
 
 	var bivirkningen_grense = FinnRiktigGrenseForBivirkning(bivirkningen)
 	//console.log(bivirkningen_grense)
@@ -11,7 +11,7 @@ LagBivirkningElementForJaNeiKnapperV2 = function (i, bivirkningen, hver_bivirkni
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = "Har du hatt opplevd <b>" + bivirkningen + "</b> " + bivirkningen_grense + " det siste døgnet? ";
+	sporsmal_innhold_div.innerHTML = bivirkningen_array[3];
 
 	var ja_knapp = document.createElement("button")
 	ja_knapp.classList.add("litt_viktig_knapp")

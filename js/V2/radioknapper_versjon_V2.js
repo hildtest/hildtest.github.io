@@ -1,6 +1,6 @@
 
 
-LagBivirkningElementForRadioKnapperV2 = function (i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
+LagBivirkningElementForRadioKnapperV2 = function (i, bivirkningen, bivirkningen_array, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
 	hver_bivirkning_div.innerHTML = ""
 
 	var sporsmal_container = document.createElement("div")
@@ -8,10 +8,11 @@ LagBivirkningElementForRadioKnapperV2 = function (i, bivirkningen, hver_bivirkni
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = "Hvordan har du opplevd det med <b>" + bivirkningen + "</b> det siste døgnet? ";
+	sporsmal_innhold_div.innerHTML = bivirkningen_array[2];
 
 	innhold_div.innerHTML = ""
 	innhold_div.className = "innhold_div_flex"
+	innhold_div.style.marginBottom = "10px"
 
 	var alternativer_array = FinnRiktigAltenativerArrayForBivirkning(bivirkningen)
 
@@ -44,7 +45,7 @@ LagBivirkningElementForRadioKnapperV2 = function (i, bivirkningen, hver_bivirkni
 
 		innhold_div.appendChild(radio_div)
 
-		BindHendelseRadioKnapperV2(i, bivirkningen, radio_div, radio_input, hver_bivirkning_div, innhold_div, resultat_div)
+		BindHendelseRadioKnapperV2(i, bivirkningen, radio_div, radio_input, hver_bivirkning_div, innhold_div, resultat_div, endre_knapp)
 	}
 
 	sporsmal_div.appendChild(sporsmal_container)
@@ -53,7 +54,7 @@ LagBivirkningElementForRadioKnapperV2 = function (i, bivirkningen, hver_bivirkni
 
 
 
-BindHendelseRadioKnapperV2 = function (index, bivirkningen, radio_div, radio_input, hver_bivirkning_div, innhold_div, resultat_div) {
+BindHendelseRadioKnapperV2 = function (index, bivirkningen, radio_div, radio_input, hver_bivirkning_div, innhold_div, resultat_div, endre_knapp) {
 	radio_input.onclick = function () {
 		var verdi = radio_input.value
 		hver_bivirkning_div.classList.add("active_div")
@@ -61,7 +62,10 @@ BindHendelseRadioKnapperV2 = function (index, bivirkningen, radio_div, radio_inp
 		var alvorlighetsgrad = FinnAlvorlighetsgrad(bivirkningen, verdi)
 		//console.log(alvorlighetsgrad)
 		status_bivirkninger[index][2] = alvorlighetsgrad
-		resultat_div.innerHTML = "<b>" + GjorForsteBokstavStor(bivirkningen) + ": " + verdi + "</b>"
+		resultat_div.innerHTML = "<b>" + GjorForsteBokstavStor(verdi) + "</b>"
+		resultat_div.innerHTML += "<br>"
+		resultat_div.appendChild(endre_knapp)
+		
 		OppdaterFargePaRadioDivKlasser(radio_div, bivirkningen)
 		OppdaterFargePaKnapp(legg_inn_alle_bivirkninger_knapp)
 	}

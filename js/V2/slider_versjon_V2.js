@@ -1,5 +1,5 @@
 
-LagBivirkningElementForSliderV2 = function (i, bivirkningen, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
+LagBivirkningElementForSliderV2 = function (i, bivirkningen, bivirkningen_array, hver_bivirkning_div, sporsmal_div, innhold_div, resultat_div, endre_knapp) {
 
 	var sporsmal_container = document.createElement("div")
 	//sporsmal_container.className = "sporsmal_container_flex"
@@ -9,7 +9,7 @@ LagBivirkningElementForSliderV2 = function (i, bivirkningen, hver_bivirkning_div
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = "Hvor mange tilfeller med <b>" + bivirkningen + "</b> har du hatt det siste døgnet? ";
+	sporsmal_innhold_div.innerHTML = bivirkningen_array[2];
 
 	
 	var vis_slider_knapp = document.createElement("button")
