@@ -118,6 +118,7 @@ VisTidligereSymptomer= function () {
 	content.appendChild(overskrift_kalender_div)
 	content.appendChild(liste_tidligere_symptomer_div)
 
+	tidligere_symptomer_array.reverse()
 	LagListeDato(tidligere_symptomer_array)
 
 	content.appendChild(tilbake_til_start_meny_div)

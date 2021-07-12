@@ -8,7 +8,7 @@ ring_sykehuset_div.classList.add("ring_sykehuset_div")
 var overskrift_advarsel_symptomer_div = document.createElement("div")
 overskrift_advarsel_symptomer_div.classList.add("overskrift_sentrum_div")
 overskrift_advarsel_symptomer_div.style.padding = "0px";
-overskrift_advarsel_symptomer_div.innerHTML = "<h3>Advarsel!</h3>"
+overskrift_advarsel_symptomer_div.innerHTML = "<h3>Advarsel</h3>"
 
 var tekst_advarsel_symptomer_div = document.createElement("div")
 tekst_advarsel_symptomer_div.classList.add("tekst_innhold")
@@ -17,7 +17,7 @@ tekst_advarsel_symptomer_div.classList.add("tekst_innhold")
 var legg_inn_alle_bivirkninger_knapp = document.createElement("button")
 legg_inn_alle_bivirkninger_knapp.classList.add("viktig_knapp")
 legg_inn_alle_bivirkninger_knapp.classList.add("ikke_klar_knapp")
-legg_inn_alle_bivirkninger_knapp.innerHTML = "Legg inn bivirkninger"
+legg_inn_alle_bivirkninger_knapp.innerHTML = "Vis oppsummering (og gjør klar til innsending)"
 
 legg_inn_alle_bivirkninger_div.appendChild(legg_inn_alle_bivirkninger_knapp)
 
@@ -160,7 +160,7 @@ VisRingSykehuset = function () {
 	//Meldingen her:
 	ring_sykehuset_div.innerHTML = ""
 	ring_sykehuset_div.appendChild(overskrift_advarsel_symptomer_div)
-	ring_sykehuset_div.appendChild(varsel_trekant_div_container)
+	//ring_sykehuset_div.appendChild(varsel_trekant_div_container)
 	tekst_advarsel_symptomer_div.innerHTML += "Du har registrert en/flere bivirkninger som er alvorlige. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
 	ring_sykehuset_div.appendChild(tekst_advarsel_symptomer_div)
 
