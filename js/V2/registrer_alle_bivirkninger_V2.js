@@ -161,7 +161,7 @@ VisRingSykehuset = function () {
 	ring_sykehuset_div.innerHTML = ""
 	ring_sykehuset_div.appendChild(overskrift_advarsel_symptomer_div)
 	//ring_sykehuset_div.appendChild(varsel_trekant_div_container)
-	tekst_advarsel_symptomer_div.innerHTML += "Du har registrert en/flere bivirkninger som er alvorlige. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
+	tekst_advarsel_symptomer_div.innerHTML = "Du har registrert en/flere bivirkninger som er alvorlige. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
 	ring_sykehuset_div.appendChild(tekst_advarsel_symptomer_div)
 
 
