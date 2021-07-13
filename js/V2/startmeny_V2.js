@@ -13,7 +13,7 @@ vis_legg_inn_symptomer_siste_dogn_div.innerHTML = ""
 vis_legg_inn_symptomer_siste_dogn_div.classList.add("start_meny_div")
 
 var vis_legg_inn_symptomer_siste_dogn_knapp = document.createElement("button")
-vis_legg_inn_symptomer_siste_dogn_knapp.innerHTML = "Legg inn symptomer for siste døgn"
+vis_legg_inn_symptomer_siste_dogn_knapp.innerHTML = "Legg inn bivirkninger for siste døgn"
 vis_legg_inn_symptomer_siste_dogn_knapp.classList.add("viktig_knapp")
 
 vis_legg_inn_symptomer_siste_dogn_div.appendChild(vis_legg_inn_symptomer_siste_dogn_knapp)
@@ -25,7 +25,7 @@ vis_tidligere_symptomer_div.innerHTML = ""
 vis_tidligere_symptomer_div.classList.add("start_meny_div")
 
 var vis_tidligere_symptomer_knapp = document.createElement("button")
-vis_tidligere_symptomer_knapp.innerHTML = "Se tidligere innlagte symptomer"
+vis_tidligere_symptomer_knapp.innerHTML = "Se tidligere registerte bivirkninger"
 vis_tidligere_symptomer_knapp.classList.add("viktig_knapp")
 
 vis_tidligere_symptomer_div.appendChild(vis_tidligere_symptomer_knapp)
@@ -42,7 +42,7 @@ legg_inn_nye_symptomer_fra_registert_dogn_div = document.createElement("div")
 legg_inn_nye_symptomer_fra_registert_dogn_div.classList.add("knapp_i_sentrum_container")
 
 var legg_inn_nye_symptomer_fra_registert_dogn_knapp = document.createElement("button")
-legg_inn_nye_symptomer_fra_registert_dogn_knapp.innerHTML = "Legg inn nye symptomer"
+legg_inn_nye_symptomer_fra_registert_dogn_knapp.innerHTML = "Legg inn nye (oppdaterte) bivirkninger"
 legg_inn_nye_symptomer_fra_registert_dogn_knapp.classList.add("viktig_knapp")
 
 VisStartMenyBivirkninger = function () {
@@ -78,8 +78,8 @@ vis_tidligere_symptomer_knapp.onclick = function () {
 
 VisVarselAlleredeSymptomerLagtInn = function () {
 	content.innerHTML = ""
-	overskrift_varsel_symptomer_allerede_lagt_inn_div.innerHTML = "<h3>Dagens symptomer er allerede lagt inn<h3>"
-	varsel_symptomer_allerede_lagt_inn_div.innerHTML += "Det er allerede blitt lagt inn symptomer for i dag, ønsker du å legge inn på nytt?<br>"
+	overskrift_varsel_symptomer_allerede_lagt_inn_div.innerHTML = "<h3>Dagens bivirkninger er allerede lagt inn<h3>"
+	varsel_symptomer_allerede_lagt_inn_div.innerHTML += "Det er allerede blitt lagt inn bivirkninger for i dag, ønsker du å legge inn på nytt?<br>"
 	content.appendChild(overskrift_varsel_symptomer_allerede_lagt_inn_div)
 	content.appendChild(varsel_symptomer_allerede_lagt_inn_div)
 

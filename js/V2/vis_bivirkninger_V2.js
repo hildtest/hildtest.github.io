@@ -15,7 +15,7 @@ var stilart = "radioknapper" //drop_down, ja_nei, radioknapper, slider
 var overskrift_rapporter_symptomer_div = document.createElement("div")
 overskrift_rapporter_symptomer_div.classList.add("overskrift_sentrum_div")
 overskrift_rapporter_symptomer_div.style.padding = "0px";
-overskrift_rapporter_symptomer_div.innerHTML = "<h3>Symptomer siste døgn</h3>"
+overskrift_rapporter_symptomer_div.innerHTML = "<h3>Bivirkninger siste døgn</h3>"
 
 var liste_bivirkninger_div = document.createElement("div")
 liste_bivirkninger_div.classList.add("liste_bivirkninger_div")

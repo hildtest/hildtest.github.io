@@ -29,12 +29,12 @@ var bivirkninger_array = [
 	],
 	
 	["munnhulesmerter", ["ingen", "milde/svake smerter", "moderate smerter som krever tilpasset kost", "sterke smerter som påvirker matinntaket"],
-	"Har du opplevd <b>smerter i munnhulen<b> det siste døgnet, og i så fall hvordan vil du beskrive dem?",
+	"Har du opplevd <b>smerter i munnhulen</b> det siste døgnet, og i så fall hvordan vil du beskrive dem?",
 	"Har du opplevd <b>sterke smerter i munnhulen</b> det siste døgnet som <b>påvirker matinntaket</b>?",
 	],
 	
 	["feber", ["ingen (under 38,0)", "38,0 - 39,0", "over 39,0 - 40,0", "over 40,0"],
-	"Har du hatt <b>feber<b> det siste døgnet, og i så fall til hvilken temperatur?",
+	"Har du hatt <b>feber</b> det siste døgnet, og i så fall til hvilken temperatur?",
 	"Har du hatt feber over 40,0 grader det siste døgnet?",
 	],
 	

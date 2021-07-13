@@ -30,7 +30,7 @@ send_inn_alle_bivirkninger_knapp.innerHTML = "Send inn bivirkninger"
 
 var tilbake_til_oversikt_over_bivirkninger_knapp = document.createElement("button")
 tilbake_til_oversikt_over_bivirkninger_knapp.classList.add("viktig_knapp")
-tilbake_til_oversikt_over_bivirkninger_knapp.innerHTML = "Tilbake til symptomer siste døgn"
+tilbake_til_oversikt_over_bivirkninger_knapp.innerHTML = "Tilbake til bivirkninger siste døgn"
 
 send_inn_alle_bivirkninger_knapp_container.innerHTML = ""
 send_inn_alle_bivirkninger_knapp_container.appendChild(tilbake_til_oversikt_over_bivirkninger_knapp)
@@ -45,7 +45,7 @@ ring_sykehuset_knapp.innerHTML = "Ring &#9742;"
 
 var tilbake_til_oppsummering_av_bivirkninger_knapp = document.createElement("button")
 tilbake_til_oppsummering_av_bivirkninger_knapp.classList.add("viktig_knapp")
-tilbake_til_oppsummering_av_bivirkninger_knapp.innerHTML = "Tilbake til oppsummering av symptomer"
+tilbake_til_oppsummering_av_bivirkninger_knapp.innerHTML = "Tilbake til oppsummering av bivirkninger"
 
 ring_sykehuset_knapp_container.appendChild(ring_sykehuset_knapp)
 ring_sykehuset_knapp_container.appendChild(tilbake_til_oppsummering_av_bivirkninger_knapp)

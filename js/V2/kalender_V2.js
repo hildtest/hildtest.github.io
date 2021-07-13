@@ -1,7 +1,7 @@
 var overskrift_kalender_div = document.createElement("div")
 overskrift_kalender_div.classList.add("overskrift_sentrum_div")
 overskrift_kalender_div.style.padding = "0px";
-overskrift_kalender_div.innerHTML = "<h3>Tidligere symptomer</h3>"
+overskrift_kalender_div.innerHTML = "<h3>Tidligere bivirkninger</h3>"
 
 var liste_tidligere_symptomer_div = document.createElement("div")
 liste_tidligere_symptomer_div.classList.add("liste_tidligere_symptomer_div")
