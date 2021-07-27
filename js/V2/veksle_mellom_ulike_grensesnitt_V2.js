@@ -32,8 +32,8 @@ var checkbox_elementer_array = [
 	["Font Stil: Sans-serif", font_stil, font_stil_muligheter, true],
 	["Bivirkning allerede lagt inn", bivirkning_allerede_lagt_inn, bivirkning_allerede_lagt_inn_muligheter, bivirkning_allerede_lagt_inn==bivirkning_allerede_lagt_inn_muligheter[0]],
 	["Advarsel Stil: Mild", advarsel_stil, advarsel_stil_muligheter, true],
-	["Rekkefølge i kalander: Yngst-til-eldst", rekkefolge_dato_kalender, rekkefolge_dato_kalender_muligheter, true],
-	]
+	["Rekkefølge i kalander: Yngst-til-eldst", rekkefolge_dato_kalender, rekkefolge_dato_kalender_muligheter, rekkefolge_dato_kalender==rekkefolge_dato_kalender_muligheter[0]],
+]
 
 
 veksler.appendChild(stilvalg_div)
@@ -84,6 +84,8 @@ BindHendelseValgAvStil = function (i, radio_input, stilvalg_type, stilvalget) {
 
 
 LagCheckboxForElementFraArray = function (array, div) {
+	console.log(rekkefolge_dato_kalender)
+	console.log(rekkefolge_dato_kalender_muligheter[0])
 	div.innerHTML = "Fremvisning av checkbox-alternativer: <br>"
 	for (var i = 0; i < array.length; i++) {
 		console.log(array[i])
@@ -141,8 +143,10 @@ BindHendelseCheckboxStil = function (i, checkbox_input, elementet) {
 			console.log(rekkefolge_dato_kalender)
 
 			//Kopiert fra kalander_V2.js
-			var eldst_yngst_array = tidligere_symptomer_array
-			console.log(eldst_yngst_array)
+			var eldst_yngst_array = []
+			for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+				eldst_yngst_array.push(tidligere_symptomer_array[i])
+			}
 
 			var yngst_eldst_array = []
 			for (var i = 0; i < tidligere_symptomer_array.length; i++) {

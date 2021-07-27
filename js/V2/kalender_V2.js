@@ -113,13 +113,16 @@ for (var i = 0; i < tidligere_symptomer_array.length; i++) {
 
 
 VisTidligereSymptomer= function () {
-	console.log("kalender")
+	//console.log("kalender")
 
 	content.appendChild(overskrift_kalender_div)
 	content.appendChild(liste_tidligere_symptomer_div)
 
-	var eldst_yngst_array = tidligere_symptomer_array
-	console.log(eldst_yngst_array)
+	var eldst_yngst_array = []
+	for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+		eldst_yngst_array.push(tidligere_symptomer_array[i])
+	}
+
 
 	var yngst_eldst_array = []
 	for (var i = 0; i < tidligere_symptomer_array.length; i++) {

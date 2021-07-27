@@ -75,9 +75,9 @@ BindHendelseRadioKnapperV2 = function (index, bivirkningen, radio_div, radio_inp
 OppdaterFargePaRadioDivKlasser = function (div, bivirkningen) {
 	var aktuell_klasse = "radio_div"+bivirkningen
 	var liste_med_elementer = document.getElementsByClassName(aktuell_klasse)
-	console.log(liste_med_elementer)
+	//console.log(liste_med_elementer)
 	for (var i = 0; i < liste_med_elementer.length; i++) {
-		console.log(liste_med_elementer[i])
+		//console.log(liste_med_elementer[i])
 		liste_med_elementer[i].classList.remove("valgt_radio")
 		liste_med_elementer[i].classList.add("generell_radio")
 	}
