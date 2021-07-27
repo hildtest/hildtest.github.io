@@ -160,7 +160,13 @@ VisRingSykehuset = function () {
 	//Meldingen her:
 	ring_sykehuset_div.innerHTML = ""
 	ring_sykehuset_div.appendChild(overskrift_advarsel_symptomer_div)
-	//ring_sykehuset_div.appendChild(varsel_trekant_div_container)
+	
+	if (advarsel_stil == "kraftig") {
+		ring_sykehuset_div.appendChild(varsel_trekant_div_container)
+	}
+	else {
+		
+	}
 	tekst_advarsel_symptomer_div.innerHTML = "Du har registrert en/flere bivirkninger som er alvorlige. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
 	ring_sykehuset_div.appendChild(tekst_advarsel_symptomer_div)
 

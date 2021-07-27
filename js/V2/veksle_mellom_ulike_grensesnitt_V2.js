@@ -137,10 +137,23 @@ BindHendelseCheckboxStil = function (i, checkbox_input, elementet) {
 		}
 		else if (elementet[0] == "Advarsel Stil: Mild") {
 			advarsel_stil = elementet[1]
+
+			//kopiert fra registrer_alle_bivirkninger_V2.js
+			ring_sykehuset_div.innerHTML = ""
+			ring_sykehuset_div.appendChild(overskrift_advarsel_symptomer_div)
+			
+			if (advarsel_stil == "kraftig") {
+				ring_sykehuset_div.appendChild(varsel_trekant_div_container)
+			}
+			else {
+				
+			}
+			tekst_advarsel_symptomer_div.innerHTML = "Du har registrert en/flere bivirkninger som er alvorlige. Du bør ringe sykehuset for å avklare situasjonen med en sykepleier. <br><br>"
+			ring_sykehuset_div.appendChild(tekst_advarsel_symptomer_div)
 		}
 		else if (elementet[0] == "Rekkefølge i kalander: Yngst-til-eldst") {
 			rekkefolge_dato_kalender = elementet[1]
-			console.log(rekkefolge_dato_kalender)
+			//console.log(rekkefolge_dato_kalender)
 
 			//Kopiert fra kalander_V2.js
 			var eldst_yngst_array = []
