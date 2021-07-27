@@ -20,12 +20,19 @@ var font_stil_muligheter = ["sans-serif", "serif"]
 var bivirkning_allerede_lagt_inn = "nei" //ja eller nei
 var bivirkning_allerede_lagt_inn_muligheter = ["ja", "nei"]
 
+var advarsel_stil = "mild"
+var advarsel_stil_muligheter = ["mild", "kraftig"]
+
+var rekkefolge_dato_kalender = "yngst-eldst"
+var rekkefolge_dato_kalender_muligheter = ["yngst-eldst", "eldst_yngst"]
 document.body.style.fontFamily = font_stil
 
 
 var checkbox_elementer_array = [
 	["Font Stil: Sans-serif", font_stil, font_stil_muligheter, true],
 	["Bivirkning allerede lagt inn", bivirkning_allerede_lagt_inn, bivirkning_allerede_lagt_inn_muligheter, bivirkning_allerede_lagt_inn==bivirkning_allerede_lagt_inn_muligheter[0]],
+	["Advarsel Stil: Mild", advarsel_stil, advarsel_stil_muligheter, true],
+	["Rekkefølge i kalander: Yngst-til-eldst", rekkefolge_dato_kalender, rekkefolge_dato_kalender_muligheter, true],
 	]
 
 
@@ -125,6 +132,30 @@ BindHendelseCheckboxStil = function (i, checkbox_input, elementet) {
 		else if (elementet[0] == "Bivirkning allerede lagt inn") {
 			bivirkning_allerede_lagt_inn = elementet[1]
 			//console.log(bivirkning_allerede_lagt_inn)
+		}
+		else if (elementet[0] == "Advarsel Stil: Mild") {
+			advarsel_stil = elementet[1]
+		}
+		else if (elementet[0] == "Rekkefølge i kalander: Yngst-til-eldst") {
+			rekkefolge_dato_kalender = elementet[1]
+			console.log(rekkefolge_dato_kalender)
+
+			//Kopiert fra kalander_V2.js
+			var eldst_yngst_array = tidligere_symptomer_array
+			console.log(eldst_yngst_array)
+
+			var yngst_eldst_array = []
+			for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+				var overste_index = tidligere_symptomer_array.length - 1
+				yngst_eldst_array.push(tidligere_symptomer_array[overste_index-i])
+			}
+
+			if (rekkefolge_dato_kalender == "yngst-eldst") {
+				LagListeDato(yngst_eldst_array)
+			}
+			else {
+				LagListeDato(eldst_yngst_array)
+			}
 		}
 	}
 }

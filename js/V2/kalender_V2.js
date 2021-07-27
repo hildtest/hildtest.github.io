@@ -118,8 +118,22 @@ VisTidligereSymptomer= function () {
 	content.appendChild(overskrift_kalender_div)
 	content.appendChild(liste_tidligere_symptomer_div)
 
-	tidligere_symptomer_array.reverse()
-	LagListeDato(tidligere_symptomer_array)
+	var eldst_yngst_array = tidligere_symptomer_array
+	console.log(eldst_yngst_array)
+
+	var yngst_eldst_array = []
+	for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+		var overste_index = tidligere_symptomer_array.length - 1
+		yngst_eldst_array.push(tidligere_symptomer_array[overste_index-i])
+	}
+
+	if (rekkefolge_dato_kalender == "yngst-eldst") {
+		LagListeDato(yngst_eldst_array)
+	}
+	else {
+		LagListeDato(eldst_yngst_array)
+	}
+	//LagListeDato(tidligere_symptomer_array)
 
 	content.appendChild(tilbake_til_start_meny_div)
 }
