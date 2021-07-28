@@ -113,7 +113,7 @@ for (var i = 0; i < tidligere_symptomer_array.length; i++) {
 
 
 VisTidligereSymptomer= function () {
-	//console.log("kalender")
+	console.log("kalender")
 
 	content.appendChild(overskrift_kalender_div)
 	content.appendChild(liste_tidligere_symptomer_div)
@@ -234,7 +234,24 @@ VisTidligereSymptomerForDag = function (i, array, div, utfyllende_informasjon_di
 	utfyllende_informasjon_div.appendChild(minimer_knapp)
 
 	div.onclick = function () {
-		LagListeDato(tidligere_symptomer_array)
+		var eldst_yngst_array = []
+		for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+			eldst_yngst_array.push(tidligere_symptomer_array[i])
+		}
+
+
+		var yngst_eldst_array = []
+		for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+			var overste_index = tidligere_symptomer_array.length - 1
+			yngst_eldst_array.push(tidligere_symptomer_array[overste_index-i])
+		}
+
+		if (rekkefolge_dato_kalender == "yngst-eldst") {
+			LagListeDato(yngst_eldst_array)
+		}
+		else {
+			LagListeDato(eldst_yngst_array)
+		}
 	}
 
 }
