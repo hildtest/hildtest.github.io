@@ -134,16 +134,16 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 	for (var i = 0; i < status_bivirkninger.length; i++) {
 		if (stilart == "ja_nei") {
 			var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
-			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b> (" + bivirkninger_array[i][2] + "): <b>" + GjorForsteBokstavStor(status_bivirkninger[i][1])+ "</b></li>"
+			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b> (" + bivirkninger_array[i][2] + "): " + GjorForsteBokstavStor(status_bivirkninger[i][1])+ "</li>"
 		}
 		else {
 			var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
-			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b>: <b>" + status_bivirkninger[i][1] + "</b></li>"
+			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b>: " + status_bivirkninger[i][1] + "</li>"
 		}
 	}
 	oppsummering_bivirkninger_div.innerHTML += "</ul>"
 	var hoyeste_alvorlighetsgrad = FinnHoyesteAlvorlighetsgrad()
-	oppsummering_bivirkninger_div.innerHTML += "<br>Høyeste alvorlighetsgrad: Grad " + hoyeste_alvorlighetsgrad
+	oppsummering_bivirkninger_div.innerHTML += "<br>Alvorlighetsgrad: Grad " + hoyeste_alvorlighetsgrad + " av 3"
 
 	content.appendChild(send_inn_alle_bivirkninger_knapp_container)
 
