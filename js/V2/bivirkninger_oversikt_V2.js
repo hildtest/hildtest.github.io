@@ -160,7 +160,7 @@ LeggBivirkningerForDagenInn = function (status_bivirkninger, index_for_dagen=7) 
 	bivirkning_allerede_lagt_inn = "ja"
 	console.log(bivirkning_allerede_lagt_inn==bivirkning_allerede_lagt_inn_muligheter[0])
 	checkbox_elementer_array = [
-	["Font Stil: Sans-serif", font_stil, font_stil_muligheter, true],
+	//["Font Stil: Sans-serif", font_stil, font_stil_muligheter, true],
 	["Bivirkning allerede lagt inn", bivirkning_allerede_lagt_inn, bivirkning_allerede_lagt_inn_muligheter, bivirkning_allerede_lagt_inn==bivirkning_allerede_lagt_inn_muligheter[0]],
 	["Advarsel Stil: Mild", advarsel_stil, advarsel_stil_muligheter, true],
 	["Rekkefølge i kalander: Yngst-til-eldst", rekkefolge_dato_kalender, rekkefolge_dato_kalender_muligheter, rekkefolge_dato_kalender==rekkefolge_dato_kalender_muligheter[0]],

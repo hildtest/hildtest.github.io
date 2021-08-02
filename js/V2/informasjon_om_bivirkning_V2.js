@@ -47,6 +47,7 @@ BindHendelseInformasjonOmBivirkningen = function (knapp, bivirkningen) {
 
 VisRelevantInformasjon = function (bivirkningen, bivirkning_informasjon_array) {
 	overflate_div.innerHTML = ""
+	overflate_div.classList.add("tekst_innhold")
 	/*
 	overflate_div.innerHTML += "Her står det relevant informasjon om bivirkningen. <br>"
 	overflate_div.innerHTML += "Som hvor vanlig den er, hvorfor den er alvorlig og hva man bør gjøre hvis den er såpass alvorlig.<br>"
