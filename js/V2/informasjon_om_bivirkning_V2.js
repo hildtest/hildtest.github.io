@@ -1,19 +1,19 @@
 var bivirkning_informasjon_array = [
-	["kvalme", "Kort info om kvalme", "Kvalme er en ubehagelig følelse i mellomgulvet, med eller uten oppkast. Kvalme gir dårligere matlyst og ofte fulgt av oppkast."], 
+	["kvalme", "Info om kvalme", "Kvalme er en ubehagelig følelse i mellomgulvet, med eller uten oppkast. Kvalme gir dårligere matlyst og ofte fulgt av oppkast."], 
 	
-	["oppkast", "Kort info om oppkast", "Oppkast, brekninger, det å kaste opp, er en prosess der mageinnhold kommer opp i og ut gjennom munnen. Oppkast skjer ofte som en ufrivillig refleks, men denne refleksen kan dempes eller fremskyndes med vilje."],
+	["oppkast", "Info om oppkast", "Oppkast, brekninger, det å kaste opp, er en prosess der mageinnhold kommer opp i og ut gjennom munnen. Oppkast skjer ofte som en ufrivillig refleks, men denne refleksen kan dempes eller fremskyndes med vilje."],
 	
-	["avføring/diare", "Kort info om avføring/diare", "Avføring, ekskrementer, er de av kroppens avfallsstoffer som skilles ut via endetarmen. Diaré er uvanlig hyppige eller tynne avføringer. Det er store individuelle variasjoner i avføringsmønstre, men avføring som er hyppigere, tynnere eller løsere enn vanlig er en grei definisjon."],
+	["avføring/diare", "Info om avføring/diare", "Avføring, ekskrementer, er de av kroppens avfallsstoffer som skilles ut via endetarmen. Diaré er uvanlig hyppige eller tynne avføringer. Det er store individuelle variasjoner i avføringsmønstre, men avføring som er hyppigere, tynnere eller løsere enn vanlig er en grei definisjon."],
 	
-	["nevropati/nervebetennelse", "Kort info om nevropati/nervebetennelse", "Nevropati er samlebetegnelse for en rekke sykdommer i perifere nerver og har tidligere blitt omtalt som nervebetennelse. Nevropatier er ulike sykdommer med forskjellige årsaker, som har det felles at det oppstår funksjonsforstyrrelser fordi nervefibrene eller deres isolerende margskjeder ødelegges av sykdomsprosesser. Avhengig av alvorlighetsgraden kan man føle prikking i huden eller større lammelser og smerter."],
+	["nevropati/nervebetennelse", "Info om nevropati/nervebetennelse", "Nevropati er samlebetegnelse for en rekke sykdommer i perifere nerver og har tidligere blitt omtalt som nervebetennelse. Nevropatier er ulike sykdommer med forskjellige årsaker, som har det felles at det oppstår funksjonsforstyrrelser fordi nervefibrene eller deres isolerende margskjeder ødelegges av sykdomsprosesser. Avhengig av alvorlighetsgraden kan man føle prikking i huden eller større lammelser og smerter."],
 
-	["hudforandringer", "Kort info om hudforandringer", "Hudforandringer/Hånd-fot syndrom er en tilstand som skaper rødhet, hevelse og eventuelle smerter på hånden eller foten. Disse forandringene kan være av varierende størrelse."],
+	["hudforandringer", "Info om hudforandringer", "Hudforandringer/Hånd-fot syndrom er en tilstand som skaper rødhet, hevelse og eventuelle smerter på hånden eller foten. Disse forandringene kan være av varierende størrelse."],
 	
-	["munnhulesmerter", "Kort informasjon om munnhulesmerter", "Munnhulesmerter er tilstand hvor det munnhulen er betent, og gir smerter. Dette kan påvirke matinnntaket."],
+	["munnhulesmerter", "Info om munnhulesmerter", "Munnhulesmerter er tilstand hvor det munnhulen er betent, og gir smerter. Dette kan påvirke matinnntaket."],
 	
-	["feber", "Kort informasjon om feber", "Feber er forhøyet kroppstemperatur som følge av sykdom. Feber er et symptom, ikke en sykdom i seg selv."],
+	["feber", "Info om feber", "Feber er forhøyet kroppstemperatur som følge av sykdom. Feber er et symptom, ikke en sykdom i seg selv."],
 	
-	["magesmerter", "Kort informasjon om magesmerter", "Magesmerter er en tilstand hvor man kjenner på smerter i mageregionen."],
+	["magesmerter", "Info om magesmerter", "Magesmerter er en tilstand hvor man kjenner på smerter i mageregionen."],
 ]
 
 VisInformasjonKnappOmBivirkningen = function (hver_bivirkning_div, bivirkningen) {
