@@ -6,7 +6,17 @@ LagBivirkningElementForDropDownV2 = function (i, bivirkningen, bivirkningen_arra
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = bivirkningen_array[2];
+	sporsmal_innhold_div.innerHTML = ""
+
+	var bivirkningen_tekst_start = document.createTextNode(bivirkningen_array[2][0])
+	var bivirkningen_tekst = document.createElement("span")
+	bivirkningen_tekst.innerHTML = bivirkningen_array[2][1]
+	var bivirkningen_tekst_slutt = document.createTextNode(bivirkningen_array[2][2])
+	sporsmal_innhold_div.appendChild(bivirkningen_tekst_start)
+	sporsmal_innhold_div.appendChild(bivirkningen_tekst)
+	sporsmal_innhold_div.appendChild(bivirkningen_tekst_slutt)
+
+	BindHendelseInformasjonOmBivirkningen(bivirkningen_tekst, bivirkningen)
 
 	innhold_div.innerHTML = ""
 

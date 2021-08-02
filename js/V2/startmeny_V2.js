@@ -13,7 +13,7 @@ vis_legg_inn_symptomer_siste_dogn_div.innerHTML = ""
 vis_legg_inn_symptomer_siste_dogn_div.classList.add("start_meny_div")
 
 var vis_legg_inn_symptomer_siste_dogn_knapp = document.createElement("button")
-vis_legg_inn_symptomer_siste_dogn_knapp.innerHTML = "Legg inn bivirkninger for siste døgn"
+vis_legg_inn_symptomer_siste_dogn_knapp.innerHTML = "Registrer bivirkninger for siste døgn"
 vis_legg_inn_symptomer_siste_dogn_knapp.classList.add("viktig_knapp")
 
 vis_legg_inn_symptomer_siste_dogn_div.appendChild(vis_legg_inn_symptomer_siste_dogn_knapp)

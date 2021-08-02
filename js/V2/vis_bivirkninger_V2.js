@@ -80,7 +80,7 @@ LagBivirkningElement = function (i, array, hver_bivirkning_div, stilart) {
 	var resultat_div = document.createElement("div")
 
 	var endre_knapp = document.createElement("button")
-	endre_knapp.innerHTML = "Endre"
+	endre_knapp.innerHTML = "Nullstill"
 	endre_knapp.className = "endre_knapp"
 	endre_knapp.classList.add("litt_viktig_knapp")
 	BindEndreKnapp(i, bivirkningen, endre_knapp, hver_bivirkning_div, stilart)
