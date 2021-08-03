@@ -13,7 +13,7 @@ var bivirkninger_array = [
 	"Har du hatt <b>6 eller flere tilfeller</b> med <b>oppkast</b> det siste døgnet",
 	],
 	
-	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6, normal eller løs konsistens", "7 eller flere, , normal eller løs konsistens"],
+	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6, normal eller løs konsistens", "7 eller flere, normal eller løs konsistens"],
 	["Hvor mange tilfeller med ", "<b>avføring</b>", " har du hatt det siste døgnet, og hvordan har konsistensen vært?"],
 	"Har du hatt <b>7 eller flere tilfeller</b> med <b>avføring</b> det siste døgnet",
 	],
