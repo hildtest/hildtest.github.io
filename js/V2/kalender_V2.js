@@ -87,7 +87,7 @@ grad_3_avforing_og_magesmerter = [
 
 
 //dato (this dato-modifikasjon), alvorlighets-grad, anmerkninger, utfyllende
-tidligere_symptomer_array = [
+tidligere_symptomer_array_alternativer = [
 	[[dd_dato-7, month_array[mm_dato]], "lav", "Grad 0", "Ingen anmerkninger", standard_rapport],
 	[[dd_dato-6, month_array[mm_dato]], "lav", "Grad 1", "Avføring", grad_1_avforing],
 	[[dd_dato-5, month_array[mm_dato]], "lav", "Grad 1", "Avføring og feber", grad_1_avforing_og_feber],
@@ -97,19 +97,38 @@ tidligere_symptomer_array = [
 	[[dd_dato-1, month_array[mm_dato]], "hoy", "Grad 3", "Avføring og magesmerter", grad_3_avforing_og_magesmerter],
 ]
 
-var standard_rapport = [
-	["avføring", 3], ["oppkast", 0], ["magesmerter som begrenser daglig funksjon", "nei"], ["utslett", "nei"], ["blod i avføring", "nei"]
+var standard_rapport_ja_nei = [
+	["Kvalme (nedsatt inntak av mat og væske med vekttap og/eller dehydrering)", "Nei"],
+	["Oppkast (6 eller flere tilfeller)", "Nei"],
+	["Avføring/diare (7 eller flere tilfeller)", "Nei"],
+	["Nevropati/nervebetennelse (smerter og lammelser som hindrer deg betraktelig i hverdagen)", "Ja"],
+	["Hudforandringer (store hudforandringer med smerter og nedsatt funksjon)", "Nei"],
+	["Munnhulesmerter (sterke smerter som påvirker matinntaket)", "Nei"],
+	["Feber (over 40,0 grader)", "Nei"],
+	["Magesmerter (sterke magesmerter som hindrer deg betraktelig i hverdagen)", "Ja"]
 ]
 
-for (var i = 0; i < tidligere_symptomer_array.length; i++) {
-	if (tidligere_symptomer_array[i][0][0] < 1) {
-		if (mm_dato <= 0) {
-			mm_dato = 12
-		}
-		tidligere_symptomer_array[i][0][0] = month_information_array[mm_dato-1][1]-Math.abs(tidligere_symptomer_array[i][0][0])
-		tidligere_symptomer_array[i][0][1] = month_array[mm_dato-1]
-	}
-}
+var avføring_og_magesmerter_ja_nei = [
+	["Kvalme (nedsatt inntak av mat og væske med vekttap og/eller dehydrering)", "Nei"],
+	["Oppkast (6 eller flere tilfeller)", "Nei"],
+	["Avføring/diare (7 eller flere tilfeller)", "Nei"],
+	["Nevropati/nervebetennelse (smerter og lammelser som hindrer deg betraktelig i hverdagen)", "Nei"],
+	["Hudforandringer (store hudforandringer med smerter og nedsatt funksjon)", "Nei"],
+	["Munnhulesmerter (sterke smerter som påvirker matinntaket)", "Nei"],
+	["Feber (over 40,0 grader)", "Nei"],
+	["Magesmerter (sterke magesmerter som hindrer deg betraktelig i hverdagen)", "Nei"]
+]
+
+var tidligere_symptomer_array_ja_nei = [
+	[[dd_dato-7, month_array[mm_dato]], "lav", "Grad 0-2", "Ingen alvorlige anmerkninger", standard_rapport_ja_nei],
+	[[dd_dato-6, month_array[mm_dato]], "lav", "Grad 0-2", "Ingen alvorlige anmerkninger", standard_rapport_ja_nei],
+	[[dd_dato-5, month_array[mm_dato]], "lav", "Grad 0-2", "Ingen alvorlige anmerkninger", standard_rapport_ja_nei],
+	[[dd_dato-4, month_array[mm_dato]], "lav", "Grad 0-2", "Ingen alvorlige anmerkninger", standard_rapport_ja_nei],
+	[[dd_dato-3, month_array[mm_dato]], "lav", "Grad 0-2", "Ingen alvorlige anmerkninger", standard_rapport_ja_nei],
+	[[dd_dato-2, month_array[mm_dato]], "lav", "Grad 0-2", "Ingen alvorlige anmerkninger", standard_rapport_ja_nei],
+	[[dd_dato-1, month_array[mm_dato]], "hoy", "Grad 3", "Avføring og magesmerter", avføring_og_magesmerter_ja_nei],
+]
+
 
 
 VisTidligereSymptomer= function () {
@@ -117,6 +136,27 @@ VisTidligereSymptomer= function () {
 
 	content.appendChild(overskrift_kalender_div)
 	content.appendChild(liste_tidligere_symptomer_div)
+
+	var tidligere_symptomer_array = []
+	console.log(stilart)
+
+	if (stilart == "drop_down" || stilart == "radioknapper") {
+		tidligere_symptomer_array = tidligere_symptomer_array_alternativer
+	}
+
+	else if (stilart == "ja_nei") {
+		tidligere_symptomer_array = tidligere_symptomer_array_ja_nei
+	}
+
+	for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+		if (tidligere_symptomer_array[i][0][0] < 1) {
+			if (mm_dato <= 0) {
+				mm_dato = 12
+			}
+			tidligere_symptomer_array[i][0][0] = month_information_array[mm_dato-1][1]-Math.abs(tidligere_symptomer_array[i][0][0])
+			tidligere_symptomer_array[i][0][1] = month_array[mm_dato-1]
+		}
+	}
 
 	var eldst_yngst_array = []
 	for (var i = 0; i < tidligere_symptomer_array.length; i++) {
@@ -234,6 +274,24 @@ VisTidligereSymptomerForDag = function (i, array, div, utfyllende_informasjon_di
 	utfyllende_informasjon_div.appendChild(minimer_knapp)
 
 	div.onclick = function () {
+		if (stilart == "drop_down" || stilart == "radioknapper") {
+			tidligere_symptomer_array = tidligere_symptomer_array_alternativer
+		}
+
+		else if (stilart == "ja_nei") {
+			tidligere_symptomer_array = tidligere_symptomer_array_ja_nei
+		}
+
+		for (var i = 0; i < tidligere_symptomer_array.length; i++) {
+			if (tidligere_symptomer_array[i][0][0] < 1) {
+				if (mm_dato <= 0) {
+					mm_dato = 12
+				}
+				tidligere_symptomer_array[i][0][0] = month_information_array[mm_dato-1][1]-Math.abs(tidligere_symptomer_array[i][0][0])
+				tidligere_symptomer_array[i][0][1] = month_array[mm_dato-1]
+			}
+		}
+
 		var eldst_yngst_array = []
 		for (var i = 0; i < tidligere_symptomer_array.length; i++) {
 			eldst_yngst_array.push(tidligere_symptomer_array[i])

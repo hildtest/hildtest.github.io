@@ -105,20 +105,25 @@ SjekkOmNoenBivirkningerErAlvorlige = function () {
 
 FinnHoyesteAlvorlighetsgrad = function () {
 	var hoyeste_alvorlighetsgrad = 0
+	antall_0_2_grader = 0 
 	for (var i = 0; i < status_bivirkninger.length; i++) {
 		var aktuell_alvorlighetsgrad = status_bivirkninger[i][2]
+		console.log(hoyeste_alvorlighetsgrad)
 		if (hoyeste_alvorlighetsgrad < aktuell_alvorlighetsgrad) {
 			hoyeste_alvorlighetsgrad = aktuell_alvorlighetsgrad
 		}
 		else if (aktuell_alvorlighetsgrad == "0-2") {
 			console.log("ikke aktuelt")
-			hoyeste_alvorlighetsgrad = "0-2"
+			antall_0_2_grader += 1
 		}
 		else {
 			//nothing happens
 		}
-
 	}
+	if (antall_0_2_grader == status_bivirkninger.length) {
+		hoyeste_alvorlighetsgrad = "0-2"
+	}
+
 	return hoyeste_alvorlighetsgrad
 }
 
@@ -134,7 +139,7 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 	for (var i = 0; i < status_bivirkninger.length; i++) {
 		if (stilart == "ja_nei") {
 			var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])
-			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b> (" + bivirkninger_array[i][2] + "): " + GjorForsteBokstavStor(status_bivirkninger[i][1])+ "</li>"
+			oppsummering_bivirkninger_div.innerHTML += "<li class='mellomrom_mellom_liste_element'><b>" + bivirkningen + "</b> (" + bivirkninger_array[i][3][1] + "): " + GjorForsteBokstavStor(status_bivirkninger[i][1])+ "</li>"
 		}
 		else {
 			var bivirkningen = GjorForsteBokstavStor(status_bivirkninger[i][0])

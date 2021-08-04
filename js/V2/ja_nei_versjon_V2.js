@@ -11,7 +11,7 @@ LagBivirkningElementForJaNeiKnapperV2 = function (i, bivirkningen, bivirkningen_
 	
 	var sporsmal_innhold_div = document.createElement("div")
 	sporsmal_innhold_div.className = "sporsmal_innhold_div"
-	sporsmal_innhold_div.innerHTML = bivirkningen_array[3];
+	sporsmal_innhold_div.innerHTML = bivirkningen_array[3][0];
 
 	var ja_knapp = document.createElement("button")
 	ja_knapp.classList.add("litt_viktig_knapp")

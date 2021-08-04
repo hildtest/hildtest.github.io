@@ -5,42 +5,42 @@
 var bivirkninger_array = [
 	["kvalme", ["ingen", "nedsatt appetitt, men normalt inntak", "nedsatt inntak av mat og væske", "nedsatt inntak med vekttap og/eller dehydrering"], 
 	["Har du opplevd ", "<b>kvalme</b>", " det siste døgnet, og i så fall hvordan vil du beskrive den?"],
-	"Har du opplevd <b>kvalme</b> hvor det har vært <b>nedsatt inntak av mat og væske med vekttap og/eller dehydrering</b> det siste døgnet",
+	["Har du opplevd <b>kvalme</b> hvor det har vært <b>nedsatt inntak av mat og væske med vekttap og/eller dehydrering</b> det siste døgnet", "nedsatt inntak av mat og væske med vekttap og/eller dehydrering"],
 	], 
 	
 	["oppkast", ["0", "1-2", "3-5", "6 eller flere",],
 	["Hvor mange tilfeller med ", "<b>oppkast</b>", " har du hatt det siste døgnet?"],
-	"Har du hatt <b>6 eller flere tilfeller</b> med <b>oppkast</b> det siste døgnet",
+	["Har du hatt <b>6 eller flere tilfeller</b> med <b>oppkast</b> det siste døgnet", "6 eller flere tilfeller"],
 	],
 	
 	["avføring/diare", ["0", "1-3, normal konsistens", "1-3, løs konsistens", "4-6, normal eller løs konsistens", "7 eller flere, normal eller løs konsistens"],
 	["Hvor mange tilfeller med ", "<b>avføring</b>", " har du hatt det siste døgnet, og hvordan har konsistensen vært?"],
-	"Har du hatt <b>7 eller flere tilfeller</b> med <b>avføring</b> det siste døgnet",
+	["Har du hatt <b>7 eller flere tilfeller</b> med <b>avføring</b> det siste døgnet", "7 eller flere tilfeller"],
 	],
 	
 	["nevropati/nervebetennelse", ["ingen", "føleforstyrrelser i huden uten smerter", "smerter og lammelser som begrenser enkelte aktiviteter", "sterke smerter og lammelser som hindrer deg i hverdagen"],
 	["Har du kjent på følelsesforstyrrelser/prikking i huden og/eller smerter og lammelser i kroppen ", "(omtalt som <b>nevropati</b>)", "?"],
-	"Har du opplevd <b>smerter og lammelser i kroppen (nevropati)</b> det siste døgnet som <b>hindrer deg betraktelig i hverdagen</b>",
+	["Har du opplevd <b>smerter og lammelser i kroppen (nevropati)</b> det siste døgnet som <b>hindrer deg betraktelig i hverdagen</b>", "smerter og lammelser som hindrer deg betraktelig i hverdagen"],
 	],
 
 	["hudforandringer", ["ingen", "begrensede forandringer uten smerter", "forandringer med smerter", "store forandringer med smerter og nedsatt funksjon",],
 	["Har du opplevd ", "<b>hudforandringer</b>", " det siste døgnet, og i så fall hvordan vil du beskrive dem?"],
-	"Har du opplevd <b>store hudforandringer</b> som gir <b>smerter og nedsatt funksjon</b> det siste døgnet?",
+	["Har du opplevd <b>store hudforandringer</b> som gir <b>smerter og nedsatt funksjon</b> det siste døgnet?", "store hudforandringer med smerter og nedsatt funksjon"],
 	],
 	
 	["munnhulesmerter", ["ingen", "milde/svake smerter", "moderate smerter som krever tilpasset kost", "sterke smerter som påvirker matinntaket"],
 	["Har du opplevd ", "<b>smerter i munnhulen</b>", "det siste døgnet, og i så fall hvordan vil du beskrive dem?"],
-	"Har du opplevd <b>sterke smerter i munnhulen</b> det siste døgnet som <b>påvirker matinntaket</b>?",
+	["Har du opplevd <b>sterke smerter i munnhulen</b> det siste døgnet som <b>påvirker matinntaket</b>?", "sterke smerter som påvirker matinntaket"],
 	],
 	
 	["feber", ["ingen (under 38,0)", "38,0 - 39,0", "over 39,0 - 40,0", "over 40,0"],
 	["Har du hatt ", "<b>feber</b>", " det siste døgnet, og i så fall til hvilken temperatur?"],
-	"Har du hatt feber over 40,0 grader det siste døgnet?",
+	["Har du hatt feber over 40,0 grader det siste døgnet?", "over 40,0 grader"],
 	],
 	
 	["magesmerter", ["ingen", "milde/svake smerter", "moderate smerter som begrenser enkelte aktiviteter", "sterke smerter som hindrer deg i hverdagen"],
 	["Har du opplevd ","<b>magesmerter</b>", " det siste døgnet, og i så fall hvordan vil du beskrive dem?"],
-	"Har du opplevd <b>sterke magesmerter</b> det siste døgnet som <b>hindrer deg betraktelig i hverdagen</b>?",
+	["Har du opplevd <b>sterke magesmerter</b> det siste døgnet som <b>hindrer deg betraktelig i hverdagen</b>?", "sterke magesmerter som hindrer deg betraktelig i hverdagen"],
 	],
 	/**/
 ]
@@ -146,13 +146,34 @@ LeggBivirkningerForDagenInn = function (status_bivirkninger, index_for_dagen=7) 
 	//console.log(bivirkning_navn_og_status_array)
 	var dato = [dd_dato, month_array[mm_dato]]
 	var hoyeste_alvorlighetsgrad = FinnHoyesteAlvorlighetsgrad()
-	var farge_kode = alvorlighetsgrad_og_farge_sammenheng_array[hoyeste_alvorlighetsgrad]
-	var alvorlighetsgrad = "Grad " + hoyeste_alvorlighetsgrad
-	var anmerkninger_array = FinnAnmerkninger(status_bivirkninger, hoyeste_alvorlighetsgrad)
-	var anmerkninger = SkrivUtArraySomSammenhengendeTekst(anmerkninger_array)
+	var farge_kode = ""
+	var alvorlighetsgrad = ""
+	var anmerkninger_array = []
+	var anmerkninger = []
+
+	if (hoyeste_alvorlighetsgrad == "0-2") {
+		farge_kode = "lav"
+		alvorlighetsgrad = "Grad " + hoyeste_alvorlighetsgrad
+		anmerkninger = "Ingen alvorlige anmerkninger"
+	}
+
+	else {
+		farge_kode = alvorlighetsgrad_og_farge_sammenheng_array[hoyeste_alvorlighetsgrad]
+		alvorlighetsgrad = "Grad " + hoyeste_alvorlighetsgrad
+		anmerkninger_array = FinnAnmerkninger(status_bivirkninger, hoyeste_alvorlighetsgrad)
+		anmerkninger = SkrivUtArraySomSammenhengendeTekst(anmerkninger_array)
+	}
+	
 
 	console.log(anmerkninger)
-	tidligere_symptomer_array[index_for_dagen] = [dato, farge_kode, alvorlighetsgrad, anmerkninger, bivirkning_navn_og_status_array]
+
+	if (stilart == "drop_down" || stilart == "radioknapper") {
+		tidligere_symptomer_array_alternativer[index_for_dagen] = [dato, farge_kode, alvorlighetsgrad, anmerkninger, bivirkning_navn_og_status_array]
+	}
+
+	else if (stilart == "ja_nei") {
+		tidligere_symptomer_array_ja_nei[index_for_dagen] = [dato, farge_kode, alvorlighetsgrad, anmerkninger, bivirkning_navn_og_status_array]
+	}
 
 
 

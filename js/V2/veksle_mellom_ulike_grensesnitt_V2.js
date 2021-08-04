@@ -7,7 +7,7 @@ veksler.innerHTML = ""
 
 stilvalg_div = document.createElement("div")
 
-stilvalg_array = ["drop_down", "ja_nei", "radioknapper", "slider"]
+stilvalg_array = ["drop_down", "ja_nei", "radioknapper"]
 
 //stilart er definert i vis_bivirkninger
 
