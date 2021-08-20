@@ -29,7 +29,7 @@ var bivirkninger_array = [
 	],
 	
 	["munnhulesmerter", ["ingen", "milde/svake smerter", "moderate smerter som krever tilpasset kost", "sterke smerter som påvirker matinntaket"],
-	["Har du opplevd ", "<b>smerter i munnhulen</b>", "det siste døgnet, og i så fall hvordan vil du beskrive dem?"],
+	["Har du opplevd ", "<b>smerter i munnhulen</b>", " det siste døgnet, og i så fall hvordan vil du beskrive dem?"],
 	["Har du opplevd <b>sterke smerter i munnhulen</b> det siste døgnet som <b>har ført til at du har spist mindre enn normalt</b>?", "sterke smerter som reduserer matinntaket"],
 	],
 	
