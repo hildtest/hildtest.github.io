@@ -155,6 +155,14 @@ BindHendelseCheckboxStil = function (i, checkbox_input, elementet) {
 			rekkefolge_dato_kalender = elementet[1]
 			//console.log(rekkefolge_dato_kalender)
 
+			if (stilart == "drop_down" || stilart == "radioknapper") {
+				tidligere_symptomer_array = tidligere_symptomer_array_alternativer
+			}
+
+			else if (stilart == "ja_nei") {
+				tidligere_symptomer_array = tidligere_symptomer_array_ja_nei
+			}
+
 			//Kopiert fra kalander_V2.js
 			var eldst_yngst_array = []
 			for (var i = 0; i < tidligere_symptomer_array.length; i++) {
