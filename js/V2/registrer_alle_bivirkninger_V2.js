@@ -148,7 +148,7 @@ VisRegisterteBivirkninger = function (status_bivirkninger) {
 	}
 	oppsummering_bivirkninger_div.innerHTML += "</ul>"
 	var hoyeste_alvorlighetsgrad = FinnHoyesteAlvorlighetsgrad()
-	oppsummering_bivirkninger_div.innerHTML += "<br>Alvorlighetsgrad: Grad " + hoyeste_alvorlighetsgrad + " av 3"
+	//oppsummering_bivirkninger_div.innerHTML += "<br>Alvorlighetsgrad: Grad " + hoyeste_alvorlighetsgrad + " av 3"
 
 	content.appendChild(send_inn_alle_bivirkninger_knapp_container)
 
